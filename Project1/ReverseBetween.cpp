@@ -18,14 +18,13 @@ private:
     int length;
 
 public:
-    //node creation
+    //making a new node
     LinkedList(int value) {
         Node* newNode = new Node(value);
         head = newNode;
         length = 1;
     }
 
-    //destructor
     ~LinkedList() {
         Node* temp = head;
         while (head) {
@@ -35,7 +34,6 @@ public:
         }
     }
 
-    //priting entire linkedList
     void printList() {
         Node* temp = head;
         if (temp == nullptr) {
@@ -71,7 +69,6 @@ public:
         length = 0;
     }
 
-    //adding node at last
     void append(int value) {
         Node* newNode = new Node(value);
         if (head == nullptr) {
@@ -87,52 +84,49 @@ public:
         length++;
     }
 
-    /*Q: Write a method swapPairs() that swaps every two adjacent nodes in a singly linked list.
-    swapping two pairs
+    void deleteFirst() {
+        if (length == 0) return;
+        Node* temp = head;
+        if (length == 1) {
+            head = nullptr;
+        }
+        else {
+            head = head->next;
+        }
+        delete temp;
+        length--;
+    }
+
+    /*Implement the reverseBetween member function for the LinkedList class,
+    which reverses the nodes of the list from the indexes m to n (the positions are 0-indexed).
     Example:
 
-    Input:  1 -> 2 -> 3 -> 4
-    Output: 2 -> 1 -> 4 -> 3
- 
-    Input:  1 -> 2 -> 3
-    Output: 2 -> 1 -> 3
-    */
-    void swapPairs() {
+    Consider the following singly linked list:
 
+        1 -> 2 -> 3 -> 4 -> 5 -> nullptr
+
+    For the given list, the function ll.reverseBetween(1, 3) should modify the list to be:
+
+        1 -> 4 -> 3 -> 2 -> 5 -> nullptr
+
+    The sublist from the indexes from 1 to 3 has been reversed.
+    */
+    void reverseBetween(int m, int n) {
+        if (head == nullptr) return;
         Node* dummy = new Node(0);
         dummy->next = head;
-
-        Node* previous = dummy;
-        Node* first = head;
-
-        while (first != nullptr && first->next != nullptr) {
-            Node* second = first->next;
-
-            previous->next = second;
-            first->next = second->next;
-            second->next = first;
-
-            previous = first;
-            first = first->next;
+        Node* prev = dummy;
+        for (int i = 0;i < m;i++) {
+            prev = prev->next;
+        }
+        Node* current = prev->next;
+        for (int i = 0;i < n - m;i++) {
+            Node* temp = current->next;
+            current->next = temp->next;
+            temp->next = prev->next;
+            prev->next = temp;
         }
         head = dummy->next;
         delete dummy;
     }
 };
-    /*We use a dummy node so that we can easily update the head even if the first two nodes are swapped.
-
-    The previous pointer tracks the node before the current pair.
-
-    For each pair:
-
-    second is first->next.
-
-    Link previous->next to second.
-
-    Link first->next to the node after second.
-
-    Link second->next to first.
-
-    Move the previous and first pointers to continue the process.
-
-    At the end, update the real head of the list from the dummy.*/

@@ -15,17 +15,13 @@ public:
 class LinkedList {
 private:
     Node* head;
-    int length;
 
 public:
-    //node creation
     LinkedList(int value) {
         Node* newNode = new Node(value);
         head = newNode;
-        length = 1;
     }
 
-    //destructor
     ~LinkedList() {
         Node* temp = head;
         while (head) {
@@ -35,7 +31,6 @@ public:
         }
     }
 
-    //priting entire linkedList
     void printList() {
         Node* temp = head;
         if (temp == nullptr) {
@@ -57,10 +52,6 @@ public:
         return head;
     }
 
-    int getLength() {
-        return length;
-    }
-
     void makeEmpty() {
         Node* temp = head;
         while (head) {
@@ -68,10 +59,8 @@ public:
             delete temp;
             temp = head;
         }
-        length = 0;
     }
 
-    //adding node at last
     void append(int value) {
         Node* newNode = new Node(value);
         if (head == nullptr) {
@@ -84,55 +73,29 @@ public:
             }
             currentNode->next = newNode;
         }
-        length++;
     }
 
-    /*Q: Write a method swapPairs() that swaps every two adjacent nodes in a singly linked list.
-    swapping two pairs
-    Example:
-
-    Input:  1 -> 2 -> 3 -> 4
-    Output: 2 -> 1 -> 4 -> 3
- 
-    Input:  1 -> 2 -> 3
-    Output: 2 -> 1 -> 3
+    //   +======================================================+
+    /*
+    You have a linked list where each node represents a binary digit (0 or 1). 
+    The goal of the binaryToDecimal function is to convert this binary number, 
+    represented by the linked list, into its decimal equivalent.
     */
-    void swapPairs() {
-
-        Node* dummy = new Node(0);
-        dummy->next = head;
-
-        Node* previous = dummy;
-        Node* first = head;
-
-        while (first != nullptr && first->next != nullptr) {
-            Node* second = first->next;
-
-            previous->next = second;
-            first->next = second->next;
-            second->next = first;
-
-            previous = first;
-            first = first->next;
+    //   +======================================================+
+    int binaryToDecimal() {
+        Node* current = head;
+        int num = 0;
+        while (current != nullptr) {
+            num = num * 2 + current->value;
+            current = current->next;
         }
-        head = dummy->next;
-        delete dummy;
+        return num;
     }
+
 };
-    /*We use a dummy node so that we can easily update the head even if the first two nodes are swapped.
+//   | - Use a single pointer : 'current' 
+//   | - Initialize an integer 'num' to 0                   
+//   | - Loop through the list                              
+//   | - Use the formula: num = num * 2 + current->value
+//   | - Return 'num' as the decimal value         
 
-    The previous pointer tracks the node before the current pair.
-
-    For each pair:
-
-    second is first->next.
-
-    Link previous->next to second.
-
-    Link first->next to the node after second.
-
-    Link second->next to first.
-
-    Move the previous and first pointers to continue the process.
-
-    At the end, update the real head of the list from the dummy.*/
