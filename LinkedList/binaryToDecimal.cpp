@@ -1,3 +1,5 @@
+//For now only fully executable script
+//will fix the other scripts in LL sooner or later
 #include <iostream>
 
 using namespace std;
@@ -98,4 +100,9 @@ public:
 //   | - Loop through the list                              
 //   | - Use the formula: num = num * 2 + current->value
 //   | - Return 'num' as the decimal value         
-
+int main(){
+    LinkedList* newLL = new LinkedList(1);
+    newLL->append(2);
+    newLL->printList();
+    cout<<newLL->binaryToDecimal();
+}
