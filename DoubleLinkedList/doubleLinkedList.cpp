@@ -92,6 +92,7 @@ class DoublyLinkedList {
         length++;
     }
 
+    //deleting last item
     void deleteLast(){
         Node* temp = tail;
         if(length == 0)return;
@@ -106,13 +107,48 @@ class DoublyLinkedList {
         delete temp;
         length--;
     }
+
+    void prepend(int value){
+        Node* newNode = new Node(value);
+        if(length == 0){
+            head = newNode;
+            tail = newNode;
+        }
+        else{
+            newNode->next = head;
+            head->prev= newNode;
+            head = newNode;
+        }
+        length++;
+    }
+
+    void deleteFirst(){
+        Node* temp = head;
+        if(length == 1){
+            head = nullptr;
+            tail = nullptr;
+        }
+        else{
+            head = head->next;
+            head->prev = nullptr;
+        }
+        delete temp; 
+        length--;
+    }
 };
 
 int main(){
     DoublyLinkedList* dll = new DoublyLinkedList(7);
     dll->append(8);
+    //dll->printList();
+   // dll->deleteLast();
+    dll->prepend(6);
     dll->printList();
-    dll->deleteLast();
+    dll->deleteFirst();
+    dll->printList();
+    dll->deleteFirst();
+    dll->printList();
+    dll->deleteFirst();
     dll->printList();
 }
 
