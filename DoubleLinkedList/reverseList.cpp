@@ -75,46 +75,41 @@ class DoublyLinkedList {
             }
             length++;
         }
-
+        
         //   +=====================================================+
         //   |                 WRITE YOUR CODE HERE                |
         //   | Description:                                        |
-        //   | - This is the isPalindrome method.                  |
-        //   | - It checks if the list is a palindrome or not.     |
-        //   | - Return type: bool                                 |
+        //   | - This is the reverse method.                       |
+        //   | - It reverses the entire doubly linked list.        |
+        //   | - Return type: void                                 |
         //   |                                                     |
         //   | Tips:                                               |
-        //   | - A list with 0 or 1 node is a palindrome.          |
-        //   | - Create two pointers: forwardNode and backwardNode.|
-        //   | - Loop from the start to the middle of the list.    |
-        //   | - Compare forwardNode and backwardNode values.      |
-        //   | - If any pair is not equal, return false.           |
-        //   | - Otherwise, return true.                           |
+        //   | - Create two pointers: current and temp.            |
+        //   | - Loop through the list swapping next and prev      |
+        //   |   for each node.                                    |
+        //   | - After loop, swap head and tail pointers.          |
+        //   | - Check output from Test.cpp in "User logs".        |
         //   +=====================================================+
-        bool isPalindrome(){
-            if(length == 0)return true;
-            if(length == 1)return true;
-            Node* forwardNode = head;
-            Node* backwardNode = tail;
-            //Only iterating through half because from mid-point its gotta be same
-            for(int i = 0; i<= length/2;i++){
-                if(forwardNode->value != backwardNode->value) return false;
-                forwardNode = forwardNode->next;
-                backwardNode = backwardNode->prev;
+        void reverse(){//expample 1<->2
+            Node* current = head;//current = 1
+            Node* temp = nullptr;
+            while(current != nullptr){
+                //just swap prev with next because DLL so no breaks
+                temp = current->prev; 
+                current->prev = current->next;
+                current->next = temp;
+                current = current->prev;//move to the next node
             }
-            return true;
-        }
-
+            temp = head;//store temporarily
+            head = tail;//now head is the tail because reverse
+            tail = temp;//tail is head because reverse
+        }   
 };
 
 int main(){
-    //DoublyLinkedList* newDll = new DoublyLinkedList(1);
-    DoublyLinkedList dll(1);
-    dll.append(2);
-    dll.append(3);
-    dll.append(2);
-    dll.append(0);//dll.append(1);
-    dll.printList();
-    bool result = dll.isPalindrome();
-    cout<<"Result:"<<result<<endl;
+    DoublyLinkedList list(1);
+    list.append(2);
+    list.printList();
+    list.reverse();
+    list.printList();
 }
