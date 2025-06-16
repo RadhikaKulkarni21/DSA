@@ -214,3 +214,7 @@ public:
         }
     }
 };
+
+int main(){
+    LinkedList* nll = new LinkedList(5);
+}
