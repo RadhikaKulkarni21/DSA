@@ -29,7 +29,7 @@ class Queue {
         }
 
     //Enqueue
-        void enQueue(int value){
+        void enqueue(int value){
             Node* newNode = new Node(value);
             if(length == 0){
                 first = newNode;
@@ -106,7 +106,7 @@ class Queue {
 
 int main(){
     Queue* newQueue = new Queue(7);
-    newQueue->enQueue(8);
+    newQueue->enqueue(8);
     newQueue->dequeue();
     newQueue->printQueue();
     newQueue->dequeue();
