@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+
+using namespace std;
+
+char firstNonRepeatingChar(const string& input_string){
+
+    unordered_map<char, int> charCounts;
+    //increase the count of each character
+    for(char i : input_string){
+        charCounts[i]++;
+    }
+    // Check if the character count is 1
+    for(char c: input_string){
+        if(charCounts[c] == 1)return c;
+    }
+    return 0;
+}
+
+int main(){
+        string input = "aabbcdd";
+        char result = firstNonRepeatingChar(input);
+        cout<<result;
+}
