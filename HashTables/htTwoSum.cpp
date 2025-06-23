@@ -9,17 +9,29 @@ vector<int> twoSum(const vector<int>& nums, int target) {
 	//   | - 'numMap' stores numbers and their indices.        |
 	//   | - 'complement' is the value needed to reach target. |
 	//   | - Use 'find' method for quick look-up in map.       |
-	//   | - Check output from Test.cpp in "User logs".        |
 	//   +=====================================================+
+    
 	unordered_map<int, int> numMap;
     for(int i = 0;i< nums.size();i++){
         //assiging the value to num
         int num = nums[i];
+
         int complement = target - num;
+
         //we are storing each 'not found' value in the unordered map, hence we can use the find here. So each loop which doesnt contain the pair will be stored and once we find the complement in this, we will be thrown out with return.
         if(numMap.find(complement) != numMap.end()){
+
+        // If we found the complement, this means 'num' 
+            // and 'complement' are the pair of numbers we 
+            // are looking for. So, we'll return their 
+            // positions from the list as our answer.
             return {nums[complement],i};
         }
+
+        // If we haven't found the pair, we save the current 
+        // number 'num' and its position 'i' into 'numMap' 
+        // for future checks. This means, "Hey map, remember 
+        // that I've seen this number at this position!"
         numMap[num] = i;
     }
 	return {};
