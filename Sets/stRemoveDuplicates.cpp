@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-
+//to convert and print indices
 string vecToString(const vector<int>& vec) {
     string str = "[";
     for (size_t i = 0; i < vec.size(); ++i) {
