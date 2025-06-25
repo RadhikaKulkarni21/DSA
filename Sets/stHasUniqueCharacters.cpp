@@ -14,6 +14,7 @@ bool hasUniqueChars(const string& str){
             //if its already present in the list, dups are present
             return false;
         }
+        //enter the unique in set
         charSet.insert(ch);
     }
     return true;
@@ -22,5 +23,6 @@ bool hasUniqueChars(const string& str){
 int main(){
     string str = "abcdef";
     bool output = hasUniqueChars(str);
+    //this will respond in 0 or 1, hence adding string
     cout<< (output ? "True":"False");
 }
