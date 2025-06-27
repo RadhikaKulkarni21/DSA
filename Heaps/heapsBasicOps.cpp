@@ -27,6 +27,25 @@ class Heap {
         heap[index2] = temp;
     }
 
+    void sinkDown(int index){
+        int maxIndex = index;
+        while(true){
+            int leftIndex = leftChild(index);//calculate the value bu do not check the proper index
+            int rightIndex = rightChild(index);
+
+            if(heap[leftIndex] > heap[maxIndex]){
+                maxIndex = leftIndex;
+            }
+            if(heap[rightIndex] > heap[maxIndex]){
+                maxIndex = rightIndex;
+            }
+            if(maxIndex != index){
+                swap(index, maxIndex);
+                index = maxIndex;
+            }
+            else return;
+        }
+    }
     
     void printHeap() {
         cout << "\n[";
@@ -48,6 +67,22 @@ class Heap {
             swap(current, parent(current));//swapping to get bigger value 
             current = parent(current);//change the current pointer for next comparision
         }
+    }
+
+    int remove(){
+        if(heap.empty()){
+            return INT_MIN;
+        }
+        int maxValue = heap.front();
+        if(heap.size() == 1){
+            heap.pop_back();
+        }
+        else{
+            heap[0] = heap.back();
+            heap.pop_back();
+            sinkDown(0);
+        }
+        return maxValue;
     }
 };
 
