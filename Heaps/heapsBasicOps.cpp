@@ -88,13 +88,14 @@ class Heap {
 
 int main(){
     Heap* newHeap = new Heap();
+    newHeap->insert(100);
     newHeap->insert(99);
     newHeap->insert(72);
     newHeap->insert(61);
     newHeap->insert(58);
 
     newHeap->printHeap();  
-    newHeap->insert(100);
 
-     newHeap->printHeap(); 
+    newHeap->remove();
+    newHeap->printHeap(); 
 }
