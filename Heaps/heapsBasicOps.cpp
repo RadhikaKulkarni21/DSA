@@ -27,20 +27,29 @@ class Heap {
         heap[index2] = temp;
     }
 
+    //This code block is to make sure that when we remove an item the complete tree structure is maintained so as to have max value at the top
+    //MinHeap sinkDown
     void sinkDown(int index){
         int maxIndex = index;
         while(true){
             int leftIndex = leftChild(index);//calculate the value bu do not check the proper index
             int rightIndex = rightChild(index);
 
-            if(heap[leftIndex] > heap[maxIndex]){
+            //for minimum value we need to check if the leftIndex is not lesser than the heap size      
+            if(leftIndex < heap.size() && heap[leftIndex] > heap[maxIndex]){
                 maxIndex = leftIndex;
             }
-            if(heap[rightIndex] > heap[maxIndex]){
+            if(rightIndex < heap.size() && heap[rightIndex] > heap[maxIndex]){
                 maxIndex = rightIndex;
             }
+        // If either child was smaller than the current node,
+        // swap the current node with this smaller child. This
+        // is essential for moving larger elements down the heap
+        // to restore the min heap property.
             if(maxIndex != index){
                 swap(index, maxIndex);
+                // Update 'index' to the position of the child to
+                // continue sinking down the heap if necessary.
                 index = maxIndex;
             }
             else return;
@@ -58,6 +67,7 @@ class Heap {
         cout << "]" << endl;
     }
 
+    //MinHeap Insert
     void insert(int value) {
         heap.push_back(value);
         int current = heap.size() - 1;
@@ -69,6 +79,7 @@ class Heap {
         }
     }
 
+    //MinHeap remove
     int remove(){
         if(heap.empty()){
             return INT_MIN;
