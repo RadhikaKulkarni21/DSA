@@ -40,12 +40,23 @@ public:
 
     Node *getRoot() {return root;}
 
-
     Node* rInsert(Node* currentNode, int value){
         if(currentNode == nullptr) return new Node(value);
+
         if(value < currentNode->value){
             currentNode->left = rInsert(currentNode->left, value);
         }
+        
+        else if(value > currentNode->value){
+            currentNode->right = rInsert(currentNode->right, value);
+        }
+        return currentNode;
+    }
+
+    void rInsert(int value){
+        //to cover edge case where tree is empty
+        if(root == nullptr)  root = new Node(value);
+        rInsert(root, value);
     }
 
     // this is just to find the value
@@ -76,14 +87,18 @@ public:
 int main(){
     BinarySearchTree* newBst = new BinarySearchTree();
 
-    newBst->insert(47);
-    newBst->insert(21);
-    newBst->insert(76);
-    newBst->insert(18);
-    newBst->insert(27);
-    newBst->insert(52);
-    newBst->insert(58);
+    newBst->rInsert(2);
+    newBst->rInsert(1);
+    newBst->rInsert(3);
+    // newBst->rInsert(18);
+    // newBst->rInsert(27);
+    // newBst->rInsert(52);
+    // newBst->rInsert(58);
 
-    cout<<newBst->rContains(27)<<endl;
-    cout<<newBst->rContains(17)<<endl;
+    //cout<<newBst->rContains(27)<<endl;
+    //cout<<newBst->rContains(17)<<endl;
+    cout<< "\nRoot:"<<newBst->getRoot()->value;
+    cout<< "\n\nRoot->left:"<<newBst->getRoot()->left->value;
+    cout<< "\n\nRoot->right:"<<newBst->getRoot()->right->value;
+
 }
