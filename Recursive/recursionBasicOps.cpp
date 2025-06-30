@@ -92,31 +92,41 @@ public:
 
     Node* deleteNode(Node* currentNode, int value){
         if(currentNode == nullptr) return nullptr;
+        //traversing left and right till we find the value we are looking for
         if(value < currentNode->value){
             currentNode->left = deleteNode(currentNode->left, value);
         }
+
+        else if(value > currentNode->value){
+            currentNode->right = deleteNode(currentNode->right, value);
+        }
+
         else{
+            //open on the left and right
             if(currentNode->left == nullptr && currentNode->right == nullptr){
                 delete (currentNode);
                 return nullptr;
             }
+            //open on the left and have a node on the right
             else if(currentNode->left == nullptr){
                 Node* temp = currentNode->right;
                 delete(currentNode);
                 return temp;
             }
+            //open on the right and have a node on the left
             else if(currentNode->right == nullptr){
                 Node* temp = currentNode->left;
                 delete(currentNode);
                 return temp;
             }
+            //have node on both left and right
             else{
-
+                int subTreeMin = minValue(currentNode->right);
+                currentNode->value = subTreeMin;
+                currentNode->right = deleteNode(currentNode->right, subTreeMin);
             }
         }
-        // else if(value > currentNode->value){
-        //     currentNode->right = deleteNode(currentNode->right, value);
-        // }
+
         return currentNode;
     }
 
@@ -128,20 +138,32 @@ public:
 int main(){
     BinarySearchTree* newBst = new BinarySearchTree();
 
-    newBst->rInsert(47);
-    newBst->rInsert(21);
-    newBst->rInsert(76);
-    newBst->rInsert(18);
-    newBst->rInsert(27);
-    newBst->rInsert(52);
-    newBst->rInsert(58);
+    // newBst->rInsert(47);
+    // newBst->rInsert(21);
+    // newBst->rInsert(76);
+    // newBst->rInsert(18);
+    // newBst->rInsert(27);
+    // newBst->rInsert(52);
+    // newBst->rInsert(58);
+
+    newBst->rInsert(2);
+    newBst->rInsert(1);
+    newBst->rInsert(3);
 
     //cout<<newBst->rContains(27)<<endl;
     //cout<<newBst->rContains(17)<<endl;
-    // cout<< "\nRoot:"<<newBst->getRoot()->value; 
-    // cout<< "\n\nRoot->left:"<<newBst->getRoot()->left->value;
-    // cout<< "\n\nRoot->right:"<<newBst->getRoot()->right->value;
+    cout<<"Before:\n";
+    cout<< "Root:"<<newBst->getRoot()->value<<endl; 
+    cout<< "Root->left:"<<newBst->getRoot()->left->value<<endl;
+    cout<< "Root->right:"<<newBst->getRoot()->right->value<<endl;
 
-    cout<<newBst->minValue(newBst->root)<<endl;
-    cout<<newBst->minValue(newBst->root->right);
+    newBst->deleteNode(2);
+
+    cout<<"After:\n";
+    cout<< "Root:"<<newBst->getRoot()->value<<endl; 
+    cout<< "Root->left:"<<newBst->getRoot()->left->value<<endl;
+    cout<< "Root->right:"<<newBst->getRoot()->right<<endl;
+
+    // cout<<newBst->minValue(newBst->root)<<endl;
+    // cout<<newBst->minValue(newBst->root->right);
 }
