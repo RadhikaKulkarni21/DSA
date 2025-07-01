@@ -65,20 +65,20 @@ class BinarySearchTree {
                 }
             }
         }
-        
-        void DFSPostOrder(Node* currentNode){
-           //left-righ-root
+        //left-root-right
+        void DFSInOrder(Node* currentNode){
+           
             if(currentNode->left){
-                DFSPostOrder(currentNode->left);
+                DFSInOrder(currentNode->left);
             }
+             cout<<currentNode->value<<" ";
             if(currentNode->right){
-                DFSPostOrder(currentNode->right);
+                DFSInOrder(currentNode->right);
             }
-            cout<<currentNode->value<<" ";
         }
          //we are overloading the original one with value passed as root is private
-        void DFSPostOrder(){
-            DFSPostOrder(root);
+        void DFSInOrder(){
+            DFSInOrder(root);
         }
 };
 
@@ -92,5 +92,5 @@ int main(){
     newBFS->insert(52);
     newBFS->insert(82);
 
-    newBFS->DFSPostOrder();
+    newBFS->DFSInOrder();
 }
