@@ -36,3 +36,23 @@ int main(){
     bubbleSort(newArray, size);
     printArray(newArray,size);
 }
+
+/*The function should perform the following tasks:
+
+Iterate through the array from the last element to the first:
+
+Using a loop with an index variable i decreasing from size - 1 to 1.
+
+Compare adjacent elements in the array:
+
+Within the loop, create another loop with an index variable j increasing from 0 to i - 1. 
+Compare the elements at positions j and j + 1.
+
+Swap elements if necessary:
+
+If the element at position j is greater than the element at position j + 1, 
+swap the elements by storing the element at position j in a temporary variable temp, 
+then assigning the element at position j + 1 to the element at position j, 
+and finally assigning the value stored in temp to the element at position j + 1.
+*/
+
