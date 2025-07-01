@@ -66,22 +66,18 @@ class BinarySearchTree {
             }
         }
         
-        void bfs(){
-            queue<Node*> newQueue;
-            newQueue.push(root);
-
-            while(newQueue.size() > 0){
-                //whichever is at the front of the queue ie root
-                Node* currentNode = newQueue.front();
-                newQueue.pop();
-                cout<<currentNode->value<<" ";
-                if(currentNode->left){
-                    newQueue.push(currentNode->left);
-                }
-                if(currentNode->right){
-                    newQueue.push(currentNode->right);
-                }
+        void DFSPostOrder(Node* currentNode){
+           
+            if(currentNode->left){
+                DFSPostOrder(currentNode->left);
             }
+            if(currentNode->right){
+                DFSPostOrder(currentNode->right);
+            }
+            cout<<currentNode->value<<" ";
+        }
+        void DFSPostOrder(){
+            DFSPostOrder(root);
         }
 };
 
@@ -93,7 +89,7 @@ int main(){
     newBFS->insert(18);
     newBFS->insert(27);
     newBFS->insert(52);
-    newBFS->insert(58);
+    newBFS->insert(82);
 
-    newBFS->bfs();
+    newBFS->DFSPostOrder();
 }
