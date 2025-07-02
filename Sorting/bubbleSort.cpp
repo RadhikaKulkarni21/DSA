@@ -14,14 +14,14 @@ void printArray(int arr[], int size) {
 }
 
 void bubbleSort(int array[], int size){
-    for(int i = size - 1; i > 0; i--)
+    for(int i = size - 1; i > 0; i--) //i = 5(index) //i = 4
     {
-        for(int j = 0;j<i;j++){
-            if(array[j] > array[j+1]){
-            int temp = array[j];
-            array[j] = array[j+1];
-            array[j+1] = temp;
-            }
+        for(int j = 0;j<i;j++){//j = 0;j < 5;j++
+            if(array[j] > array[j+1]){//j[0] = 6 j[0+1] = 4
+            int temp = array[j];      //j[1] = 6  j[2] = 2
+            array[j] = array[j+1];    //We will do this for every element
+            array[j+1] = temp;       //take one element compare it with next element
+            }                        //Move on if no match is found
         }
     }
 }
