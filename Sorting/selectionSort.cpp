@@ -32,7 +32,7 @@ void selectionSort(int array[], int size){
 
 /*Iterate through the array from the first element to the second-to-last:
 
-Using a loop with an index variable i increasing from 0 to size - 1.
+Using a loop with an index variable i increasing from 0 to (size - 1)
 
 Find the index of the minimum element in the remaining unsorted part of the array:
 
