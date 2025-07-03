@@ -95,22 +95,23 @@ class LinkedList {
 		void bubbleSort(){
 		    if(length < 2) return;//if just 1 element, list is already sorted
 
-            //creat
+            //create this to mark which node is already visited and/or swapped
 		    Node* sortedUntil = nullptr;
 		    while(sortedUntil != head->next){
-		        Node* current = head;
+		        Node* current = head;//we need to set it to head current
 		        while(current->next != sortedUntil){
 		            Node* nextNode = current->next;
+                    //check and swap
 		            if(current->value > nextNode->value){
 		                int temp = current->value;
 		                current->value = nextNode->value;
 		                nextNode->value = temp;
 		            }
+                    ////moving forward till we reach the marker
 		            current =  current->next;
 		        }
-		        sortedUntil = current;
+		        sortedUntil = current;//if sorted set current
 		    }
-		    
 		}
 };
 
