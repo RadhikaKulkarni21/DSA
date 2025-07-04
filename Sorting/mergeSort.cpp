@@ -70,6 +70,18 @@ void merge(int array[], int leftIndex, int midIndex,int rightIndex){
     }
 }
 
+//actually breaking the array and merging
+void mergeSort(int array[], int leftIndex, int rightIndex){
+    if(leftIndex >= rightIndex) return;
+    int midIndex = leftIndex + (rightIndex - leftIndex) / 2;
+
+    //break the array into subarrays using recursive func
+    mergeSort(array, leftIndex, midIndex);
+    mergeSort(array, midIndex + 1, rightIndex);
+
+    merge(array, leftIndex,midIndex,rightIndex);
+}
+
 int main(){
     int newArray[] = {1,3,7,8,2,4,5,6};
 
@@ -82,6 +94,7 @@ int main(){
     printArray(newArray, size);
 
     cout<<"After";
-    merge(newArray, leftIndex,midIndex,rightIndex);
+    //merge(newArray, leftIndex,midIndex,rightIndex);
+    mergeSort(newArray, leftIndex, rightIndex);
     printArray(newArray, size);
 }
