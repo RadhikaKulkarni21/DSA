@@ -53,14 +53,6 @@ class LinkedList {
             cout << endl;
         }
 
-        Node* getHead() {
-            return head;
-        }
-
-        Node* getTail() {
-            return tail; 
-        }
-
         int getLength() {
             return length;
         }
@@ -76,36 +68,7 @@ class LinkedList {
             }
             length++;
         }
-
-       void deleteFirst() {
-            if (length == 0) return;
-            Node* temp = head;
-            if (length == 1) {
-                head = nullptr;
-                tail = nullptr;
-            } else {
-                head = head->next;
-            }
-            delete temp;
-            length--;
-        }
         
-		//   +=====================================================+
-		//   |                WRITE YOUR CODE HERE                 |
-		//   | Description:                                        |
-		//   | - This method sorts the linked list using           |
-		//   |   the Insertion Sort algorithm.                     |
-		//   | - Divides the list into sorted and unsorted parts.  |
-		//   | - Iterates through unsorted part and inserts each   |
-		//   |   node into the sorted part at the right position.  |
-		//   |                                                     |
-		//   | Return type: void                                   |
-		//   |                                                     |
-		//   | Tips:                                               |
-		//   | - Uses two sub-lists to divide original list.       |
-		//   | - Uses while loops for list traversal.              |
-		//   | - Check output from Test.cpp in "User logs".        |
-		//   +=====================================================+
 		void insertionSort(){
 		    if(length < 2) {return;}
 		   
