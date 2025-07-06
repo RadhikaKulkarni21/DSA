@@ -1,3 +1,6 @@
+/*Wrote this because the other quickSort.cpp was not working correctly
+eventually it started working idk how*/
+
 using namespace std;
 #include <iostream>
 
