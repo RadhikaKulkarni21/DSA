@@ -1,5 +1,6 @@
 /*Wrote this because the other quickSort.cpp was not working correctly
-eventually it started working idk how*/
+eventually it started working idk how
+error- segmentation fault - https://www.geeksforgeeks.org/cpp/segmentation-fault-c-cpp*/
 
 using namespace std;
 #include <iostream>
