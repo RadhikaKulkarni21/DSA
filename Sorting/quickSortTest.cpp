@@ -18,28 +18,25 @@ void swap(int array[], int firstIndex, int secondIndex) {
     array[secondIndex] = temp;
 }
 
-int pivot(int array[], int pivotIndex, int endIndex){
-    int swapIndex = pivotIndex;//start at the same point
-    for(int i = pivotIndex + 1; i<= endIndex;i++){
-        if(array[i] < array[pivotIndex]){
-            //changing this so that the item is samller than pivot      
+int pivot(int array[], int pivotIndex, int endIndex) {
+    int swapIndex = pivotIndex;
+    for (int i = pivotIndex + 1; i <= endIndex; i++) {
+        if (array[i] < array[pivotIndex]) {
+             
             swapIndex++;
             swap(array, swapIndex, i);
         }
     }
-    //changing the biggest with smallest swap index
+    
     swap(array, pivotIndex, swapIndex);
     return swapIndex;
 }
 
-void quickSort(int array[], int leftIndex, int rightIndex){
-    if(leftIndex >= rightIndex) return;
-    //this will make the array look like |smaller pivot bigger|
-    int pivotIndex = pivot(array, leftIndex, rightIndex);
-    //this will run for the left side of pivot so sorting the numbers smaller than pivot
-    quickSort(array, leftIndex, pivotIndex - 1);
-    //this will run for the left side of pivot so sorting the numbers bigger than pivot
-    quickSort(array, pivotIndex + 1, rightIndex);
+void quickSort(int array[], int leftIndex, int rightIndex) {
+	if(leftIndex >= rightIndex) return;
+	int pivotIndex = pivot(array, leftIndex, rightIndex);
+	quickSort(array, leftIndex, pivotIndex - 1);
+	quickSort(array, pivotIndex + 1, rightIndex);
 }
 
 int main(){
