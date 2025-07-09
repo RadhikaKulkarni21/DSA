@@ -1,17 +1,4 @@
-using namespace std;
-#include <iostream>
-#include <vector>
-
-void printVector(vector<int> vect){
-    cout<<"[";
-    for(int i = 0;i < vect.size();i++){
-        cout<< vect[i];
-        if(i != vect.size() - 1){
-            cout<<", ";
-        }
-    }
-    cout<<"]"<<endl;
-}
+#include "helperFunction.h"
 
 vector<int> findMaxMin(vector<int>& newList) {
     int minValue = newList[0];

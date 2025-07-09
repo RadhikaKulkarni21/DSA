@@ -1,7 +1,6 @@
-using namespace std;
-#include <iostream>
-#include <vector>
+#include "helperFunction.h"
 
+//helper fucntion
 void printVector(const vector<int> nums){
     cout << "[";
     for(size_t i = 0; i < nums.size();i++){

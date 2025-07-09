@@ -1,14 +1,4 @@
-using namespace std;
-#include <iostream>
-#include <vector>
-
-void printString(const vector<string>& strings){
-    cout<<"[";
-    for (const auto& str : strings) {
-        cout << "\"" << str << "\" ";
-    }
-    cout << "]"<<endl;
-}
+#include "helperFunction.h"
 
 string longestStringFunction(vector<string>& stringList){
     string longestString = "";
@@ -19,7 +9,6 @@ string longestStringFunction(vector<string>& stringList){
     }
     return longestString;
 }
-
 
 int main(){
     vector<string> stringList = {"elephant", "cow", "rhino"};
