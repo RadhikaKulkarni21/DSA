@@ -35,3 +35,8 @@ void printVectorNewSize(const vector<int>& nums, int newSize = -1) {
     }
     cout << "]";
 }
+
+/*
+some codes are missing questions.
+TODO: add questions, context to the codes to know what is what
+*/
