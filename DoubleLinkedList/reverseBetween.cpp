@@ -83,24 +83,20 @@ class DoublyLinkedList {
         }
         
         void reverseBetween(int startIndex, int endIndex) {
-            //   +===================================================+
-            //   |               WRITE YOUR CODE HERE                |
-            //   | Description:                                      |
-            //   | - Reverses a portion of a doubly linked list      |
-            //   |   between startIndex and endIndex (inclusive).    |
-            //   | - The rest of the list remains unchanged.         |
-            //   |                                                   |
-            //   | Behavior:                                         |
-            //   | - A dummy node is used to simplify edge cases     |
-            //   |   when reversing from the head.                   |
-            //   | - `prev` is positioned just before the reversal   |
-            //   |   section.                                        |
-            //   | - Nodes are extracted one by one and moved to the |
-            //   |   front of the sublist, reversing the segment.    |
-            //   | - All `.next` and `.prev` pointers are correctly  |
-            //   |   updated during each step.                       |
-            //   | - Updates the list's head and deletes dummy node. |
-            //   +===================================================+
+            /*
+            Write a method reverseBetween(int startIndex, int endIndex) 
+            that reverses the nodes of a doubly linked list between 
+            the given start and end indices, inclusive.
+            */
+            // - A dummy node is used to simplify edge cases  
+            //   when reversing from the head.                
+            // - `prev` is positioned just before the reversal
+            //   section.                                     
+            // - Nodes are extracted one by one and moved to the 
+            //   front of the sublist, reversing the segment. 
+            // - All `.next` and `.prev` pointers are correctly  
+            //   updated during each step.                    
+            // - Updates the list's head and deletes dummy node. 
                 // Return early if list is empty or no range to reverse
             if (head == nullptr || startIndex == endIndex) return;
         

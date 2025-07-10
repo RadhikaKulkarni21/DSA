@@ -76,20 +76,20 @@ class DoublyLinkedList {
             length++;
         }
         
-        //   +=====================================================+
-        //   |                 WRITE YOUR CODE HERE                |
-        //   | Description:                                        |
-        //   | - This is the reverse method.                       |
-        //   | - It reverses the entire doubly linked list.        |
-        //   | - Return type: void                                 |
-        //   |                                                     |
-        //   | Tips:                                               |
-        //   | - Create two pointers: current and temp.            |
-        //   | - Loop through the list swapping next and prev      |
-        //   |   for each node.                                    |
-        //   | - After loop, swap head and tail pointers.          |
-        //   | - Check output from Test.cpp in "User logs".        |
-        //   +=====================================================+
+/*
+Implement a member function called reverse() that reverses the order 
+of the nodes in the list.
+
+Input:
+The function is a member of the DoublyLinkedList class, 
+which has a head and a tail pointer, as well as a length attribute.
+*/                                              
+        //    - Create two pointers: current and temp.            
+        //    - Loop through the list swapping next and prev      
+        //      for each node.                                    
+        //    - After loop, swap head and tail pointers.          
+
+
         void reverse(){//expample 1<->2
             Node* current = head;//current = 1
             Node* temp = nullptr;

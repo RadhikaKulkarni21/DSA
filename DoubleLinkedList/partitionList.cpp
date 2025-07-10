@@ -82,28 +82,34 @@ class DoublyLinkedList {
             }
             length++;
         }
-        
+
+/*
+Write a method called partitionList that rearranges the nodes in a 
+doubly linked list so that all nodes with values less than a given integer x 
+appear before nodes with values greater than or equal to x.
+
+The original relative order of the nodes in each partition should be preserved.
+
+The partitioning must be done in-place using dummy nodes and pointer manipulation.
+
+Example
+Input:
+3 <-> 8 <-> 5 <-> 10 <-> 2 <-> 1, x = 5
+Output:
+3 <-> 2 <-> 1 <-> 8 <-> 5 <-> 10
+*/
         void partitionList(int x) {
-            //   +===================================================+
-            //   |               WRITE YOUR CODE HERE                |
-            //   | Description:                                      |
-            //   | - Partitions a doubly linked list around a value  |
-            //   |   `x`.                                            |
-            //   | - Nodes with values < x come before nodes with    |
-            //   |   values >= x, preserving original order.         |
-            //   |                                                   |
-            //   | Behavior:                                         |
-            //   | - Uses two dummy nodes to build two sublists:     |
-            //   |   one for values < x and one for values >= x.     |
-            //   | - Traverses the list and adds each node to the    |
-            //   |   appropriate sublist.                            |
-            //   | - Reconnects the two sublists at the end.         |
-            //   | - Properly updates both `.next` and `.prev`       |
-            //   |   pointers.                                       |
-            //   | - Updates `head` to the new start of the list.    |
-            //   | - Deletes dummy nodes to free memory.             |
-            //   +===================================================+
-                        // If the list is empty, do nothing
+            //    - Uses two dummy nodes to build two sublists:     
+            //      one for values < x and one for values >= x.     
+            //    - Traverses the list and adds each node to the    
+            //      appropriate sublist.                            
+            //    - Reconnects the two sublists at the end.         
+            //    - Properly updates both `.next` and `.prev`       
+            //      pointers.                                       
+            //    - Updates `head` to the new start of the list.    
+            //    - Deletes dummy nodes to free memory.             
+
+            // If the list is empty, do nothing
             if (!head) return;
         
             // Create two dummy nodes to start the two partitions

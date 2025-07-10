@@ -16,7 +16,7 @@ class Node {
 };
 
 class DoublyLinkedList {
-    private:
+    public:
         Node* head;
         Node* tail;
         int length;
@@ -75,36 +75,49 @@ class DoublyLinkedList {
             }
             length++;
         }
+/*
+Implement a member function called isPalindrome() that checks 
+if the list is a palindrome, i.e., 
+its elements read the same forward and backward.
 
-        //   +=====================================================+
-        //   |                 WRITE YOUR CODE HERE                |
-        //   | Description:                                        |
-        //   | - This is the isPalindrome method.                  |
-        //   | - It checks if the list is a palindrome or not.     |
-        //   | - Return type: bool                                 |
-        //   |                                                     |
-        //   | Tips:                                               |
-        //   | - A list with 0 or 1 node is a palindrome.          |
-        //   | - Create two pointers: forwardNode and backwardNode.|
-        //   | - Loop from the start to the middle of the list.    |
-        //   | - Compare forwardNode and backwardNode values.      |
-        //   | - If any pair is not equal, return false.           |
-        //   | - Otherwise, return true.                           |
-        //   +=====================================================+
-        bool isPalindrome(){
-            if(length == 0)return true;
-            if(length == 1)return true;
-            Node* forwardNode = head;
-            Node* backwardNode = tail;
+Input:
+The function is a member of the DoublyLinkedList class, which has a head and a tail 
+pointer, as well as a length attribute.
+
+Output:
+The function should return a boolean value indicating whether the 
+doubly linked list is a palindrome or not.
+
+Constraints:
+The doubly linked list may be empty, have only one node, or have two or more nodes.
+
+Example:
+
+Consider the following doubly linked list:
+
+Head: 1
+Tail: 1
+Length: 5
+ 
+Doubly Linked List:
+1 <-> 2 <-> 3 <-> 2 <-> 1
+After calling isPalindrome(), the result should be true as the list is a palindrome.
+
+*/
+
+bool isPalindrome(){
+    if(length == 0)return true;
+        if(length == 1)return true;
+        Node* forwardNode = head;
+        Node* backwardNode = tail;
             //Only iterating through half because from mid-point its gotta be same
-            for(int i = 0; i<= length/2;i++){
-                if(forwardNode->value != backwardNode->value) return false;
-                forwardNode = forwardNode->next;
-                backwardNode = backwardNode->prev;
-            }
-            return true;
+        for(int i = 0; i<= length/2;i++){
+            if(forwardNode->value != backwardNode->value) return false;
+            forwardNode = forwardNode->next;
+            backwardNode = backwardNode->prev;
         }
-
+        return true;
+    }
 };
 
 int main(){

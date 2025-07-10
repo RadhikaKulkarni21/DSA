@@ -76,23 +76,17 @@ class DoublyLinkedList {
             length++;
         }
 
-        //   +=====================================================+
-        //   |                 WRITE YOUR CODE HERE                |
-        //   | Description:                                        |
-        //   | - The swapPairs function swaps adjacent pairs       |
-        //   |   of nodes in a doubly linked list.                 |
-        //   | - Return type: void                                 |
-        //   |                                                     |
-        //   | Tips:                                               |
-        //   | - Utilizes a dummyNode to simplify edge cases.      |
-        //   | - Uses pointers to navigate and swap nodes.         |
-        //   | - Pay close attention to the 'next' and 'prev'      |
-        //   |   pointers of the nodes.                            |
-        //   | - Works in-place; doesn't create new nodes.         |
-        //   | - Always checks if the list is empty or has only    |
-        //   |   one node.                                         |
-        //   | - Check output from Test.cpp in "User logs".        |
-        //   +=====================================================+
+/*
+Implement a member function called swapPairs() 
+that swaps the values of every two adjacent nodes in the list.
+*/                                           
+        // - Utilizes a dummyNode to simplify edge cases.   
+        // - Uses pointers to navigate and swap nodes.      
+        // - Pay close attention to the 'next' and 'prev'   
+        //   pointers of the nodes.                         
+        // - Works in-place; doesn't create new nodes.      
+        // - Always checks if the list is empty or has only one node.                                      
+
         void swapPairs(){
             Node* dummy = new Node(0);
             dummy->next = head;
