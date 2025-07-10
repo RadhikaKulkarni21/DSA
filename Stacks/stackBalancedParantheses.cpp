@@ -3,6 +3,23 @@
 #include <iostream>
 using namespace std;
 
+
+/*
+Implement a function called isBalancedParentheses() that 
+checks if the input string contains balanced parentheses.
+Examples:
+
+Consider the following input string:
+parentheses: "()"
+After calling isBalancedParentheses(parentheses), the result should be:
+true
+
+Consider the following input string:
+parentheses: "(()))"
+After calling isBalancedParentheses(parentheses), the result should be:
+false
+
+*/
 bool isBalancedParentheses(const string& parentheses) {
     // Stack to store the opening parentheses
     stack<char> charStack;

@@ -3,6 +3,27 @@
 using namespace std;
 using std::stack;
 
+/*
+Implement a function called sortStack() that sorts 
+a given stack of integers in ascending order using an additional stack.
+
+Consider the following input stack:
+
+inputStack:
+5
+2
+7
+1
+
+After calling sortStack(inputStack), the input stack should be:
+
+inputStack:
+1
+2
+5
+7
+*/
+
 void sortStack(stack<int>& inputStack) {
     
     // Additional stack to temporarily store and sort elements
