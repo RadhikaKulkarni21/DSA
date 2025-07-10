@@ -1,10 +1,19 @@
-#include <unordered_map>
-#include <vector>
-#include <array>
-#include <iostream>
-#include <string> 
-using namespace std;
+#include "headerHashTables.h"
 
+
+/*
+Implement a function called subarraySum() that finds a continuous
+subarray within a given vector of integers that adds up to a specific target number.
+
+Consider the following input vector and target:
+
+nums: {1, 2, 3, 4, 5}
+target: 9
+After calling subarraySum(nums, target), the result should be:
+
+{1, 3}
+
+*/
 
 vector<int> subarraySum(const vector<int>& nums, int target) {
     //   | - 'sumIndex' stores cumulative sums and their       |
@@ -13,7 +22,8 @@ vector<int> subarraySum(const vector<int>& nums, int target) {
 	//   | - Use 'find' method for quick look-up in map.       |
 	//   | - Check output from Test.cpp in "User logs".        |
     unordered_map<int, int> sumIndex;
-    //we need to set the intial value of sum to {0,-1} so when we iterate through the loop it will auto change the value to {value, 0}
+    //we need to set the intial value of sum to {0,-1} so when we iterate 
+    //through the loop it will auto change the value to {value, 0}
     sumIndex[0] = -1;
     
     //store sum

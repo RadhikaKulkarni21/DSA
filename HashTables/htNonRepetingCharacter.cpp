@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <unordered_map>
+#include "headerHashTables.h"
 
 /*
 Implement a function called firstNonRepeatingChar() that finds and 
@@ -18,8 +16,6 @@ input_string: "truetalent"
 After calling firstNonRepeatingChar(input_string), the result should be:
 'r'
 */
-
-using namespace std;
 
 char firstNonRepeatingChar(const string& input_string){
 

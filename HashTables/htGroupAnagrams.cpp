@@ -1,22 +1,20 @@
-#include <iostream>
-#include <unordered_map>
-#include <vector>
-#include <string>
-#include <algorithm>
-using namespace std;
+#include "headerHashTables.h"
 
+/*
+Implement a function called groupAnagrams() that 
+groups a list of strings based on their anagram equivalence.
 
-void printGroups(const vector<vector<string>>& groups) {
-    cout << "{ ";
-    for (const auto& group : groups) {
-        cout << "( ";
-        for (const string& str : group) {
-            cout << str << " ";
-        }
-        cout << ") ";
-    }
-    cout << "}\n";
-};
+Consider the following input vector:
+
+strings: {"eat", "tea", "tan", "ate", "nat", "bat"}
+After calling groupAnagrams(strings), the result could be 
+(order of groups and strings within groups does not matter):
+{
+    {"eat", "tea", "ate"},
+    {"tan", "nat"},
+    {"bat"}
+}
+*/
 
 vector<vector<string>> groupAnagrams(const vector<string>& strings) {
 
