@@ -1,6 +1,5 @@
 #include "headerHashTables.h"
 
-
 /*
 Implement a function called subarraySum() that finds a continuous
 subarray within a given vector of integers that adds up to a specific target number.
@@ -16,11 +15,10 @@ After calling subarraySum(nums, target), the result should be:
 */
 
 vector<int> subarraySum(const vector<int>& nums, int target) {
-    //   | - 'sumIndex' stores cumulative sums and their       |
-	//   |   indices.                                          |
-	//   | - 'currentSum' keeps track of the sum up to index i.|
-	//   | - Use 'find' method for quick look-up in map.       |
-	//   | - Check output from Test.cpp in "User logs".        |
+    // - 'sumIndex' stores cumulative sums and their indices.                                       
+	// - 'currentSum' keeps track of the sum up to index i
+	// - Use 'find' method for quick look-up in map.    
+
     unordered_map<int, int> sumIndex;
     //we need to set the intial value of sum to {0,-1} so when we iterate 
     //through the loop it will auto change the value to {value, 0}
@@ -44,11 +42,10 @@ vector<int> subarraySum(const vector<int>& nums, int target) {
 }
 
 int main(){
-
     vector<int> nums{1, 2, 3, 4, 5};
     int target = 10;
     vector<int> result = subarraySum(nums, target);
     //need the ternary operator because we are producing two different ints
     cout << "RETURNED: Indices (" << (result.empty() ? "" : to_string(result[0])) << "," 
-             << (result.empty() ? "" : to_string(result[1])) << ")\n";
+    << (result.empty() ? "" : to_string(result[1])) << ")\n";
 }

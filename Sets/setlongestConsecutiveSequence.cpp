@@ -1,8 +1,16 @@
-#include <vector>
-#include <unordered_set>
-#include <iostream>
-#include <string>
-using namespace std;
+#include "headerSets.h"
+
+/*
+Write a function called longestConsecutiveSequence.
+
+This function takes a list of numbers as input and finds the length 
+of the longest sequence of numbers that can be arranged in order.
+
+For example, if the list is [2, 1, 6, 9, 4, 3], 
+the longest sequence in order is [1, 2, 3, 4], 
+and the length is 4.
+*/
+
 
 int longestConsecutiveSequence(vector<int>& nums){
     unordered_set<int> numSet(nums.begin(),nums.end());

@@ -25,7 +25,6 @@ vector<int> twoSum(const vector<int>& nums, int target) {
 	//   | - 'numMap' stores numbers and their indices.        |
 	//   | - 'complement' is the value needed to reach target. |
 	//   | - Use 'find' method for quick look-up in map.       |
-	//   +=====================================================+
     
 	unordered_map<int, int> numMap;
     for(int i = 0;i< nums.size();i++){

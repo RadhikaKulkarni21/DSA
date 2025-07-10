@@ -1,8 +1,4 @@
-#include <vector>
-#include <unordered_set>
-#include <iostream>
-#include <string>
-using namespace std;
+#include "headerSets.h"
 
 bool hasUniqueChars(const string& str){
     unordered_set<char> charSet;

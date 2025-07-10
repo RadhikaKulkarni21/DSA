@@ -1,24 +1,21 @@
-#include <vector>
-#include <unordered_set>
-#include <iostream>
-#include <string>
-using namespace std;
+#include "headerSets.h"
 
-//to convert and print indices
-string vecToString(const vector<int>& vec) {
-    string str = "[";
-    for (size_t i = 0; i < vec.size(); ++i) {
-        str += to_string(vec[i]);
-        if (i < vec.size() - 1) {
-            str += ", ";
-        }
-    }
-    str += "]";
-    return str;
-}
+/*
+This function takes a list of numbers as input and returns a 
+new list that has all the duplicate numbers removed.
+
+Input List
+
+[1, 2, 2, 3, 3, 3, 4, 5, 5, 6]
+
+Output List
+
+[1, 2, 3, 4, 5, 6]
+*/
 
 vector<int> removeDuplicates(const vector<int>& myList){
-    //since unordered_sets only store unique values, we don't need to iterate to every element to find dups
+    //since unordered_sets only store unique values, we don't need to 
+    //iterate to every element to find dups
     unordered_set<int>uniqueSet(myList.begin(),myList.end());
     return vector<int>(uniqueSet.begin(), uniqueSet.end());
 }

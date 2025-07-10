@@ -1,8 +1,23 @@
-#include <vector>
-#include <unordered_set>
-#include <iostream>
-#include <string>
-using namespace std;
+#include "headerSets.h"
+/*
+Write a function named hasUniqueChars.
+
+The function checks if all the characters in a given text are unique or not.
+
+If they are unique, the function will return true. 
+If even one character is repeated, the function will return false.
+
+Input Text :"hello"
+Output false
+
+In the word "hello," the letter 'l' appears twice. So, the output is false.
+
+Input Text "world"
+
+Output true
+
+In the word "world," all the letters are different from each other. So, the output is true.
+*/
 
 bool hasUniqueChars(const string& str){
     unordered_set<char> charSet;

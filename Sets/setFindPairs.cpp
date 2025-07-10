@@ -1,16 +1,31 @@
-#include <vector>
-#include <unordered_set>
-#include <iostream>
-#include <string>
-using namespace std;
+#include "headerSets.h"
+
+/*
+This function takes two lists of numbers and a target number.
+
+It then finds pairs of numbers where one number is from the first list
+and the other is from the second list, and their sum equals the target number.
+
+Input Lists and Target
+
+First List: [1, 2, 3]
+
+Second List: [4, 5, 6]
+
+Target: 8
+
+Output Pairs
+
+[(2, 6), (3, 5)]
+*/
 
 vector<vector<int>> findPairs(const vector<int>& arr1, const vector<int>& arr2, int target) {
-    //   | - 'mySet' stores numbers from 'arr1'.                   |
-    //   | - 'pairs' will store the pairs that meet the target.    |
-    //   | - Loop through 'arr1' to populate 'mySet'.              |
-    //   | - Loop through 'arr2' to find pairs.                    |
-    //   | - Use 'find' method for quick look-up in set.           |
-    //   +=========================================================+
+    // - 'mySet' stores numbers from 'arr1'.                
+    // - 'pairs' will store the pairs that meet the target. 
+    // - Loop through 'arr1' to populate 'mySet'.           
+    // - Loop through 'arr2' to find pairs.                 
+    // - Use 'find' method for quick look-up in set.        
+
     unordered_set<int> unSet;
     //vector to store two values
     vector<vector<int>> pairs;
