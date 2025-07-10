@@ -3,17 +3,23 @@ using namespace std;
 #include <vector>
 #include <unordered_map>
 
+/*
+Implement a function called findDuplicates() that finds and returns 
+all the duplicate elements in a given vector of integers.
+*/
+
 vector<int> findDuplicates(const vector<int>& nums){
     unordered_map<int, int> numCounts;
     vector<int> duplicates;
     //putting each number from vector
-    //Inside the for loop, the count of the current number (num) in the numCounts map is incremented by 1.
+    //Inside the for loop, the count of the current number (num) 
+    //in the numCounts map is incremented by 1.
     for(int i : nums){
         numCounts[i]++;
     }
 
     for(const auto& value: numCounts){
-        if(value.second > 1){//seoncd will be value {key,value}
+        if(value.second > 1){//second will be value {key,value}
             duplicates.push_back(value.first);
         }
     }

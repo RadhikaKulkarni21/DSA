@@ -2,6 +2,7 @@
 using namespace std;
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 //helper fucntion
 void printVector(const vector<int> nums){
