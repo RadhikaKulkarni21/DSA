@@ -86,7 +86,8 @@ class LinkedList {
 		        }
 		        else{
 		            Node* searchPoint = sortedList;
-		            while(searchPoint->next != nullptr && current->value > searchPoint->next->value){
+		            while(searchPoint->next != nullptr 
+                        && current->value > searchPoint->next->value){
 		                searchPoint = searchPoint->next;
 		            }
 		            current->next = searchPoint->next;
@@ -118,3 +119,68 @@ int main(){
     cout<<"After:";
     list.printList();
 }
+
+/*
+Check if List is Already Sorted
+
+    If the list has less than 2 elements, it's already sorted, so exit the function.
+
+Initialize Sorted and Unsorted List Heads
+
+    sortedListHead starts at the head of the list.
+
+    unsortedListHead starts at the second node in the list.
+
+    Detach sortedListHead from the rest of the list by setting its next to nullptr.
+
+Begin Main Loop
+
+    Loop while unsortedListHead is not nullptr.
+
+    Prepare for Insertion
+
+        Pick the first node from the unsorted list (current = unsortedListHead).
+
+        Move unsortedListHead to its next node.
+
+    Check Where to Insert
+
+        If current->value is less than sortedListHead->value:
+
+            Insert at Beginning
+
+                Set current->next to sortedListHead.
+
+                Update sortedListHead to be current.
+
+        Otherwise:
+
+            Initialize Search Pointer
+
+                Start at sortedListHead.
+
+            Search for Insert Position
+
+                Loop while searchPointer->next is not nullptr and 
+                current->value is greater than searchPointer->next->value.
+
+                Move searchPointer to its next node.
+
+            Insert Node
+
+                Set current->next to searchPointer->next.
+
+                Set searchPointer->next to current.
+
+    End of Main Loop
+
+Update List Head
+
+    Set the head of the list to be sortedListHead.
+
+Update List Tail
+
+    Start at sortedListHead and traverse to the end.
+
+    Update the tail to be the last node visited.
+*/

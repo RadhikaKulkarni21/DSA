@@ -2,7 +2,9 @@
 #include <vector>
 using namespace std;
 
-class Node { 
+
+
+ class Node { 
     public:
         int value;
         Node* next;
@@ -12,9 +14,6 @@ class Node {
             next = nullptr;
         }
 };
-
-
-
 
 class LinkedList {
     private:
@@ -28,15 +27,6 @@ class LinkedList {
             head = newNode;
             tail = newNode;
             length = 1;
-        }
-
-        ~LinkedList() {
-            Node* temp = head;
-            while (head) {
-                head = head->next;
-                delete temp;
-                temp = head;
-            }
         }
 
         void printList() {
@@ -79,19 +69,6 @@ class LinkedList {
             length++;
         }
 
-       void deleteFirst() {
-            if (length == 0) return;
-            Node* temp = head;
-            if (length == 1) {
-                head = nullptr;
-                tail = nullptr;
-            } else {
-                head = head->next;
-            }
-            delete temp;
-            length--;
-        }
-
 		void bubbleSort(){
 		    if(length < 2) return;//if just 1 element, list is already sorted
 
@@ -129,3 +106,52 @@ int main(){
     cout << "After: ";
     list.printList();
 }
+
+/*
+1)Check if List is Already Sorted
+
+ -If the list length is less than 2, exit the function.
+
+2) Initialize a 'Sorted Until' Marker
+
+ -Set a marker that will keep track of where the list is sorted until.
+
+ -Initialize this marker to nullptr.
+
+3)Start Outer Loop to Sort the List
+
+  Loop until the 'sorted until' marker is the second node in the list.
+
+  Initialize Current Node for Inner Loop
+
+    Start at the head of the list.
+
+  Start Inner Loop to Compare Adjacent Nodes
+
+    Loop from the head to where the list is sorted until 
+    (as indicated by the 'sorted until' marker).
+
+    Get the Next Node
+
+        Store the next node relative to the current node.
+
+    Compare Current and Next Node Values
+
+        If the value of the current node is greater than that of the next node:
+
+            Swap the Values
+
+                Swap the values of the current node and the next node.
+
+    Move to the Next Node in List
+
+        Set the current node to its next node.
+
+    End of Inner Loop
+
+  Update 'Sorted Until' Marker
+
+    Move the 'sorted until' marker back by one node.
+
+End of Outer Loop
+*/

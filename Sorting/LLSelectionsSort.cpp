@@ -121,3 +121,55 @@ int main(){
     cout << "After: ";
     list.printList();
 }
+
+/*
+Check if List is Already Sorted
+
+    If the list has less than 2 elements, it's already sorted, so exit the function.
+
+Initialize 'Current' Node
+
+    Start at the head of the list.
+
+Begin Outer Loop
+
+    Loop while the 'current' node's next is not nullptr.
+
+    Initialize 'Smallest' Node
+
+        Start by assuming the 'current' node holds the smallest value.
+
+    Initialize 'Inner Current' Node
+
+        Start at the node next to 'current'.
+
+    Begin Inner Loop
+
+        Loop while the 'inner current' node is not nullptr.
+
+        Find the Smallest Value
+
+            If the value at 'inner current' is smaller than the value at 'smallest':
+
+                Update 'smallest' to be 'inner current'.
+
+        Move 'Inner Current' Node
+
+                Go to the next node in the list.
+
+        End of Inner Loop
+
+    Check If Swap is Needed
+
+        If 'smallest' is not equal to 'current':
+
+    Swap the Values
+
+        Swap the values of 'smallest' and 'current' nodes.
+
+    Move 'Current' Node
+
+        Go to the next node in the list.
+
+    End of Outer Loop
+*/

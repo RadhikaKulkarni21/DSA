@@ -27,7 +27,8 @@ class Heap {
         heap[index2] = temp;
     }
 
-    //This code block is to make sure that when we remove an item the complete tree structure is maintained so as to have max value at the top
+    //This code block is to make sure that when we remove an item the complete tree structure is 
+    //maintained so as to have max value at the top
     //MinHeap sinkDown
     void sinkDown(int index){
         int maxIndex = index;
