@@ -36,9 +36,9 @@ The contiguous subarray [4,-1,2,1] has the largest sum, which is 6.
 
 int maxSubarray(vector<int>& nums) {
 	if(nums.empty())return 0;
-	int maxSum = nums[0];
+	int maxSum = nums[0];//we put these at first value
 	int currentSum = nums[0];
-	for(int i = 1;i < nums.size();i++){
+	for(int i = 1;i < nums.size();i++){//starting at 1 because [0] value is alread stored 
 	        currentSum = max(nums[i], currentSum + nums[i]);
 	        maxSum = max(maxSum, currentSum);
 	}

@@ -135,3 +135,74 @@ int main(){
         cout << "Merged: ";
         list1.printList();
 }
+
+/*
+Initialize Pointers and Dummy Node
+
+    Get the head of the otherList and call it otherHead.
+
+    Create a dummy node with value 0.
+
+    Initialize current to point to the dummy node.
+
+Start Merging
+
+    Loop while head and otherHead are not nullptr.
+
+    Compare Node Values
+
+        If the value at head is smaller than the value at otherHead:
+
+            Attach Node from Original List
+
+                Set current->next to head.
+
+                Move head to the next node in the original list.
+
+        Otherwise:
+
+            Attach Node from Other List
+
+                Set current->next to otherHead.
+
+                Move otherHead to the next node in the otherList.
+
+    Advance Current Pointer
+
+        Move current to its next node.
+
+    End of Loop
+
+Handle Remaining Nodes in Original List
+
+    If head is not nullptr:
+
+        Attach the remaining nodes from the original list to current.
+
+        Traverse to the end of the list.
+
+Handle Remaining Nodes in Other List
+
+    If otherHead is not nullptr:
+
+        Attach the remaining nodes from the otherList to current.
+
+        Traverse to the end of the list.
+
+Update Tail
+
+    The tail of the merged list is the node where current is pointing.
+
+Update Head and Clean Up
+
+    The head of the merged list is dummy->next.
+
+    Delete the dummy node.
+
+Update Length
+
+    Add the length of otherList to the length of the merged list.
+
+Reset Other List
+    Set the head, tail, and length of otherList to nullptr and 0, respectively.
+*/

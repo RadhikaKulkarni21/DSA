@@ -55,7 +55,10 @@ int maxProfitFor(const vector<int>& prices){
     int maxProfit = 0;
     for(int price = 0; price < prices.size();price++){
         minPrice = min(minPrice, prices[price]);//getting min outta prices in vector
+        //profit will be min of whatever buying price 
+        //and whatever is the price on that day
         int profit = prices[price] - minPrice;
+        //we compare the subtartion for each day and store it
         maxProfit = max(maxProfit,profit);
     }
     return maxProfit;
