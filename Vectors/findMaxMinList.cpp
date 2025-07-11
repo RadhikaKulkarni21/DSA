@@ -1,5 +1,17 @@
 #include "helperFunction.h"
 
+/*
+ Write a function that takes a list of integers and returns a 
+ new list containing two elements: the maximum and the minimum value in the input list.
+ Example 1:
+
+Input:
+
+myList: [3, 7, 2, 9, 5]
+
+Output: [9, 2]
+*/
+
 vector<int> findMaxMin(vector<int>& newList) {
     int minValue = newList[0];
     int maxValue = newList[0];

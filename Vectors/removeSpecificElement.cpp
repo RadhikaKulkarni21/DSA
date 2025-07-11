@@ -1,16 +1,28 @@
 #include "helperFunction.h"
 
-//helper fucntion
-void printVector(const vector<int> nums){
-    cout << "[";
-    for(size_t i = 0; i < nums.size();i++){
-        cout<<nums[i];
-        if(i != nums.size() - 1){
-            cout<< ", ";
-        }
-    }
-    cout<<"]"<<endl;
-}
+/*
+Write a function that takes in two parameters: 
+a list of numbers (nums) and a target number (val). 
+The goal is to remove all occurrences of the target number 
+from the list without creating a new list. After the removals, 
+the list should not have any gaps between the remaining numbers. 
+The function should not return the modified list since 
+it will be modified in place; however, 
+the function should resize the list so that the remaining 
+length matches the number of items left after the removals.
+
+Example 1:
+
+Input:
+
+nums: [3, 2, 3, 6, 3, 4, 5, 3]
+
+val: 3
+
+Output:
+
+Modified nums: [2, 6, 4, 5]
+*/
 
 void removeSpecificElement(vector<int>& nums, int val){
     //we get a varible to replace the value with pointer

@@ -1,8 +1,29 @@
 #include "helperFunction.h"
 
+/*
+Write a function that, given a sorted list of integers, 
+removes all consecutive duplicates and returns the length of the modified list. 
+The function should perform the operation in-place, 
+which means you shouldn't use an additional list to store the result.
+
+Example 1:
+
+Input:
+
+nums: [1,1,2,2,2,3,4,4]
+
+Output:
+
+5
+
+Modified nums:
+
+[1,2,3,4,X,X,X,X] (where X can be any number since it's beyond the new length)
+*/
+
 int removeDuplicates(vector<int>& nums){
     //0th index will always be unique so we start from 1st index
-    int writePointer = 1;
+    int writePointer = 1;//this is a index thats why '1'
     if(nums.size() == 0) return 0;
 
     for(int readPointer = 1; readPointer < nums.size();readPointer++){
