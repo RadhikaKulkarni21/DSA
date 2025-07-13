@@ -18,7 +18,7 @@ Output:
 
 Modified nums:
 
-[1,2,3,4,X,X,X,X] (where X can be any number since it's beyond the new length)
+[1,2,3,4,X,X,X,X] (wher+e X can be any number since it's beyond the new length)
 */
 
 int removeDuplicates(vector<int>& nums){
