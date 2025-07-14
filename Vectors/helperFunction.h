@@ -4,7 +4,6 @@ using namespace std;
 #include <vector>
 #include <algorithm>
 
-//helper fucntion
 void printVector(const vector<int> nums){
     cout << "[";
     for(size_t i = 0; i < nums.size();i++){
@@ -39,5 +38,5 @@ void printVectorNewSize(const vector<int>& nums, int newSize = -1) {
 
 /*
 some codes are missing questions.
-TODO: add questions, context to the codes to know what is what
+TODO: add questions, context to the codes to know what is what - DONE
 */
