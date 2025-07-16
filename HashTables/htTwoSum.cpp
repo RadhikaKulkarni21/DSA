@@ -43,9 +43,9 @@ vector<int> twoSum(const vector<int>& nums, int target) {
             // and 'complement' are the pair of numbers we 
             // are looking for. So, we'll return their 
             // positions from the list as our answer.
-            return {nums[complement],i};
+            return {numMap[complement],i};
         }
-
+        //we are storing this complement in numMap
         // If we haven't found the pair, we save the current 
         // number 'num' and its position 'i' into 'numMap' 
         // for future checks. This means, "Hey map, remember 
@@ -56,9 +56,12 @@ vector<int> twoSum(const vector<int>& nums, int target) {
 }
 
 int main(){
-        vector<int> nums{3, 3, 4, 4};
-        int target = 6;
-        vector<int> result = twoSum(nums, target);
-        //ternary operator if(result is empty) then "" else send result[0]
+    vector<int> nums{3, 3, 4, 4};
+    int target = 6;
+    for(int n : nums){
+        cout<< n << endl;
+    }
+    vector<int> result = twoSum(nums, target);
+    //ternary operator if(result is empty) then "" else send result[0]
     cout << "("<<(result.empty() ? "" : to_string(result[0])) << ", " << (result.empty() ? "" : to_string(result[1])) << ")\n";
 }

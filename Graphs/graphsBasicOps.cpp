@@ -29,7 +29,8 @@ class Graph{
 
     //adding a new vertex
     bool addVertex(string vertex){
-        if(adjList.count(vertex) == 0){//for that vertex is 0, then only we add or else it is already present
+        if(adjList.count(vertex) == 0){//for that vertex is 0, then only we add or 
+            //else it is already present
             adjList[vertex];  //{ "A" : [] }
             return true;
         }

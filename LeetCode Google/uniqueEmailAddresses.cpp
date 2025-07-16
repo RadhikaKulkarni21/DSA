@@ -45,7 +45,9 @@ class solution{
 };
 
 int main(){ 
-    vector<string> newVector = {"test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"};
+    vector<string> newVector = {"test.email+alex@leetcode.com",
+                                "test.e.mail+bob.cathy@leetcode.com",
+                                "testemail+david@lee.tcode.com"};
     //create an object of the class for reference
     solution emailVector;
     //passing the function and value
