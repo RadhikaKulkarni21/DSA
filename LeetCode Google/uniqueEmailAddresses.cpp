@@ -1,10 +1,4 @@
-using namespace std;
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <set>
-#include <unordered_set>
-#include <string>
+#include "lcHeader.h"
 
 //we need to simplify the emails
 //we use hash set because hash only has non duplicates

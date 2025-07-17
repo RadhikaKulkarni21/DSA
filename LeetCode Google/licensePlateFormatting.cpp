@@ -1,8 +1,4 @@
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <iostream>
-using namespace std;
+#include "lcHeader.h"
 
 //We are traversing the string from left to right
 //hence the new string will have elements from right to left
