@@ -1,3 +1,4 @@
+//no main class - focus on algorihtm and concept
 #include "lcHeader.h"
 
 ListNode* removeNthFromEnd(ListNode* head, int n) { 
@@ -11,7 +12,7 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
 
     //for loop to initiate and move the first poniter
     //the first pointer will exactly be at n steps away from 2nd pointer
-    for(int i = 0;i < n + 1;i++){
+    for(int i = 0;i <= n + 1;i++){
         first= first->next;
     }
 
