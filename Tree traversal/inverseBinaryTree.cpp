@@ -8,7 +8,7 @@
 #include "R:\C++\Project1\LeetCode Google\lcHeader.h"
 
 //Recursive
-bool inverseBinaryTreeR(TreeNode* root){
+TreeNode* inverseBinaryTreeR(TreeNode* root){
     if(root == NULL) return NULL;
 
     TreeNode* temp;
@@ -25,7 +25,7 @@ bool inverseBinaryTreeR(TreeNode* root){
 }
 
 //Iterative
-bool inverseBinaryTreeI(TreeNode* root){
+TreeNode* inverseBinaryTreeI(TreeNode* root){
     //we will use queue
     queue<TreeNode*> bQueue;
     while(!bQueue.empty()){
@@ -42,4 +42,5 @@ bool inverseBinaryTreeI(TreeNode* root){
         if(current->left != nullptr) bQueue.push(current->left);
         if(current->right != nullptr) bQueue.push(current->right);
     }
+    return root;
 }
