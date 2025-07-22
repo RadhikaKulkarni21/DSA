@@ -1,3 +1,4 @@
+//#include "R:\C++\Project1\LeetCode Google\lcHeader.h"
 using namespace std;
 #include <iostream>
 #include <vector>
@@ -24,3 +25,14 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
+
+void printVector(const vector<int> nums){
+    cout << "[";
+    for(size_t i = 0; i < nums.size();i++){
+        cout<<nums[i];
+        if(i != nums.size() - 1){
+            cout<< ", ";
+        }
+    }
+    cout<<"]"<<endl;
+}
