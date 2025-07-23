@@ -1,16 +1,5 @@
 #include "lcHeader.h"
 
-void printVector(const vector<int> nums){
-    cout << "[";
-    for(size_t i = 0; i < nums.size();i++){
-        cout<<nums[i];
-        if(i != nums.size() - 1){
-            cout<< ", ";
-        }
-    }
-    cout<<"]"<<endl;
-}
-
 void moveZeroes(vector<int>& nums){
     //we'll use two pointers 
     //the reader will traverse through the vector to find zero
