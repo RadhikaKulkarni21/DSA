@@ -18,7 +18,7 @@ After calling firstNonRepeatingChar(input_string), the result should be:
 */
 
 char firstNonRepeatingChar(const string& input_string){
-
+    if(input_string.length() == 0) return 0;
     unordered_map<char, int> charCounts;
     //increase the count of each character
     for(char i : input_string){
@@ -32,7 +32,7 @@ char firstNonRepeatingChar(const string& input_string){
 }
 
 int main(){
-        string input = "aabbcdd";
+        string input = "aabbccdd";
         char result = firstNonRepeatingChar(input);
         cout<<result;
 }
