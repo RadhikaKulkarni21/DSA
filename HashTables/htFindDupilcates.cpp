@@ -1,7 +1,4 @@
-using namespace std;
-#include <iostream>
-#include <vector>
-#include <unordered_map>
+#include "headerHashTables.h"
 
 /*
 Implement a function called findDuplicates() that finds and returns 

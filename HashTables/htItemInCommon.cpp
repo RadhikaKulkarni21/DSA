@@ -1,7 +1,4 @@
-#include <unordered_map>
-#include <vector>
-#include <iostream>
-using namespace std;
+#include "headerHashTables.h"
 
 /*
 Implement a function called itemInCommon() 
