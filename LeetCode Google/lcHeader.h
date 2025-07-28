@@ -9,6 +9,7 @@ using namespace std;
 #include <unordered_map>
 #include <queue>
 #include <map>
+#include <array>
 
 struct ListNode {
     int val;
@@ -37,3 +38,17 @@ void printVector(const vector<int> nums){
     }
     cout<<"]"<<endl;
 }
+
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    Node* next;
+    Node* random;
+    
+    Node(int _val) {
+        val = _val;
+        next = NULL;
+        random = NULL;
+    }
+};

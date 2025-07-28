@@ -34,6 +34,9 @@ Explanation:
 The contiguous subarray [4,-1,2,1] has the largest sum, which is 6.
 */
 
+//this is being solved by Kadane's algorithm
+//we take each value from the vector and add into current sum
+//we check the prev values if they're less we discard them and start anew with next value
 int maxSubarray(vector<int>& nums) {
 	if(nums.empty())return 0;
 	int maxSum = nums[0];//we put these at first value
@@ -46,9 +49,31 @@ int maxSubarray(vector<int>& nums) {
 }
 
 int main(){
-     vector<int> nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+    vector<int> nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
     int returnedResult = maxSubarray(nums);
     cout << "Input Vector: "; 
     printVector(nums); 
     cout << "RETURNED: " << returnedResult << "\n";
 }
+
+/*
+{-2, 1, -3, 4, -1, 2, 1, -5, 4}
+
+currSum = -2
+maxSum = -2
+
+1>-2 so -2 is not worth keeping
+currSum = 1
+maxSum = 1
+
+next is -3 so we start over as -3 can be discarded
+currSum = 4
+maxSum = 4 
+4+-1+2+1
+currSum = 6
+maxSum = 6
+-5 breaks this array and we start again ar 4
+currSum = 4
+maxSum = 6
+hence the ans is {4,-1,2,1}
+*/
