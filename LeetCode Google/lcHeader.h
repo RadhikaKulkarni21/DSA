@@ -10,6 +10,7 @@ using namespace std;
 #include <queue>
 #include <map>
 #include <array>
+#include <stack>
 
 struct ListNode {
     int val;
