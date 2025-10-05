@@ -2,7 +2,7 @@
 
 
 int missingNumber(vector<int> arr, int num){
-    //gonna need to pass the num = array.size separately as array indexx starts from 0
+    //gonna need to pass the num = array.size separately as array index starts from 0
     //when calculating size a 50 length array will be of size 49 hence will destroy
     //the calculations
     int totalSum = num * (num + 1)/2;
@@ -34,8 +34,10 @@ int missingNumberAcc(const vector<int>& arr){
 int main(){
     vector<int> arr = {1,2,3,4,5,6,8,9,10};
     vector<int> num = {4,6,7,1,9,8,3,5,10};
+
     int n = arr.size() + 1;//need a +1 bc array index starts from zero
-    //cout<< "Missing Number: "<< missingNumber(arr, n)<< endl;
+    cout<< "Missing Number: "<< missingNumber(arr, n)<< endl;
+
     cout<< "Missing Number: "<< missingNumberAcc(num);
     return 0;
 }
