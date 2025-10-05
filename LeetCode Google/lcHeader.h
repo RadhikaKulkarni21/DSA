@@ -11,6 +11,7 @@ using namespace std;
 #include <map>
 #include <array>
 #include <stack>
+#include <numeric>
 
 struct ListNode {
     int val;
