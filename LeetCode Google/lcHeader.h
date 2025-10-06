@@ -41,6 +41,17 @@ void printVector(const vector<int> nums){
     cout<<"]"<<endl;
 }
 
+void printStringVector(vector<string> s){
+    cout<< "[";
+    for(size_t i = 0; i < s.size(); i++){
+        cout<<s[i];
+        if(i != s.size() - 1){
+            cout<<",";
+        }
+    }
+    cout << "]" << endl;
+}
+
 // Definition for a Node.
 class Node {
 public:
