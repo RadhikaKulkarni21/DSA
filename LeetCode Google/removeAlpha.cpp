@@ -5,28 +5,25 @@
 	- Remove all the alphabets
 	- Sort the numbers
 	- Print eg 2 3 4 5
-
 */
 
 string printNumbers(string s){
-    string filter;
+    //string filter;
     string result;
     string output;
 
+    set<char> numbers;
     for(char c : s){
         if(isdigit(c)){
-            filter += c;
+            numbers.insert(c);
         }
     }
     
     //sort(filter.begin(), filter.end());//TC: O(NLogN)
-
-    //to replace this we use sets DS
-    set<char> numbers;
-
-    for(char n: filter){
-        numbers.insert(n);
-    }
+    
+    // for(char n: filter){
+    //     numbers.insert(n);
+    // }
 
     for(char n: numbers){
         result += (n);
@@ -38,7 +35,7 @@ string printNumbers(string s){
             output += ' ';
         }
     }
-    
+
     return output;
 }
 
