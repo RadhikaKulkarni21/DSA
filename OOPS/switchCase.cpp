@@ -20,6 +20,6 @@ int switchCase(int n){
 
 int main(){
     int n = 2;
-    switchCase(2);
-    //switchCase(3);
+    switchCase(8);
+    //switchCase(n);
 }
