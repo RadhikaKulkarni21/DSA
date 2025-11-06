@@ -82,5 +82,7 @@ int main(){
     }
 
     //TODO: add what happens after user selects an item
+    //TODO: Reloop it after user selects buy
+    //Maybe we can recreate in C# to use as a desktop application
 }
 
