@@ -34,18 +34,14 @@ class MenuCategory{
         }
 };
 
-//TODO: Create separate inherited class
-//TODO: Create separate functions to create categroy and add items
+vector<MenuCategory> createMenu(string s){
+    vector<MenuCategory> menu;
 
-
-int main(){
     //creating different menus for each category
-
     MenuCategory mains("Mains");
     MenuCategory drinks("Drinks");
     MenuCategory sides("Sides");
     MenuCategory combos("Combos");
-
 
     //adding to each category
     mains.addItem(menuItems("burger.jpg ", "Burger ", 5.99));
@@ -64,25 +60,40 @@ int main(){
     combos.addItem(menuItems("combo2.jpg ", "Kebab + Drink + Side ", 15.99));
     combos.addItem(menuItems("combo3.jpg ", "Wrap + Drink + Side ", 15.99));
 
-    string n;
-    cout<<"Please select from the following options: "<< endl << "Mains"<< endl << "Drinks"<< endl << "Sides"<< endl << "Combos" << endl;
-    cin>> n;
-    
-    if(n == "Mains"){
+   // Add all categories to menu
+    menu.push_back(mains);
+    menu.push_back(drinks);
+    menu.push_back(sides);
+    menu.push_back(combos);
+
+    //Display only what user selects
+    if(s == "Mains"){
         mains.display();
     }
-    else if(n == "Drinks"){
+    else if(s == "Drinks"){
         drinks.display();
     }
-    else if(n == "Sides"){
+    else if(s == "Sides"){
         sides.display();
     }
-    else if(n == "Drinks"){
-        drinks.display();
+    else if(s == "Combos"){
+        combos.display();
     }
+
+    return menu;
+}
+
+
+int main(){
+    
+    string mainMenu;
+    int itemSelect;
+    cout<<"Please select from the following options: "<< endl 
+    << "Mains"<< endl << "Drinks"<< endl << "Sides"<< endl << "Combos" << endl;
+    cin>> mainMenu;
+    createMenu(mainMenu);
 
     //TODO: add what happens after user selects an item
     //TODO: Reloop it after user selects buy
-    //Maybe we can recreate in C# to use as a desktop application
 }
 
