@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+*.exe
+*.one
+*.onetoc2
+OOPS/TEST.CPP
