@@ -87,13 +87,11 @@ vector<MenuCategory> createMenu(string s){
 int main(){
     
     string mainMenu;
-    int itemSelect;
+
     cout<<"Please select from the following options: "<< endl 
     << "Mains"<< endl << "Drinks"<< endl << "Sides"<< endl << "Combos" << endl;
+
     cin>> mainMenu;
     createMenu(mainMenu);
-
-    //TODO: add what happens after user selects an item
-    //TODO: Reloop it after user selects buy
 }
 

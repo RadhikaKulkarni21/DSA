@@ -1,5 +1,7 @@
-//#include "R:\C++\Project1\LeetCode Google\lcHeader.h"
-//#include "lcHeader.h"
+/*LOCAL COMMON HEADER*/
+//#include "R:\C++\Project1\lcHeader.h"
+
+
 using namespace std;
 #include <iostream>
 #include <vector>
