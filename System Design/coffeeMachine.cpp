@@ -64,6 +64,7 @@ class CoffeeMachine{
 };
 
 int main(){
+    //will be just for this scope, manually delete itself
     CoffeeMachine coffee;
 
     MakeCoffee espresso("Espresso", 2.5);
