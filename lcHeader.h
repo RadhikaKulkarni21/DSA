@@ -17,6 +17,7 @@ using namespace std;
 #include <numeric>
 #include <sstream>
 
+//For linkedlist - Single and double
 struct ListNode {
     int val;
     ListNode *next;
@@ -25,6 +26,7 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
+//for tree traversing
 struct TreeNode {
     int val;
     TreeNode *left;
@@ -55,6 +57,19 @@ void printStringVector(vector<string> s){
     }
     cout << "]" << endl;
 }
+
+//hash tables
+void printGroups(const vector<vector<string>>& groups) {
+    cout << "{ ";
+    for (const auto& group : groups) {
+        cout << "( ";
+        for (const string& str : group) {
+            cout << str << " ";
+        }
+        cout << ") ";
+    }
+    cout << "}\n";
+};
 
 // Definition for a Node.
 class Node {
