@@ -15,7 +15,13 @@ class LeagueLane{
     string player;
     vector<string> champs;
 
-    LeagueLane(string l,string r, string p): lane(l), role(r), player(p){};
+    //LeagueLane(string l,string r, string p): lane(l), role(r), player(p){};
+
+    LeagueLane(string l,string r, string p){
+        lane = l;
+        role = r;
+        player = p;
+    }
 
     void addChamp(string champ){
         champs.push_back(champ);

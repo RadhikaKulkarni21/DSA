@@ -69,7 +69,7 @@ int lengthOfLongestSubstring(const string& s) {
         // If we've seen the character and it's inside the current window
         //check count of c in map
         if (lastSeen.count(c) && lastSeen[c] >= left) {
-            left = lastSeen[c] + 1;   // move left one place ahead as to slide the window
+            left = lastSeen[c] + 1; //move left one place ahead as to slide the window
         }
 
         lastSeen[c] = right; // update last seen position
@@ -78,7 +78,6 @@ int lengthOfLongestSubstring(const string& s) {
 
     return maxLen;
 }
-
 
 int main(){
     string s = "abababa";
