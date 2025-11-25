@@ -1,16 +1,4 @@
-using namespace std;
-#include <iostream>
-
-void printArray(int arr[], int size) {
-    cout << "[";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i];
-        if (i != size - 1) {
-            cout << ", ";
-        }
-    }
-    cout << "]"<<endl;
-}
+#include "R:\C++\Project1\lcHeader.h"
 
 void swap(int array[], int firstIndex, int secondIndex) {
     int temp = array[firstIndex];

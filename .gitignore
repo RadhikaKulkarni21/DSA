@@ -365,3 +365,4 @@ FodyWeavers.xsd
 *.one
 *.onetoc2
 OOPS/TEST.CPP
+*.json
