@@ -1,18 +1,4 @@
-using namespace std;
-#include <iostream>
-#include <vector>
-
-
-void printArray(int arr[], int size) {
-    cout << "[";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i];
-        if (i != size - 1) {
-            cout << ", ";
-        }
-    }
-    cout << "]"<<endl;
-}
+#include "R:\C++\Project1\lcHeader.h"
 
 //take two varibales, loop through
 //compare values, add them into another array/list
@@ -29,6 +15,7 @@ void merge(int array[], int leftIndex, int midIndex,int rightIndex){
     int* leftArray = new int[leftArraySize];
     int* rightArray = new int[rightArraySize];
 
+    //inserting it into new array
     for (int i = 0; i < leftArraySize; i++){
         leftArray[i] = array[leftIndex + i];
     }
@@ -81,6 +68,9 @@ void mergeSort(int array[], int leftIndex, int rightIndex){
 
     merge(array, leftIndex,midIndex,rightIndex);
 }
+
+//time complexity O(n log n) for every case
+//Space complexity O(n) additional arrays are being used
 
 int main(){
     int newArray[] = {1,3,7,8,2,4,5,6};

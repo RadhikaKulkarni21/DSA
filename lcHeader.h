@@ -1,7 +1,6 @@
 /*LOCAL COMMON HEADER*/
 //#include "R:\C++\Project1\lcHeader.h"
 
-
 using namespace std;
 #include <iostream>
 #include <vector>
@@ -70,6 +69,18 @@ void printGroups(const vector<vector<string>>& groups) {
     }
     cout << "}\n";
 };
+
+//Sorting
+void printArray(int arr[], int size) {
+    cout << "[";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i];
+        if (i != size - 1) {
+            cout << ", ";
+        }
+    }
+    cout << "]"<<endl;
+}
 
 // Definition for a Node.
 class Node {

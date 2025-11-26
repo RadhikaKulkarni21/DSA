@@ -1,22 +1,9 @@
-#include <iostream>
-
-using namespace std;
-
-void printArray(int arr[], int size) {
-    cout << "[";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i];
-        if (i != size - 1) {
-            cout << ", ";
-        }
-    }
-    cout << "]";
-}
+#include "R:\C++\Project1\lcHeader.h"
 
 void bubbleSort(int array[], int size){
     for(int i = size - 1; i > 0; i--) //i = 5(index) //i = 4
     {
-        for(int j = 0;j<i;j++){//j = 0;j < 5;j++
+        for(int j = 0;j<i;j++){//i is passes
             if(array[j] > array[j+1]){//j[0] = 6 j[0+1] = 4
             int temp = array[j];      //j[1] = 6  j[2] = 2
             array[j] = array[j+1];    //We will do this for every element
@@ -25,7 +12,8 @@ void bubbleSort(int array[], int size){
         }
     }
 }
-
+//Complexity: O(n^2)
+//Space O(1) - no new data structure created
 
 int main(){
     int newArray[] = {6,4,2,5,1,3};
@@ -45,7 +33,8 @@ Using a loop with an index variable i decreasing from size - 1 to 1.
 
 Compare adjacent elements in the array:
 
-Within the loop, create another loop with an index variable j increasing from 0 to i - 1. 
+Within the loop, create another loop with an index variable j increasing 
+from 0 to i - 1. 
 Compare the elements at positions j and j + 1.
 
 Swap elements if necessary:
