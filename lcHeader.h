@@ -79,7 +79,7 @@ void printArray(int arr[], int size) {
             cout << ", ";
         }
     }
-    cout << "]";
+    cout << "]"<<endl;
 }
 
 // Definition for a Node.

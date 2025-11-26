@@ -10,7 +10,7 @@ int pivot(int array[], int pivotIndex, int endIndex){
     int swapIndex = pivotIndex;//start at the same point
     for(int i = pivotIndex + 1; i<= endIndex;i++){
         if(array[i] < array[pivotIndex]){
-            //changing this so that the item is samller than pivot      
+            //changing this so that the item is smaller than pivot      
             swapIndex++;
             swap(array, swapIndex, i);
         }
@@ -23,10 +23,13 @@ int pivot(int array[], int pivotIndex, int endIndex){
 void quickSort(int array[], int leftIndex, int rightIndex){
     if(leftIndex >= rightIndex) return;
     //this will make the array look like |smaller pivot bigger|
+
     int pivotIndex = pivot(array, leftIndex, rightIndex);
     //this will run for the left side of pivot so sorting the numbers smaller than pivot
+
     quickSort(array, leftIndex, pivotIndex - 1);
     //this will run for the left side of pivot so sorting the numbers bigger than pivot
+
     quickSort(array, pivotIndex + 1, rightIndex);
 }
 
@@ -37,7 +40,7 @@ int main(){
 
     int returnedIndex = pivot(newArray, 0, size - 1);
 
-    cout<<"Returned Index:" << returnedIndex <<"\n\n";
+    cout<<"Returned Index:" << returnedIndex <<endl;
     printArray(newArray, size);
     quickSort(newArray,0, size - 1);
     printArray(newArray,size);
