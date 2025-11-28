@@ -15,6 +15,7 @@ using namespace std;
 #include <stack>
 #include <numeric>
 #include <sstream>
+#include <cmath>
 
 //For linkedlist - Single and double
 struct ListNode {
@@ -35,6 +36,7 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+//numeric vector printing
 void printVector(const vector<int> nums){
     cout << "[";
     for(size_t i = 0; i < nums.size();i++){
@@ -46,6 +48,7 @@ void printVector(const vector<int> nums){
     cout<<"]"<<endl;
 }
 
+//char vector print
 void printStringVector(vector<string> s){
     cout<< "[";
     for(size_t i = 0; i < s.size(); i++){
@@ -70,7 +73,7 @@ void printGroups(const vector<vector<string>>& groups) {
     cout << "}\n";
 };
 
-//Sorting
+//Sorting Algorithms
 void printArray(int arr[], int size) {
     cout << "[";
     for (int i = 0; i < size; i++) {
