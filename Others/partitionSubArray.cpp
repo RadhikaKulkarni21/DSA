@@ -12,7 +12,7 @@ O/p = 3
 [36] [6,6] [12,3]
 */
 
-#include "testsHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 int numberOfPartitons(vector<int>arr, int n){
     //return -1 if no partitions are possible
