@@ -1,4 +1,4 @@
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 int CountBinarySubstring(string s){
     int counter = 0;//count stringd

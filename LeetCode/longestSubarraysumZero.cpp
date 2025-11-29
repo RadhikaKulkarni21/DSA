@@ -7,7 +7,7 @@ nums = 15 -2 2 -8 1 7 10 23
 longest
 */
 
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 int longestSubarray(vector<int>& nums){
     int n = nums.size();

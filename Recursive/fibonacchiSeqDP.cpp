@@ -1,6 +1,4 @@
-using namespace std;
-#include <iostream>
-#include <vector>
+#include "R:\C++\Project1\lcHeader.h"
 //this will always create a brand new vector so O(n) each time
 static int counter = 0;
 

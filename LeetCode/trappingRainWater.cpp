@@ -4,7 +4,7 @@ Given n non-negative integers representing an elevation map where
 the width of each bar is 1, compute how much water it can trap after raining.
 */
 
-#include "lcheader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
     int trap(vector<int>& height){
         int water = 0;

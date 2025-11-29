@@ -1,8 +1,4 @@
-#include <iostream>
-#include <unordered_set>
- 
-using namespace std;
- 
+#include "R:\C++\Project1\lcHeader.h"
 int main() {
     // Create a set
     unordered_set<int> mySet = {1, 2, 3, 4, 5};

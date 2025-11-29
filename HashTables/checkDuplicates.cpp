@@ -1,4 +1,4 @@
-#include "R:\C++\Project1\LeetCode Google\lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 //Method 1: Linear search - traverse through the whole vector to find two nums
 //O(n^2) two for loops and if condn

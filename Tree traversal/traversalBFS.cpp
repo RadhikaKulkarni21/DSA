@@ -1,6 +1,5 @@
-using namespace std;
-#include <iostream>
-#include <queue>
+#include "R:\C++\Project1\lcHeader.h"
+
 class Node { 
     public: 
         int value;

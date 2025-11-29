@@ -5,7 +5,7 @@
 1      3 6      9      9     6   3       1
 
 */
-#include "R:\C++\Project1\LeetCode Google\lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 //Recursive
 TreeNode* inverseBinaryTreeR(TreeNode* root){

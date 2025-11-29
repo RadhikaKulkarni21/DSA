@@ -1,8 +1,4 @@
-#include <vector>
-#include <algorithm>
-#include <iostream>
-#include <limits>
-using namespace std;
+#include "R:\C++\Project1\lcHeader.h"
 
 vector<int> getMinimumLength(int roads_nodes, vector<int> roads_from, vector<int> roads_to, vector<int> roads_weight) {
     if(roads_nodes <= 0)return {};

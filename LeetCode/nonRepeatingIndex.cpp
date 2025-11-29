@@ -1,4 +1,4 @@
-#include "lcheader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 //First non repeating character but its index
 

@@ -1,4 +1,4 @@
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 /*
 We are using stack here, so we parse through the each character in string and
 check if the current stack in closing equivalent of it. If it is not a closing

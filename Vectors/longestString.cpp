@@ -1,4 +1,5 @@
-#include "helperFunction.h"
+#include "R:\C++\Project1\lcHeader.h"
+
 /*
  Write a function that accepts a list of strings
 and returns the longest string from the list.

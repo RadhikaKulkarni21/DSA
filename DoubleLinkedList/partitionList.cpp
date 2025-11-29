@@ -1,8 +1,5 @@
 //Zero idea what is going on in this code - skip it
-#include <iostream>
-
-using namespace std;
-
+#include "R:\C++\Project1\lcHeader.h"
 class Node { 
     public: 
         int value;

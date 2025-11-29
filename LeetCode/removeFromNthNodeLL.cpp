@@ -1,5 +1,5 @@
 //no main class - focus on algorihtm and concept
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 ListNode* removeNthFromEnd(ListNode* head, int n) { 
     //create a dummy node to assign before the head

@@ -1,4 +1,4 @@
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 //if array is not sorted
 vector<int> twoSum(vector<int>& nums, int target) {

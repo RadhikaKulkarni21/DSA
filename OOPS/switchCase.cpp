@@ -1,5 +1,4 @@
-#include<iostream>
-using namespace std;
+#include "R:\C++\Project1\lcHeader.h"
 
 int switchCase(int n){
     switch(n){

@@ -1,7 +1,4 @@
-#include <string>
-#include <stack>
-#include <iostream>
-using namespace std;
+#include "R:\C++\Project1\lcHeader.h"
 
 using std::string; // Allows the use of 'string' instead of 'std::string'
 using std::stack; // Allows the use of 'stack' instead of 'std::stack

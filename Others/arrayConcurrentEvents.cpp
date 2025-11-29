@@ -1,4 +1,4 @@
-#include "header.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 int maxConcurrentEvents(const vector<pair<int, int>>& events){
     vector<pair<int, int>> timeEvent;

@@ -1,4 +1,4 @@
-#include "header.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 string minWindowSubstring(string s, string t){
     unordered_map<char, int> winCount;

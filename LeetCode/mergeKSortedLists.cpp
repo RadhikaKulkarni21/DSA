@@ -1,5 +1,5 @@
 //not functioning
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
     
 ListNode* mergeKLists(vector<ListNode*>& lists) {

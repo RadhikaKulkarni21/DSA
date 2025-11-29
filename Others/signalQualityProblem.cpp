@@ -1,4 +1,4 @@
-#include "header.h"
+#include "R:\C++\Project1\lcHeader.h"
 /*
 We want to detect signal quality problems. Pots, in a linear office, 
 we run a roboard that goes to and throw while measuring signal strength to get signal quality.

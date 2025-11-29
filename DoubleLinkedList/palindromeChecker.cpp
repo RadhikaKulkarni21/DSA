@@ -1,19 +1,5 @@
-#include <iostream>
+#include "R:\C++\Project1\lcHeader.h"
 
-using namespace std;
-
-class Node { 
-    public: 
-        int value;
-        Node* next;
-        Node* prev;
-    
-        Node(int value) {
-            this->value = value;
-            next = nullptr;
-            prev = nullptr;
-        }
-};
 
 class DoublyLinkedList {
     public:

@@ -1,4 +1,4 @@
-#include "headerSets.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 /*
 This function takes a list of numbers as input and returns a 

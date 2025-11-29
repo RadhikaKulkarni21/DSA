@@ -1,4 +1,4 @@
-#include "R:\C++\Project1\LeetCode Google\lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 int maxDepth(TreeNode* root){
     //root is null reutrn 0

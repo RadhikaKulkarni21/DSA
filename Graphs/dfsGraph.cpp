@@ -8,11 +8,7 @@ return the max number of cities that jack can visit.
 How many cities can be visited including the starting one he can visit.
 */
 
-#include <vector>
-#include <unordered_set>
-#include <iostream>
-#include <string>
-using namespace std;
+#include "R:\C++\Project1\lcHeader.h"
 
 int dfs(int currCity, int city0, vector<vector<int>> adj,bool oddCityVisited){
     int maxLen = 1;

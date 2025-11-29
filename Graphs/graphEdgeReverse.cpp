@@ -1,5 +1,5 @@
 #include "R:\C++\Project1\lcHeader.h"
-#include <functional>
+
 /*
 A country represented as a graph with gnodes cities connected by gnodes-1
  uni directional edges. The ith edge connects cities g_from[i] to g_to[i]. 

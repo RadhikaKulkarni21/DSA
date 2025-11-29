@@ -1,5 +1,4 @@
-#include "helperFunction.h"
-
+#include "R:\C++\Project1\lcHeader.h"
 /*
 Write a function that takes in two parameters: 
 a list of numbers (nums) and a target number (val). 

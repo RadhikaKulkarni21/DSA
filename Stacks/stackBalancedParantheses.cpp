@@ -1,9 +1,4 @@
-#include <string>
-#include <stack>
-#include <iostream>
-using namespace std;
-
-
+#include "R:\C++\Project1\lcHeader.h"
 /*
 Implement a function called isBalancedParentheses() that 
 checks if the input string contains balanced parentheses.

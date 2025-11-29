@@ -1,7 +1,4 @@
-#include <iostream>
-
-using namespace std;
-
+#include "R:\C++\Project1\lcHeader.h"
 
 class Node { 
     public: 

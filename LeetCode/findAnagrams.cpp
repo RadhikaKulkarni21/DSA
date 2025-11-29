@@ -7,7 +7,7 @@ result [0,1,-1]
 acts.length != act.length,hence return -1
  */
 
- #include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 vector<int> anagramChanges(vector<string> a,  vector<string> b) {
     vector<int> result;

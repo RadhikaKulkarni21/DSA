@@ -1,4 +1,5 @@
-#include "helperFunction.h"
+#include "R:\C++\Project1\lcHeader.h"
+
 
 /*
  Write a function that takes a list of integers and returns a 

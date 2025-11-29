@@ -1,4 +1,4 @@
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 void moveZeroes(vector<int>& nums){
     //we'll use two pointers 

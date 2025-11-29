@@ -1,4 +1,4 @@
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 //we use sliding window again
 //at any given time only unique numbers will stay in the 

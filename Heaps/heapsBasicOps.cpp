@@ -1,9 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <climits> 
-
-using namespace std;
-
+#include "R:\C++\Project1\lcHeader.h"
 
 class Heap {
     public:

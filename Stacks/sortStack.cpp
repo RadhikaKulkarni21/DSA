@@ -1,8 +1,4 @@
-#include <stack>
-#include <iostream>
-using namespace std;
-using std::stack;
-
+#include "R:\C++\Project1\lcHeader.h"
 /*
 Implement a function called sortStack() that sorts 
 a given stack of integers in ascending order using an additional stack.

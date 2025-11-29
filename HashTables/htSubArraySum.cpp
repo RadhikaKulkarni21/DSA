@@ -1,4 +1,4 @@
-#include "headerHashTables.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 /*
 Implement a function called subarraySum() that finds a continuous
