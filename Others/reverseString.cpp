@@ -1,4 +1,4 @@
-#include "header.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 string reverseRecu(string str,int len) 
 { 

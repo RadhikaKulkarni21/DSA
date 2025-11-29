@@ -1,4 +1,4 @@
-#include "headerSets.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 /*
 Write an algorithm to determine if a number n is happy.

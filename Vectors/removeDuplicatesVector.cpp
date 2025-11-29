@@ -1,4 +1,4 @@
-#include "helperFunction.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 /*
 Write a function that, given a sorted list of integers, 

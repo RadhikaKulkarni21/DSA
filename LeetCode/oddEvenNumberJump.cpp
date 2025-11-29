@@ -28,7 +28,7 @@ by jumping some number of times (possibly 0 or more than once).
 Return the number of good starting indices.
 */
 
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 class Solution {
 public:

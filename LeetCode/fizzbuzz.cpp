@@ -1,4 +1,4 @@
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 /*Given an integer n, return a string array answer (1-indexed) where:
 

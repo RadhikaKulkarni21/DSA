@@ -1,4 +1,4 @@
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 //we need to simplify the emails
 //we use hash set because hash only has non duplicates

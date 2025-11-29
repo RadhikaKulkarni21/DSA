@@ -1,9 +1,4 @@
-using namespace std;
-#include <iostream>
-#include <vector>
-#include <deque>
-#include <algorithm>
-#include <numeric>
+#include "R:\C++\Project1\lcHeader.h"
 
 /*
 Given a list of integers representing notification timestamps (in seconds) and

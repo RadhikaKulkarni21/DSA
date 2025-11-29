@@ -1,4 +1,4 @@
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 //We are traversing the string from left to right
 //hence the new string will have elements from right to left

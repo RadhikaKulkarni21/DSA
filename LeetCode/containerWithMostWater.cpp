@@ -1,4 +1,4 @@
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 int maxArea(vector<int>& height) {
     //we get the maxArea

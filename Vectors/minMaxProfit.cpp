@@ -34,8 +34,7 @@ Output:
 Explanation:
 Buy on Day 2 (price = 1) and sell on Day 5 (price = 6) for a profit of 6-1 = 5.
 */
-
-#include "helperFunction.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 int maxProfit(const vector<int>& prices){
     //we need to find the max value

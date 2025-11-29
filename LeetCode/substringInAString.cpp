@@ -1,4 +1,4 @@
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 //sliding window
 //complexity is O(n^2)

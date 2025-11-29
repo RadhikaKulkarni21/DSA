@@ -1,5 +1,5 @@
 //not functional
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 /*
 A path in a binary tree is a sequence of nodes where each pair of 

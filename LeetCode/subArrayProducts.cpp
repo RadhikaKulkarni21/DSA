@@ -4,7 +4,7 @@ subarray products [1][2][3][1,2][2,3][1,2,3]
 count the number of subarrays whose product is less than k
 */
 
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 // Custom function to multiply adjacent numbers
 int op(int a, int b) {

@@ -1,4 +1,4 @@
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 //sliding window solution
 //we create a window of certain length and once the condn to keep the length k
 //surpasses we move the window forward while removing the elements

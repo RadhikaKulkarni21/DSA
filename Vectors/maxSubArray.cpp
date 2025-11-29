@@ -1,4 +1,4 @@
-#include "helperFunction.h"
+#include "R:\C++\Project1\lcHeader.h"
 /*
 Title: Maximum Subarray Sum
 

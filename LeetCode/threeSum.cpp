@@ -1,4 +1,4 @@
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 /*
 Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] 

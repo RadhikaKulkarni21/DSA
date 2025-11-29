@@ -1,8 +1,4 @@
-#include <iostream>
-#include <unordered_map>
-#include <unordered_set>
-
-using namespace std;
+#include "R:\C++\Project1\lcHeader.h"
 
 class Graph{
     public:

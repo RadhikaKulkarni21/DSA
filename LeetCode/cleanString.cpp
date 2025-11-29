@@ -1,4 +1,4 @@
-#include "lcHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 /*
 Given the string "William Henry Douglas", make all of the letters lowercase, 

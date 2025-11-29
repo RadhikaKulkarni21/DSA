@@ -1,6 +1,4 @@
-#include <unordered_map>
-#include <vector>
-using namespace std;
+#include "R:\C++\Project1\lcHeader.h"
 
 int longestSubarrayWithSum(vector<int>& nums, int target) {
     unordered_map<long, int> firstIndex;

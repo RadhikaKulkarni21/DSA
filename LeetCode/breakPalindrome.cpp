@@ -1,4 +1,4 @@
-#include "lcheader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 string breakPalindrome(string palindrome){
     int l = palindrome.length();

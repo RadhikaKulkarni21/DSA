@@ -17,6 +17,9 @@ using namespace std;
 #include <sstream>
 #include <cmath>
 #include <climits>
+#include <limits>
+#include <deque>
+#include <functional>
 
 //For linkedlist - Single and double
 struct ListNode {
@@ -61,6 +64,15 @@ void printStringVector(vector<string> s){
     cout << "]" << endl;
 }
 
+//used somewhere
+void printString(const vector<string>& strings){
+    cout<<"[";
+    for (const auto& str : strings) {
+        cout << "\"" << str << "\" ";
+    }
+    cout << "]"<<endl;
+}
+
 //hash tables
 void printGroups(const vector<vector<string>>& groups) {
     cout << "{ ";
@@ -99,3 +111,53 @@ public:
         random = NULL;
     }
 };
+
+//DoubleLinkedList
+class Node { 
+    public: 
+        int value;
+        Node* next;
+        Node* prev;
+    
+        Node(int value) {
+            this->value = value;
+            next = nullptr;
+            prev = nullptr;
+        }
+};
+
+//single linkedlist
+class Node {
+public:
+    int value;
+    Node* next;
+    Node(int value) {
+        this->value = value;
+        next = nullptr;
+    }
+};
+
+string vecToString(const vector<int>& vec) {
+    string str = "[";
+    for (size_t i = 0; i < vec.size(); ++i) {
+        str += to_string(vec[i]);
+        if (i < vec.size() - 1) {
+            str += ", ";
+        }
+    }
+    str += "]";
+    return str;
+}
+
+//new size to print resized vector
+void printVectorNewSize(const vector<int>& nums, int newSize = -1) {
+    cout << "[";
+    int sizeToPrint = (newSize == -1) ? nums.size() : newSize;
+    for (int i = 0; i < sizeToPrint; i++) {
+        cout << nums[i];
+        if (i < sizeToPrint - 1) {
+            cout << ", ";
+        }
+    }
+    cout << "]";
+}

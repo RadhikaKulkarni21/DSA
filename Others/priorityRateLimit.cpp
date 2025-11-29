@@ -1,9 +1,4 @@
-using namespace std;
-#include <iostream>
-#include <vector>
-#include <deque>
-#include <algorithm>
-#include <numeric>
+#include "R:\C++\Project1\lcHeader.h"
 
 struct Notification{
     int id;

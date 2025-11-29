@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-
-using namespace std;
+#include "R:\C++\Project1\lcHeader.h"
 
 class Stack {
     private:
