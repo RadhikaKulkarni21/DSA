@@ -1,6 +1,4 @@
-#include <iostream>
-
-using namespace std;
+#include "R:\C++\Project1\lcHeader.h"
 
 void funcThree(){
     cout<<"Three"<<endl;

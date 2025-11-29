@@ -1,4 +1,4 @@
-#include "oopsHeader.h"
+#include "R:\C++\Project1\lcHeader.h"
 
 //simple constructor
 class A {

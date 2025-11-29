@@ -1,6 +1,4 @@
-#include <iostream>
-
-using namespace std;
+#include "R:\C++\Project1\lcHeader.h"
 
 int factorial(int n){
     if(n==1) return 1;

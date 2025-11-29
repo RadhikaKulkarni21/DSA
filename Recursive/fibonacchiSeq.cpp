@@ -1,6 +1,4 @@
-using namespace std;
-#include <iostream>
-#include <vector>
+#include "R:\C++\Project1\lcHeader.h"
 //using memoization
 //to calculate the number of operations required
 static int counter = 0;

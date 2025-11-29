@@ -16,7 +16,6 @@ class Node {
         }
 };
 
-
 class HashTable {
     private:
         static const int SIZE = 7;
