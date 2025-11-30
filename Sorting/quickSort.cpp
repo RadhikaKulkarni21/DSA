@@ -1,5 +1,8 @@
 #include "R:\C++\Project1\lcHeader.h"
-
+/*
+Pivot is root and reccursively calling it stores smaller children in left side
+and bigger children in right side 
+*/
 void swap(int array[], int firstIndex, int secondIndex) {
     int temp = array[firstIndex];
     array[firstIndex] = array[secondIndex];

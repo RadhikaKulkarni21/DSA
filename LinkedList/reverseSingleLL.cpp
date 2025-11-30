@@ -1,5 +1,14 @@
 #include "R:\C++\Project1\lcHeader.h"
 
+class Node {
+public:
+    int value;
+    Node* next;
+    Node(int value) {
+        this->value = value;
+        next = nullptr;
+    }
+};
 
 class LinkedList {
 private:

@@ -1,20 +1,4 @@
-/*Wrote this because the other quickSort.cpp was not working correctly
-eventually it started working idk how
-error- segmentation fault - https://www.geeksforgeeks.org/cpp/segmentation-fault-c-cpp*/
-
-using namespace std;
-#include <iostream>
-
-void printArray(int arr[], int size) {
-    cout << "[";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i];
-        if (i != size - 1) {
-            cout << ", ";
-        }
-    }
-    cout << "]"<<endl;
-}
+#include "R:\C++\Project1\lcHeader.h"
 
 void swap(int array[], int firstIndex, int secondIndex) {
     int temp = array[firstIndex];
@@ -22,18 +6,23 @@ void swap(int array[], int firstIndex, int secondIndex) {
     array[secondIndex] = temp;
 }
 
-int pivot(int array[], int pivotIndex, int endIndex) {
-    int swapIndex = pivotIndex;
-    for (int i = pivotIndex + 1; i <= endIndex; i++) {
-        if (array[i] < array[pivotIndex]) {
-             
-            swapIndex++;
-            swap(array, swapIndex, i);
+int pivot(int array[], int low, int high) {
+    
+    int partition = array[high];
+    
+    int i = low - 1;
+
+    //traverse to store smaller elements on left side
+    for(int j = low; j <= high - 1; j++){
+        if(array[j] > partition){
+            i++;
+            swap(array[i], array[j]);
         }
     }
+
     
-    swap(array, pivotIndex, swapIndex);
-    return swapIndex;
+    swap(array[i+1], array[high]);
+    return i + 1;
 }
 
 void quickSort(int array[], int leftIndex, int rightIndex) {

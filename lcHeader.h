@@ -112,31 +112,6 @@ public:
     }
 };
 
-//DoubleLinkedList
-class Node { 
-    public: 
-        int value;
-        Node* next;
-        Node* prev;
-    
-        Node(int value) {
-            this->value = value;
-            next = nullptr;
-            prev = nullptr;
-        }
-};
-
-//single linkedlist
-class Node {
-public:
-    int value;
-    Node* next;
-    Node(int value) {
-        this->value = value;
-        next = nullptr;
-    }
-};
-
 string vecToString(const vector<int>& vec) {
     string str = "[";
     for (size_t i = 0; i < vec.size(); ++i) {
