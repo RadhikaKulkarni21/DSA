@@ -1,5 +1,17 @@
 #include "R:\C++\Project1\lcHeader.h"
 
+class Node { 
+    public: 
+        int value;
+        Node* next;
+        Node* prev;
+    
+        Node(int value) {
+            this->value = value;
+            next = nullptr;
+            prev = nullptr;
+        }
+};
 
 class DoublyLinkedList {
     public:
