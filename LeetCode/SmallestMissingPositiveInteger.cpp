@@ -1,7 +1,7 @@
 #include "R:\C++\Project1\lcHeader.h"
 
 //easy approach
-/*int findSmallestMissingPositive(vector<int> orderNumbers) {
+int findSmallestMissingPositiveN(vector<int> orderNumbers) {
     int n = orderNumbers.size();
     if(n == 0)return 1;
     
@@ -21,7 +21,7 @@
     }
     
     return n + 1;
-}*/
+}
 
 int findSmallestMissingPositive(vector<int> arr) {
   	int n = arr.size();
@@ -67,3 +67,43 @@ int main(){
     vector<int> orderNumbers = {3, 4, -1, 1};
     cout<< findSmallestMissingPositive(orderNumbers);//2
 }
+
+
+//second approach
+/*
+we search for 1 first and if 1 does not exist thats the one we are looking for
+
+all the -ve numbers are set to 1, this removes the out of range issue
+for the further "for" loops
+
+next for loop
+1st pass = arr[(arr[0] -1)%n] += 4
+arr[(3-1)%4] += 4
+arr[2%4]+= 4
+arr[2]+= 4
+arr[2] = 5 
+
+arr = 3 4 5 1
+
+2nd pass = arr[(arr[1] -1)%n] += 4
+arr[(4-1)%4] += 4
+arr[3%4]+= 4
+arr[3]+= 4
+arr[3] = 5 
+
+arr = 3 4 5 5
+
+3rd pass = arr[(arr[2] -1)%n] += 4
+arr[(1-1)%4] += 4
+arr[0%4]+= 4
+arr[0]+= 4
+arr[0] = 7
+
+arr = 7 4 5 5
+
+4th pass arr = 11 4 5 5
+
+
+last for loop at 1 arr[i] <= 4
+hence i + 1 = 2
+*/
