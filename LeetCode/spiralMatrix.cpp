@@ -31,11 +31,13 @@ vector<int> spiralOrder(vector<vector<int>> matrix) {
         right--;
 
         //bottom row
-        if(top<=bot){
+        if(top<=bot){//so that we dont reach out of bounds while --
             for(int k = right; k >= left; k--){
                 res.push_back(matrix[bot][k]);//8,7
             }
         }
+        //after first pass, it will break out of the loop
+        //-- will secure us the next value = 7
         bot--;
 
         //left col
@@ -43,6 +45,8 @@ vector<int> spiralOrder(vector<vector<int>> matrix) {
             for(int l = bot; l >= top;l--){
                 res.push_back(matrix[l][left]);//4,5
             }
+        //after first pass, it will break out of the loop
+        //++ will secure us the next value = 5
             left++;
         }
         
@@ -68,3 +72,21 @@ int main(){
     vector<vector<int>> nums = {{1,2,3}, {4,5,6}, {7,8,9}};
     printVector(spiralOrder(nums));
 }
+
+/*
+first pass
+[0,0][0,1][0,2] - 1 2 3
+top = 0 bot = 2 left = 0 right = 2
+
+second pass
+[1,2][2,2] - 6 9
+top = 1, bot = 2, left = 0 right = 2
+
+third pass
+[2,1][2,0]
+top 1 bot = 1 left = 0 right = 1
+
+fourth pass 
+[1,0][1,1]
+top = 1 bot = 1 left = 1 right = 1
+*/
