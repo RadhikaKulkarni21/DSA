@@ -28,6 +28,8 @@ class Solution{
         string token;
         int validWord = 0;
 
+        //>> splits by whitespace
+        //stops after whitespace is hit and outputs the word
         while(ss >> token){
             if(isValid(token)) validWord++;
         }
@@ -42,6 +44,8 @@ class Solution{
 
         for(int i = 0;i < n;i++){
             if(word[i] == '-'){
+                //check if hypen is set to true, if yes immediate false
+                //or will check rest of the validity
                 //hypen is checked bc only one is allowed, if its already true
                 //we skip
                 if(hypen || i == 0 || i == (n - 1) || !islower(word[i-1]) || !islower(word[i+1])){
@@ -49,6 +53,7 @@ class Solution{
                 }
                 hypen = true;
             }
+            //same for puncuation marks
             if(word[i] == '!' || word[i] == '.' || word[i] == ','){
                 if(pm || !i == n - 1){
                     return false;
@@ -59,3 +64,10 @@ class Solution{
         return true;
     }
 };
+
+int main(){
+    string sentence = "cat and  dog";
+    Solution s;
+
+    cout << s.countValidWords(sentence);
+}
