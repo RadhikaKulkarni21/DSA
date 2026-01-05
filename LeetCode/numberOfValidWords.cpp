@@ -43,6 +43,7 @@ class Solution{
         bool pm = false;
 
         for(int i = 0;i < n;i++){
+            if(isdigit(word[i])) return false;
             if(word[i] == '-'){
                 //check if hypen is set to true, if yes immediate false
                 //or will check rest of the validity
@@ -55,7 +56,7 @@ class Solution{
             }
             //same for puncuation marks
             if(word[i] == '!' || word[i] == '.' || word[i] == ','){
-                if(pm || !i == n - 1){
+                if(pm || i != n - 1){
                     return false;
                 }
                 pm = true;
