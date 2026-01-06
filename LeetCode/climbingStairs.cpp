@@ -33,5 +33,14 @@ int climbingStairs(int n){
 
 int main(){
     int n = 4;
-    cout<< climbingStairs(n);
+    cout<< climbingStairs(n);//exp op = 5
 }
+
+/*
+4 steps:
+1 1 1 1
+1 2 1
+1 1 2
+2 1 1
+2 2
+*/
