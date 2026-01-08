@@ -4,11 +4,13 @@
  ## Content
    1) Folders named after DSA concepts consists of basic codes of that concept, some might have practice problems.
    2) "LeetCode" folder has leetcode premium questions that I solved from their Google, microsoft etc questions.
-   3) "Others" folder has questions made by chatgpt to practice for interviews.
-      - Prompt is "I am preparing for *company name*'s *position name*, pretend to be my mock interviewer and ask me questions.(You can also add languages or concepts to this).
+   3) "Others" folder has questions made by chatgpt/gemini to practice for interviews.
+      - Prompt is "I am preparing for *company name*'s *position name*, pretend to be my mock interviewer and ask me questions."(You can also add languages or concepts to this).
    4) System Design are questions that help you learn creating a system from sratch.
       - If you want larger system designs, which includes mutiple features, files checkout this repository [Esports-Projects](https://github.com/RadhikaKulkarni21/Esports-Projects)
+      - Game development is in C# and includes gaming engine(Unity 6 3D/2D) are in various other repository, each game has its own.
    5) A local common header file which has most of the libraries, functions and definations.
+   6) I mostly used C++ 17/20.
 
 ## Note 
 1) There are also questions added that were asked in interviews either live coding or monitored coding tests eg hackerrank/codility.
