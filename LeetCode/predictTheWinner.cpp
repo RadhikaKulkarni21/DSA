@@ -35,5 +35,12 @@ int main(){
     vector<int> nums = {1,5,233,7};
     Solution s;
     bool result = s.predictTheWinner(nums);
-    cout<< result ? "True" : "False";
+    string res = s.predictTheWinner(nums) ? "True" : "False";
+    // if(result == 1){
+    //     cout<< "True";
+    // }
+    // else{
+    //     cout<< "False";
+    // }
+   cout << res;
 }
