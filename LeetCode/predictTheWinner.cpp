@@ -20,6 +20,8 @@ class Solution{
         if(dp[i][j] != -1) return dp[i][j];
 
         //i- j is used a boundary
+        //both the players can only take from start or end of array
+        //the total in max score will be of remainig  elements in array not main array
         dp[i][j] =  total - min(maxScore(a, total- a[i], i + 1, j), maxScore(a, total - a[j], i, j - 1));
 
         return dp[i][j];
@@ -42,7 +44,7 @@ class Solution{
 };
 
 int main(){
-    vector<int> nums = {1,5,233,7};
+    vector<int> nums = {3,9,1,2};
     Solution s;
     bool result = s.predictTheWinner(nums);
     string res = s.predictTheWinner(nums) ? "True" : "False";
