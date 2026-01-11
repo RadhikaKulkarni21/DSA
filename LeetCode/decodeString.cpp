@@ -57,3 +57,61 @@ int main(){
 
     delete strg;
 }
+
+/*
+stack removes elements which was last added
+for loop to print 0 to 4, 0 1 2 3 4
+stack will store it as 4 3 2 1 0
+stack.top is 4
+stack pop will remove 4 first
+
+working:
+for = '0' to '3'
+st = ""
+first for loop runs
+st =
+a
+[
+3
+run into ] goes to else
+
+curr_str = " "
+first while runs, curr_str = a
+st.pop = 'a' st = 3[
+second pop removes [ st = 3
+
+curr_str = a st = 3
+num =  " ", curr_size = 0
+
+second while num = 3 st = " "
+
+times(3)
+for(0) curr_str(0) = a st = a, for ends times(2)
+for(1) curr_str(0) = a st = aa, for ends times(1)
+for(2) curr_str(0) = a st = aaa, for ends times(0)
+
+st = aaa2[bc]
+for runs again
+
+st = "aaa"
+first for loop runs
+st = a a a 2 [ b c
+run into ] goes to else
+
+curr_str = " "
+first while runs, curr_str = c,
+st.pop = 'c' st = aaa2[b
+curr_str = bc st = aaa2[
+second pop removes [ st = aaa2
+
+curr_str = bc st = aaa2
+num =  " ", curr_size = 2
+
+second while num = 2 st = "aaa"
+
+times(2)
+for(0) curr_str(0) = b st = aaab
+for(0) curr_str(1) = c st = aaabc for ends times(1)
+for(0) curr_str(0) = b st = aaabcb
+for(0) curr_str(0) = c st = aaabcbc for ends times(0)
+*/
