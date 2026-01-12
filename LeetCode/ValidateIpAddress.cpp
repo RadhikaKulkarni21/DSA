@@ -1,6 +1,4 @@
-// https://learn.microsoft.com/en-us/cpp/standard-library/regular-expressions-cpp?view=msvc-170
 #include "R:\C++\Project1\lcHeader.h"
-#include <regex>
 
 class Solution
 {
