@@ -39,7 +39,7 @@ class Solution{
                 }
             }
         }
-
+        //simply making the string
         s = "";
         while(!st.empty()){
             s = st.top() + s;
