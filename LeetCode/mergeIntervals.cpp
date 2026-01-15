@@ -17,20 +17,25 @@ class Solution{
 
         vector<vector<int>> merged;
 
+        //the first vector will be present no matter what
         vector<int> prev = intervals[0];
 
+        //we are comparing last element in vector 1 with first element in vector2
         for(int i = 1; i < intervals.size();i++){
             vector<int> interval = intervals[i];
 
-            if(interval[0] < prev[1]){
+            if(interval[0] <= prev[1]){
                 prev[1] = max(prev[1], interval[1]);
             }
             else{
                 merged.push_back(prev);
+                //interval is intervals[i]
                 prev =  interval;
             }
         }
-
+        //to add the last interval
+        //the interval gets updated in for loop
+        //so prev will be prev++
         merged.push_back(prev);
         return merged;
     }
