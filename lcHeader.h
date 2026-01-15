@@ -86,6 +86,19 @@ void printGroups(const vector<vector<string>>& groups) {
     cout << "}\n";
 };
 
+
+void printVectOfVect(const vector<vector<int>>& groups) {
+    cout << "{ ";
+    for (const auto& group : groups) {
+        cout << "( ";
+        for (const int& n : group) {
+            cout << n << " ";
+        }
+        cout << ") ";
+    }
+    cout << "}\n";
+};
+
 //Sorting Algorithms
 void printArray(int arr[], int size) {
     cout << "[";
