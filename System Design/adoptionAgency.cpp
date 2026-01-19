@@ -8,6 +8,7 @@ Each derived class should have an additional unique attribute (e.g., breed for d
 
 Add a method to display each pet’s details.
 */
+
 #include "R:\C++\Project1\lcHeader.h"
 
 class Pet{
@@ -16,7 +17,7 @@ class Pet{
     int age;
     double price;
 
-    Pet(string n, int a, double p) : name(n), age(a), price(p) {};
+    Pet(string n, int a, double p) : name(n), age(a), price(p) {};//constructor
     
     virtual void display(){
         cout<<"Pet: " << name <<"Age: " << age << "Price: " << price << "$" <<endl; 
@@ -57,7 +58,8 @@ class Bird : public Pet{
 
 
 int main(){
-    //same data type - slicing is easy//can be stored in vector now
+    //same data type - slicing is easy
+    //can be stored in vector now
     Pet* p1 = new Dog("Milo", 5, 25.99, "Indie");
     Pet* p2 = new Cat("Eniey", 2, 38.50, "Black and white");
     Pet* p3 = new Bird("Paddy", 9, 55.90, "Free space");

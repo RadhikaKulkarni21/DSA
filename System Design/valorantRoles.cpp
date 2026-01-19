@@ -76,3 +76,8 @@ int main(){
     cont.display();
     sen.display();
 }
+
+/*
+We need objects to access the valorant class
+We are using inheritence
+*/
