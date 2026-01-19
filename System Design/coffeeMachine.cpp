@@ -6,6 +6,7 @@ Design the classes and relationships to represent this system using OOP.
 
 #include "R:\C++\Project1\lcHeader.h"
 
+//combining this will make the coffee
 struct Ingredients{
 
     string  ing;
@@ -45,7 +46,7 @@ class CoffeeMachine{
     }
 
     void displayMenu(){
-        cout<<"****** DOFGK 카페 ******" <<endl;
+        cout<<"****** Coffee 카페 ******" <<endl;
 
         for(size_t i = 0; i < menu.size();i++){
             cout<< i + 1 << ". " << menu[i].coffeeName << " - $" << menu[i].price << endl;
@@ -68,6 +69,7 @@ int main(){
     CoffeeMachine coffee;
 
     MakeCoffee espresso("Espresso", 2.5);
+    //obj.func(struct(arguments))
     espresso.addIngredients(Ingredients("Coffee", 70));
     espresso.addIngredients(Ingredients("Water", 30));
 

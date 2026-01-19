@@ -2,8 +2,8 @@
 Currently processing stove league, lets design a league inheritence cpp program 
 This has each lane - Top, Mid, Bot
 Each role for each lane - TOP, Jungle, mid, adc, support
-Each role has top three prefered champs out of 172 =(
-Each role has a player assigned - Took the 2025 T1 roster
+Each role has top three prefered champs out of 172
+Each role has a player assigned
 */
 #include "R:\C++\Project1\lcHeader.h"
 
