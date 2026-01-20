@@ -23,7 +23,7 @@ class MakeCoffee{
 
     MakeCoffee(string drink, float price) : coffeeName(drink), price(price) {};
 
-    //each ing to make a cup of coffee - milk/water/coffee
+    //each ing to make a cup of coffee - milk/water/coffee/cocoa
     void addIngredients(Ingredients i){
         ing.push_back(i);
     }
@@ -54,7 +54,7 @@ class CoffeeMachine{
     }
 
     void displayDrink(int choice){
-        cout<< "Your drink is: "<< endl;
+        cout<< "Your drink is: "<< endl << "Warning: Dispensed drinks are hot";
 
         if(choice < 1 || choice > menu.size()){
             cout<<"Invalid option"<<endl;
@@ -89,7 +89,7 @@ int main(){
     cappucino.addIngredients(Ingredients("Milk",40));
 
     MakeCoffee hotChoco("Hot Chocolate", 4.5);
-    hotChoco.addIngredients(Ingredients("Chocolate", 60));
+    hotChoco.addIngredients(Ingredients("Cocoa", 60));
     hotChoco.addIngredients(Ingredients("Milk",40));
 
 
