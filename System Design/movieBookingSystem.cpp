@@ -27,10 +27,55 @@ class Movie{
     Movie(string n, double d) : name(n), duration(d) {};
 
     void displayMovie(){
-        cout<< "Movie: "<< name << "Duration: " << duration << endl;
+        cout<< "Movie: "<< name << "Duration: " << duration << " hrs"<< endl;
     }
 };
 
-class Shows : public Movie{
+class Seat{
     public:
+    int seatNo;
+    bool checkBook;
+
+    Seat(int sn) : seatNo(sn), checkBook(false) {};
+
+    //book the seat
+    void bookSeat(){
+        checkBook = true;
+    }
+
+    void displaySeats(){
+        cout << "Seat: " << seatNo << (checkBook ? " Available" : " Booked") << endl;
+    }
 };
+
+class Shows {
+    public:
+    Movie movie;
+    string showTimes;
+    vector<Seat> seats;
+
+    Shows(Movie m, string s, int totalSeats) : movie(m), showTimes(s) {
+        for(int i = 1; i <= totalSeats; i++){
+            seats.push_back(Seat(i));
+        }
+    }
+
+    void displayShows() {
+        movie.displayMovie();
+
+        cout << "Show Times: " << showTimes << endl;
+        cout << "Seats:" << seats.size() << endl;
+
+        for(auto seat : seats){
+            seat.displaySeats();
+        }
+    }
+};
+
+int main(){
+    Movie movieDetail("Tune in for love", 2.5);
+
+    Shows showTimes(movieDetail, "7:00 PM", 20);
+
+    showTimes.displayShows();
+}
