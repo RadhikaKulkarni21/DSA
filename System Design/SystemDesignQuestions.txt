@@ -1,12 +1,11 @@
 1) Menu / Ordering Systems
 
-- Café / Restaurant Menu System
+- Café / Restaurant Menu System -DONE
 
 Classes: MenuCategory, MenuItem, Order, Customer.
 
 Concepts: composition, constructors, vector/list of objects.
 
-Add-ons: cart, total, tax, print bill.
 
 - Pizza Ordering System
 
@@ -14,19 +13,22 @@ Classes: Pizza, Topping, Order.
 
 Optional: inheritance (VegPizza / NonVegPizza), method overriding (getPrice()).
 
+
 - Vending Machine
 
 Classes: Item, VendingMachine, Coin.
 
 Add-ons: balance check, dispense logic, inventory count.
 
+
 2) Ticketing / Booking Systems
 
-- Movie Ticket Booking System
+- Movie Ticket Booking System - DONE
 
 Classes: Movie, Showtime, Seat, Booking.
 
 Focus: class relationships, seat selection, simple pricing logic.
+
 
 - Bus / Train Reservation
 
@@ -96,7 +98,7 @@ Classes: ParkingLot, Vehicle, Ticket.
 
 Add-ons: levels, spot allocation, time-based fee.
 
-- Coffee Machine
+- Coffee Machine - DONE
 
 Classes: Drink, Ingredient, CoffeeMachine.
 
