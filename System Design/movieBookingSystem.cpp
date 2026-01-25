@@ -31,6 +31,7 @@ class Movie{
     }
 };
 
+//we put seat first as seat will make seats in shows 
 class Seat{
     public:
     int seatNo;
