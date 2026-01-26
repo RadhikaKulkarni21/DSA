@@ -14,7 +14,6 @@ public:
 
 //items make a cart
 //cart will have items and quantity
-
 class CartItems{
 public:
     Item i;
@@ -27,9 +26,22 @@ public:
     }
 };
 
+class Coupon {
+public:
+    string code;
+    double discountPercentage;
+
+    Coupon(string c, double d) : code(c), discountPercentage(d) {}
+
+    double apply(double total) {
+        return total - (total * discountPercentage / 100);
+    }
+};
+
 class ShoppingBag{
 public:
     vector<CartItems> cartItems;
+    Coupon* coupon = nullptr;
 
     void addItem(Item i, int quantity){
        cartItems.push_back(CartItems(i, quantity));
@@ -41,7 +53,15 @@ public:
         for(auto ci : cartItems) {
             checkout += ci.calculateTotal();
         }
+
+        if(coupon != nullptr){
+            checkout = coupon->apply(checkout);
+        }
         return checkout;
+    }
+
+    void applyCoupon(Coupon &c) {
+        coupon = &c;
     }
 
     void displayShopping(){
@@ -49,15 +69,16 @@ public:
             cout << ci.i.name 
             << " Price: " << ci.i.price
             << " Quantity: " << ci.quantity << endl
-            << " Total Price: " << ci.calculateTotal() << endl;
+            << "Total Price: " << ci.calculateTotal() << endl;
         }
-
+        cout << "Coupon Applied: " << coupon->code << endl;
         cout << "Total Cart Value: " << calculateCheckout() << endl;
     }
 };
 
 int main(){
     ShoppingBag sb;
+    Coupon coupon("FIRST", 10);
 
     Item i1("Crisps", 0.99);
     Item i2("Waffels", 1.99);
@@ -69,5 +90,6 @@ int main(){
     sb.addItem(i3, 1);
     sb.addItem(i4, 2);
 
+    sb.applyCoupon(coupon);
     sb.displayShopping();
 }
