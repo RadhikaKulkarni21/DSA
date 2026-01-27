@@ -8,9 +8,17 @@ class Item{
 public:
     string name;
     double price;
+    int totalStock;
     bool inStock;
 
-    Item(string n, double p) : name(n), price(p), inStock(false){};
+    Item(string n, double p, int ts) : name(n), price(p), totalStock(ts), inStock(false){};
+
+    bool checkStock(int q, int totalStock){
+        if (q < totalStock)
+        {
+            inStock = true;
+        }
+    }
 };
 
 class Billing{
@@ -26,6 +34,7 @@ public:
 };
 
 class Tax{
+public:
     string taxName;
     double taxRate;
 
@@ -41,10 +50,39 @@ class Invoice{
     Tax* tax = nullptr;
 
     void addItem(Item i, int q){
-        shoppedItems.push_back(Billing(i, q));
+        if(i.checkStock()){
+            shoppedItems.push_back(Billing(i, q));
+        }
     }
 
     double invoice(){
+        double checkout = 0;
 
+        for (auto si : shoppedItems){
+            checkout += si.calculateBill();
+        }
+
+        if(tax != nullptr){
+            checkout = tax->applyTax(checkout); 
+        }
+
+        return checkout;
+    }
+
+    void printInvoice(){
+        for(auto si : shoppedItems){
+            cout << si.i.name 
+            << " Price: " << si.i.price
+            << " Qunatity: " << si.quantity << endl;
+
+            cout << "Item total: " << si.calculateBill() << endl;
+            cout << "Total Invoice: " << invoice() << endl;
+        }
     }
 };
+
+int main(){
+    Invoice iv;
+
+    
+}
