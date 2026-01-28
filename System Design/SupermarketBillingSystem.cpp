@@ -9,15 +9,16 @@ public:
     string name;
     double price;
     int totalStock;
-    bool inStock;
 
-    Item(string n, double p, int ts) : name(n), price(p), totalStock(ts), inStock(false){};
+    Item(string n, double p, int ts) : name(n), price(p), totalStock(ts){};
 
-    bool checkStock(int q, int totalStock){
-        if (q < totalStock)
+    bool checkStock(int q){
+        if (q <= totalStock)
         {
-            inStock = true;
+            totalStock -= q;
+            return true;
         }
+        return false;
     }
 };
 
@@ -46,11 +47,12 @@ public:
 };
 
 class Invoice{
+public:
     vector<Billing> shoppedItems;
     Tax* tax = nullptr;
 
-    void addItem(Item i, int q){
-        if(i.checkStock()){
+    void addItem(Item &i, int q){
+        if(i.checkStock(q)){
             shoppedItems.push_back(Billing(i, q));
         }
     }
@@ -70,19 +72,37 @@ class Invoice{
     }
 
     void printInvoice(){
+        double bill = 0;
         for(auto si : shoppedItems){
             cout << si.i.name 
             << " Price: " << si.i.price
-            << " Qunatity: " << si.quantity << endl;
+            << " Quantity: " << si.quantity << endl;
 
-            cout << "Item total: " << si.calculateBill() << endl;
-            cout << "Total Invoice: " << invoice() << endl;
+            bill += si.calculateBill();
         }
+        cout<< "Total before taxes: " << bill << endl;
+        cout<< "Tax: " << tax->taxName << " Rate: " << tax->taxRate << endl;
+        cout << "Total Invoice: " << invoice() << endl;
     }
 };
 
 int main(){
     Invoice iv;
+    Tax vat("VAT", 8.2);
 
-    
+    Item i1("Soju", 9.99, 10);
+    Item i2("Corona", 2.99, 10);
+    Item i3("Eggs", 3.49, 10);
+    Item i4("Rice", 1.99, 10);
+    Item i5("Soy Sauce", 0.99, 10);
+
+    iv.addItem(i1, 1);
+    iv.addItem(i2, 3);
+    iv.addItem(i3, 1);
+    iv.addItem(i4, 2);
+    iv.addItem(i5, 1);
+
+    //Ref the tax we created above
+    iv.tax = &vat;
+    iv.printInvoice();
 }
