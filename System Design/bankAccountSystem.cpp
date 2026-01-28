@@ -1,6 +1,4 @@
 #include "R:\C++\Project1\lcHeader.h"
-
-
 //accounts - savings/ current
 //customers
 //customers can have multiple accounts
@@ -10,6 +8,8 @@ enum TransactionType{
     withdraw,
     depsoit
 };
+//we can enum account types as well
+//But we are using inheritence so can skip
 
 class Account{
 protected:
