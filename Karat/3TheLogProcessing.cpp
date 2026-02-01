@@ -1,5 +1,8 @@
 /*
 This is common for Data or Backend roles and focuses on time-window logic.
+Part 1	O(N)	O(U)
+Part 2	O(N)	O(N)
+Part 3	O(N log N)	O(N)
 */
 
 #include "R:\C++\Project1\lcHeader.h"

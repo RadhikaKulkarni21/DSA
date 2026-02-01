@@ -1,5 +1,8 @@
 /*
 The Parent-Child (Family Tree) Problem
+Part 1	Zero / One Parent	O(N)	O(V)
+Part 2	Common Ancestor	O(N)	O(V)
+Part 3	Earliest Ancestor	O(N)	O(V)
 */
 
 #include "R:\C++\Project1\lcHeader.h"
@@ -108,7 +111,6 @@ bool hasCommonAncestor(
     return false;
 }
 
-
 /*Part 3: Given one individual, find their earliest ancestor
 (the person at the highest level of the tree). 
 If there is a tie, any one is usually fine.*/
@@ -155,3 +157,4 @@ int findEarliestAncestor(
     return earliest;
 }
 
+//O(m × n + W × L)

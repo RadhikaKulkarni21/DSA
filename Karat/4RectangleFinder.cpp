@@ -42,7 +42,7 @@ pair<pair<int,int>, pair<int,int>> findSingleRectangle(const vector<vector<int>>
     }
     return {{-1, -1}, {-1, -1}}; // should never happen
 }
-
+//O(R*C)
 /*
 Part 2: Now, there can be multiple rectangles of 0s.
 They will not be touching. Return the coordinates for all of them.
@@ -82,3 +82,4 @@ vector<pair<pair<int,int>, pair<int,int>>> findAllRectangles(vector<vector<int>>
     }
     return rectangles;
 }
+//O(r * c)
