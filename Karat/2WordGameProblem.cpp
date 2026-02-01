@@ -68,5 +68,50 @@ bool existsInGrid(vector<vector<char>>& grid, string word){
 Part 3: Similar to Part 2, but you must find multiple words,
 and each letter in the grid can only be used once across all words
 */
+bool dfsWord(vector<vector<char>>& grid, vector<vector<bool>>& used,
+             int r, int c, string& word, int idx){
+    if(idx = word.size()) return true;
 
-/*TODO*/
+    int m = grid.size(), n = grid[0].size();
+
+    if(r < 0 || c < 0 || r >= m || c >= n) return false;
+    if(used[r][c] || grid[r][c] != word[idx]) return false;
+    
+    used[r][c] = true;
+    //ultimately trying to find true, finding a valid word
+    bool found = dfsWord(grid, used, r + 1, c, word, idx) ||
+    dfsWord(grid, used, r - 1, c, word, idx) ||
+    dfsWord(grid, used, r, c + 1, word, idx) ||
+    dfsWord(grid, used, r, c - 1, word, idx);
+    
+    //invalid cell for current word, move to another word and set this false
+    if(!found) used[r][c] = false;
+    return found;
+}
+
+bool canFormAllWords(vector<vector<char>>& grid, vector<string>& words, int wordIdx,
+                     vector<vector<bool>>& used){
+    if(wordIdx == words.size()) return true;
+
+    int m = grid.size(), n = grid[0].size();
+    
+    string& word = words[wordIdx];
+
+    for(int i = 0; i < m;i++){
+        for(int j = 0; j < n; j++){
+            if(dfsWord(grid, used, i, j, word, 0)){
+                if(canFormAllWords(grid, words, wordIdx + 1, used)){
+                    return true;
+                }
+            // backtrack whole word
+            //This loop resets the entire used grid to false,
+            //undoing a failed word placement so other possibilities can be tried.
+                for(auto& row: used){
+                    fill(row.begin(), row.end(), false);
+                }
+            }
+        }
+    }
+    return false;
+}
+
