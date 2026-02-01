@@ -114,11 +114,11 @@ bool hasCommonAncestor(
 If there is a tie, any one is usually fine.*/
 /*TODO: WRITE EXPLANATION*/
 void dfs(
-    int curr,
-    int depth,
+    int curr,//whatever the current person is
+    int depth,//how upwards we can go to find the parent
     unordered_map<int, vector<int>>& parents,
-    int& earliest,
-    int& maxDepth
+    int& earliest,//the topmost
+    int& maxDepth//depth store bc we need to traverse thru different set of persons
 ) {
     // Base case: reached a root ancestor
     if (parents[curr].empty()) {
@@ -143,6 +143,7 @@ int findEarliestAncestor(
 
     // Build child -> parents map
     for (auto& p : pairs) {
+        //pushing each parent with child
         parents[p[1]].push_back(p[0]);
     }
 

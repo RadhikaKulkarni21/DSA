@@ -69,5 +69,4 @@ Part 3: Similar to Part 2, but you must find multiple words,
 and each letter in the grid can only be used once across all words
 */
 
-
 /*TODO*/
