@@ -102,4 +102,46 @@ Part 3: Find the most common 3-page sequence
 
 string mostCommonSequence(vector<vector<string>>& logs){
     unordered_map<string, vector<pair<string, string>>> userPages;
+
+    for(auto& log: logs){
+        //user.push({timestamps, page})
+        userPages[log[0]].push_back({log[1], log[2]});
+    }
+
+    unordered_map<string, int> freq;
+
+    /*
+    Key = user (string)
+
+    Value = pages → vector<pair<string, string>>
+    Each pair = (timestamp, page)
+
+    This loop iterates user by user, giving us all their visit history.
+    */
+    for(auto& [user, page] : userPages){
+        //get the proper sequence 
+        //sorts first by a.first=timestamp),then by a.second=page if timestamps tie
+        sort(page.begin(), page.end());
+
+        //make the sequence
+        //i+ to create a sliding window as we need 3 pages
+        for(int i = 0; i + 2 < page.size(); i++){
+            string seq = page[i].second + " " + page[i + 1].second + " "
+            + page[i + 2].second;
+
+            freq[seq]++;
+        }
+    }
+
+    string ans;
+    int max = 0;
+
+    //freq is the seq and count
+    for(auto& [seq, count] : freq){
+        if(count > max){
+            max = count;
+            ans = seq;
+        }
+    }
+    return ans;
 }
