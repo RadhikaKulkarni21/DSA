@@ -4,19 +4,20 @@ This problem focuses on 2D array traversal and coordinate tracking.
 
 Part 3: Instead of rectangles, there are now irregularly shaped "blobs" of 0s.
 Return the coordinates of every cell that belongs to each blob.
+
+The Rectangle Finder (Matrix) 
+
+Part 1	One rectangle	    O(RC)	O(1)
+Part 2	Multiple rectangles	O(RC)	O(RC)
+Part 3	Irregular blobs	    O(RC)	O(RC)
 */
 
 #include "R:\C++\Project1\lcHeader.h"
-
 /*
 Part 1: You are given a 2D matrix of 1s and 0s. 
 There is exactly one rectangle of 0s. 
 Return its top-left and bottom-right coordinates. 
 */
-
-#include <vector>
-using namespace std;
-
 pair<pair<int,int>, pair<int,int>> findSingleRectangle(const vector<vector<int>>& mat) {
     int rows = mat.size(), cols = mat[0].size();
 
@@ -42,15 +43,11 @@ pair<pair<int,int>, pair<int,int>> findSingleRectangle(const vector<vector<int>>
     }
     return {{-1, -1}, {-1, -1}}; // should never happen
 }
-//O(R*C)
+
 /*
 Part 2: Now, there can be multiple rectangles of 0s.
 They will not be touching. Return the coordinates for all of them.
 */
-
-#include <vector>
-using namespace std;
-
 vector<pair<pair<int,int>, pair<int,int>>> findAllRectangles(vector<vector<int>>& mat) {
     int rows = mat.size(), cols = mat[0].size();
     //creating a matrix and marking all as F for not visited
@@ -82,4 +79,3 @@ vector<pair<pair<int,int>, pair<int,int>>> findAllRectangles(vector<vector<int>>
     }
     return rectangles;
 }
-//O(r * c)
