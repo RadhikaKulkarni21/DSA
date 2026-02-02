@@ -1,7 +1,7 @@
 /*
 This is common for Data or Backend roles and focuses on time-window logic.
-Part 1	O(N)	O(U)
-Part 2	O(N)	O(N)
+Part 1	O(N)	    O(U)
+Part 2	O(N)	    O(N)
 Part 3	O(N log N)	O(N)
 */
 
@@ -132,6 +132,7 @@ string mostCommonSequence(vector<vector<string>>& logs){
             string seq = page[i].second + " " + page[i + 1].second + " "
             + page[i + 2].second;
 
+            //each seq, add its frequency
             freq[seq]++;
         }
     }
@@ -139,7 +140,7 @@ string mostCommonSequence(vector<vector<string>>& logs){
     string ans;
     int max = 0;
 
-    //freq is the seq and count
+    //freq is the seq and its count
     for(auto& [seq, count] : freq){
         if(count > max){
             max = count;
