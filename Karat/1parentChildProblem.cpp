@@ -1,35 +1,11 @@
 /*
 The Parent-Child (Family Tree) Problem
 Part 1	Zero / One Parent	O(N)	O(V)
-Part 2	Common Ancestor	O(N)	O(V)
+Part 2	Common Ancestor 	O(N)	O(V)
 Part 3	Earliest Ancestor	O(N)	O(V)
 */
 
 #include "R:\C++\Project1\lcHeader.h"
-
-//case where class needs to exist for whole code to run
-class FamilyTree{
-    //each parent to children
-    unordered_map<int, vector<int>> parent;
-    //each children of parent
-    unordered_map<int, vector<int>> children;
-    unordered_map<int, int> parentCount;
-    unordered_set<int> people;
-
-public:
-    FamilyTree(const vector<pair<int, int>> pairs) {
-        for(auto p : pairs){
-            int par = p.first;
-            int child = p.second;
-
-            parent[child].push_back(par);
-            children[par].push_back(child);
-            parentCount[child]++;
-            people.insert(par);
-            people.insert(child);
-        }
-    }
-};
 
 /*Part 1: Given a list of [parent, child] pairs, find:
 
@@ -48,7 +24,7 @@ vector<vector<int>> findParents(vector<vector<int>> pairs){
         parentCount[child]++;
 
         //if only one parent or one child
-        // we use set to remove duplicate parents/children
+        //we use set to remove duplicate parents/children
         people.insert(parent);
         people.insert(child);
     }
@@ -71,8 +47,10 @@ vector<vector<int>> findParents(vector<vector<int>> pairs){
 Part 2: Given the same pairs and two specific individuals, 
 write a function that returns True if they share at least one common ancestor.
 */
+//we are traversing bottom up
 void dfs(
     int person,
+    //parent would be integer and vector followed would be all the children
     unordered_map<int, vector<int>>& parents,
     unordered_set<int>& visited
 ) {
@@ -156,5 +134,3 @@ int findEarliestAncestor(
 
     return earliest;
 }
-
-//O(m × n + W × L)
