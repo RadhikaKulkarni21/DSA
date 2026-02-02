@@ -1,14 +1,16 @@
 /*
 The "Scrabble" or Word Game Problem 
 This category tests string manipulation and frequency counting.
+
+Part 1	First word	            O(N × L)	        O(1)
+Part 2	Continous grid for word	O(m × n × 2^L)	    O(L)
+Part 3	All words	            O((m × n)^(W × L))	O(m × n + W × L)
 */
 
 #include "R:\C++\Project1\lcHeader.h"
 
 /*Part 1: Given a list of words and a string of available characters, 
 find the first word in the list that can be fully formed using those characters.*/
-
-
 string firstFormableWord(vector<string> words, string chars){
     vector<int> freq (26,0);
 
@@ -24,6 +26,8 @@ string firstFormableWord(vector<string> words, string chars){
         //Now we check if the chars are in the words
         bool ok = true;
         for(char c : word){
+            //we need this to fill ip the vector
+            //or else the freq will always be zero
             needed[c - 'a'];
             if(needed[c - 'a'] > freq[c - 'a']){
                 //if we pass the number of chars
@@ -37,12 +41,10 @@ string firstFormableWord(vector<string> words, string chars){
     return "";
 }
 
-
 /*
 Part 2: Given a grid of letters and a word, 
 find if the word exists in the grid (usually only moving right or down).
 */
-
 bool dfs(vector<vector<char>> grid, int row, int col, int ind, string word){
     if(ind == word.size()) return true;
 
@@ -63,7 +65,7 @@ bool existsInGrid(vector<vector<char>>& grid, string word){
     }
     return false;
 }
-////O(m × n × L)
+
 /*
 Part 3: Similar to Part 2, but you must find multiple words,
 and each letter in the grid can only be used once across all words
@@ -114,5 +116,3 @@ bool canFormAllWords(vector<vector<char>>& grid, vector<string>& words, int word
     }
     return false;
 }
-
-//O(m × n + W × L)
