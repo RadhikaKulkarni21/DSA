@@ -17,7 +17,7 @@ public:
 
     void displayBook(){
         cout<< "Book: " << title << " by " << author << " Category: " << category 
-        << " Currently" << (isIssued ? "available" : "issued") <<endl;
+        << " Currently the book is " << (isIssued ? "available" : "issued") <<endl;
     }
 
 };
@@ -87,12 +87,12 @@ public:
 
     void displayBorrowingHistory(){
         cout << "Book Issued: " << book->title << endl
-        << "Member Name" << member->mName << endl
-        << "On: " << issueDate << " till" << returnDate << endl;
+        << "Member Name: " << member->mName << endl
+        << "Issued On: " << issueDate << " for " << returnDate << " Days" <<endl;
 
         if(lateFine != nullptr){
             //https://www.studyplan.dev/intro-to-programming/string-interpolation
-            cout << "Returned passed due date. Late fees of has been incurred: " << lateFine << endl; 
+            cout << "Returned passed due date. Late fees of has been incurred: " << lateFine->calculateFine() << endl; 
         }
         else{
             cout <<"No late fees." << endl;
@@ -105,7 +105,6 @@ public:
 };
 
 class Library{
-
 private:
     vector<Book*> books;
     vector<Member*> members;
@@ -118,22 +117,120 @@ public:
     }
 
     void addMember(Member* m){
-
+        members.push_back(m);
     }
 
     void addLibrarian(Librarian* l){
         librarians.push_back(l);
     }
 
-    void issueBook(){
-
+    Book* findBook(int bookId){
+        for(auto b : books){
+            if(b->id == bookId){
+                return b;
+            }
+        }
+        return nullptr;
     }
 
-    void returnBook(){
+    Member* findMember(int mid){
+        for(auto m : members){
+            if(m->memberId == mid){
+                return m;
+            }
+        }
+        return nullptr;
+    }
 
+    Librarian* findLibrarian(int libId){
+        for(auto l : librarians){
+            if(l->LibId == libId){
+                return l;
+            }
+        }
+        return nullptr;
+    }
+
+    void issueBook(int bookId, int memId, int libId, int issueDate, int dueDate){
+        Book* book = findBook(bookId);
+        Member* member = findMember(memId);
+        Librarian* librarian = findLibrarian(libId);
+
+        if(book && member && !book->isIssued){
+            book->isIssued = true;
+            BorrowingHistory* h = new BorrowingHistory(book, member, librarian, issueDate, dueDate);
+            history.push_back(h);
+
+            cout<< book->title <<" has been issued to you" << endl
+            << "To be returned: " << dueDate << endl;
+        }
+        else{
+            cout << "Cannot issue the book currently" << endl; 
+        }
+    }
+
+    void returnBook(int bookId, int actualReturnDate){
+        for(auto h : history){
+            if(h->book->id == bookId && h->book->isIssued){
+                h->returnBook(actualReturnDate);
+                h->displayBorrowingHistory();
+                return;
+            }
+        }
+        cout << "No history found" << endl;
+    }
+
+    //meed to delete as new references might affect the code
+    ~Library(){
+        for(auto b : books) delete b;
+        for(auto m : members) delete m;
+        for(auto l : librarians) delete l;
+        for(auto h : history) delete h;
     }
 };
 
 int main(){
+    Library library;
 
+    //add books
+    Book* book1 = new Book("My DonXiote", "Kim Ho Yoon", 1, "SLice of Youth");
+    Book* book2 = new Book("The Healing Season of Pottery", "Somin Yeon", 2, "Healing");
+
+    //add members
+    Member* member1 = new Member(1, "Han Wangho");
+    Member* member2 = new Member(2, "Ju Mingyu");
+
+    //add librarians
+    Librarian* librarian1 = new Librarian(1, "Sawako");
+    Librarian* librarian2 = new Librarian(2, "Miran");
+
+    //Add books to library
+    library.addBook(book1);
+    library.addBook(book2);
+
+    //Add members
+    library.addMember(member1);
+    library.addMember(member2);
+    
+    //Add librarian
+    library.addLibrarian(librarian1);
+    library.addLibrarian(librarian2);
+
+    //issue books
+    library.issueBook(1, 1, 1, 1, 14);
+    library.issueBook(2, 2, 2, 2, 14);
+
+    //return books
+    library.returnBook(1, 10);
+    library.returnBook(2, 15);
 }
+
+/*
+Future scope:
+CIN >>
+
+Maybe adding alphanumeric ID for ids
+
+
+Change dates to date format
+*/
