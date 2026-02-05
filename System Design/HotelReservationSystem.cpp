@@ -100,10 +100,12 @@ public:
 
         if(room->isBooked){
             cout << "Room is already booked" << endl;
+            return;
         }
 
         if(!room || !guest){
             cout << "Invalid request" << endl;
+            return;
         }
         room->isBooked = true;
 
@@ -117,5 +119,26 @@ public:
 };
 
 int main(){
-    //TODO
+    Hotel hotel;
+
+    //add rooms
+    Room* room1 = new Room(101, single, 50);
+    Room* room2 = new Room(102, twin, 100);
+    Room* room3 = new Room(103, king, 300);
+
+    hotel.addRooms(room1);
+    hotel.addRooms(room2);
+    hotel.addRooms(room3);
+
+    //add guests
+    Guest* guest1 = new Guest("Jihoon Jung", 1);
+    Guest* guest2 = new Guest("Kiin Kim", 2);
+
+    hotel.addGuests(guest1);
+    hotel.addGuests(guest2);
+
+    //add booking
+    hotel.addBooking(101, "Kiin Kim", 4, 1);
+    hotel.addBooking(102, "Jihoon Jung", 5, 2);
+    hotel.addBooking(103, "Park Jaehyuk", 3, 1);
 }
