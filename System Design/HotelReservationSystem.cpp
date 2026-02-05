@@ -59,14 +59,6 @@ public:
         //total people will be the size of Guests vector
         return room->getPrice() * stayDays * totalGuests;
     }
-
-    void makeABooking(){
-        room->isBooked = true;
-
-        cout<< "Booking successful for " << guest->guestName << endl
-        << "Room type: " << room->type << " Room No: " << room->roomNo << endl
-        << "Total cost: " << calculatePrice() << endl;
-    }
 };
 
 class Hotel{
@@ -90,6 +82,7 @@ public:
                 return r;
             }
         }
+        return nullptr;
     }
 
     Guest* findGuest(string guestName){
@@ -98,25 +91,28 @@ public:
                 return guest;
             }
         }
+        return nullptr;
     }
 
-    void addBooking(int roomNo, string guestN, int stayDays){
+    void addBooking(int roomNo, string guestN, int stayDays,int totalGuests){
         Room* room = findRoom(roomNo);
         Guest* guest = findGuest(guestN);
 
-        if(room && guest && !room->isBooked){
-            room->isBooked = true;
-
-            Booking* b = new Booking(room, guest, stayDays);
-            bookings.push_back(b);
-
-            cout<< "Booking successful for " << guest->guestName << endl
-            << "Room type: " << room->type << " Room No: " << room->roomNo << endl
-            << "Total cost: " << b->calculatePrice() << endl;
+        if(room->isBooked){
+            cout << "Room is already booked" << endl;
         }
-        else{
-            cout << "Booking cannot be done" << endl;
+
+        if(!room || !guest){
+            cout << "Invalid request" << endl;
         }
+        room->isBooked = true;
+
+        Booking* b = new Booking(room, guest, stayDays, totalGuests);
+        bookings.push_back(b);
+
+        cout<< "Booking successful for " << guest->guestName << endl
+        << "Room type: " << room->type << " Room No: " << room->roomNo << endl
+        << "Total cost: " << b->calculatePrice() << endl;
     }
 };
 
