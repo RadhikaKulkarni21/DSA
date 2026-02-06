@@ -21,6 +21,7 @@ string boolTostr(Attendance attendance){
     switch(attendance){
         case(OPTIONAL): return "Optional";
         case MANDOTARY : return "Mandotary";
+        default: return "Not specified";
     }
 }
 
@@ -160,9 +161,10 @@ public:
         course->totalEnrolled++;
 
         cout << "Assigned course to you is " << course->courseName << " " << course->courseId << endl
-        << "Attendance Requirement: " << course->required << endl;
+        << "Attendance Requirement: " << boolTostr(course->required) << endl;
         cout << "Minimum credits required to pass: " << course->minCredits;
         cout << " Maximum credits: " << course->maxCredits << endl;
+        cout << "Note: For andotary attendance courses, attendance counts towards final grade"<< endl;
 
     }
 };
@@ -178,8 +180,8 @@ int main() {
     record.addStudent(s2);
 
     // Create courses
-    Course* c1 = new Course("Esports theory", 101, 4, 2, 2, boolTostr(MANDOTARY), Freshman);
-    Course* c2 = new Course("Korean Literature", 201, 5, 2, 1, boolTostr(OPTIONAL), Junior);
+    Course* c1 = new Course("Esports theory", 101, 4, 2, 2, MANDOTARY, Freshman);
+    Course* c2 = new Course("Korean Literature", 201, 5, 2, 1, OPTIONAL, Junior);
 
     record.addCourses(c1);
     record.addCourses(c2);
@@ -205,4 +207,6 @@ int main() {
 /*
 future scope
 Add labs
+waitlist
+drop class
 */
