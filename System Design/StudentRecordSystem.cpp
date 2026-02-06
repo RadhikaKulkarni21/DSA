@@ -17,6 +17,13 @@ enum Attendance{
     MANDOTARY
 };
 
+string boolTostr(Attendance attendance){
+    switch(attendance){
+        case(OPTIONAL): return "Optional";
+        case MANDOTARY : return "Mandotary";
+    }
+}
+
 class Student{
 public:
     string sName;
@@ -171,8 +178,8 @@ int main() {
     record.addStudent(s2);
 
     // Create courses
-    Course* c1 = new Course("Esports theory", 101, 4, 2, 2, MANDOTARY, Freshman);
-    Course* c2 = new Course("Korean Literature", 201, 5, 2, 1, OPTIONAL, Junior);
+    Course* c1 = new Course("Esports theory", 101, 4, 2, 2, boolTostr(MANDOTARY), Freshman);
+    Course* c2 = new Course("Korean Literature", 201, 5, 2, 1, boolTostr(OPTIONAL), Junior);
 
     record.addCourses(c1);
     record.addCourses(c2);
@@ -194,3 +201,8 @@ int main() {
 
     return 0;
 }
+
+/*
+future scope
+Add labs
+*/
