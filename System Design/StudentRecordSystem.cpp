@@ -37,14 +37,15 @@ class Course{
 public:
     string courseName;
     int courseId;
+    int minCredits;
     int maxCredits;
     Attendance required;
     int maxStudents;
     AcademicLevel level;
     int totalEnrolled = 0;
 
-    Course(string cn, int ci, int mc,int ms, Attendance r,AcademicLevel al) : courseName(cn), courseId(ci), 
-    maxCredits(mc),maxStudents(ms), required(r), level(al) {};
+    Course(string cn, int ci, int mc,int minc, int ms, Attendance r,AcademicLevel al) : courseName(cn), courseId(ci), 
+    minCredits(minc), maxCredits(mc),maxStudents(ms), required(r), level(al) {};
 
     void displayCourse(){
         cout << "Course ID: " << courseId << endl
@@ -113,50 +114,83 @@ public:
     }
 
     string setResult(int stdId, int crsId){
-        Student* student = findStudent(stdId);
-        Course* course = findCourse(crsId);
         for(auto g : grades){
-            if(g->marks >= 60 && g->marks <= course->maxCredits){
-                return "Pass";
-            }
-            else if(g->marks < 60 && g->marks > 40){
-                return "Grace";
-            }         
-            else{
-                return "fail";
+            if(g->student->studentId == stdId &&
+               g->course->courseId == crsId){
+
+                if(g->marks >= 60)
+                    return "Pass";
+                else if(g->marks >= 40)
+                    return "Grace";
+                else
+                    return "Fail";
             }
         }
+        return "Grades not available";
     }
 
     void assignCourse(int stdId, int crsId){
         Student* student = findStudent(stdId);
         Course* course = findCourse(crsId);
-        int studentCounter = 0;
+
+        if(!student || !course){
+            cout << "Please check details again" << endl;
+            return;
+        }
 
         if(student->level != course->level){
             cout << "This course is not available for your academic level" << endl;
             return;
         }
-
-        if(course->isEnrolled == true){
-            cout << "You are already enrolled for the class" << endl;
-            return;
-        }
         
-        if(studentCounter >= course->maxStudents){
+        if( course->totalEnrolled >= course->maxStudents){
             cout << "Course is already full, please join waitlist";
             return;
         }
 
-        course->isEnrolled = true;
-
         Enrollment* e = new Enrollment(student, course);
         enrollments.push_back(e);
-        studentCounter++;
+        course->totalEnrolled++;
 
-        cout << "Assigned course to you" << course->courseName << " " << course->courseId << endl
+        cout << "Assigned course to you is " << course->courseName << " " << course->courseId << endl
         << "Attendance Requirement: " << course->required << endl;
-        cout << "Maximum credits" << course->maxCredits;
+        cout << "Minimum credits required to pass: " << course->minCredits;
+        cout << " Maximum credits: " << course->maxCredits << endl;
 
     }
 };
+
+int main() {
+    StudentRecord record;
+
+    // Create students
+    Student* s1 = new Student("Paul", 1, Freshman);
+    Student* s2 = new Student("Dana", 2, Junior);
+
+    record.addStudent(s1);
+    record.addStudent(s2);
+
+    // Create courses
+    Course* c1 = new Course("Esports theory", 101, 4, 2, 2, MANDOTARY, Freshman);
+    Course* c2 = new Course("Korean Literature", 201, 5, 2, 1, OPTIONAL, Junior);
+
+    record.addCourses(c1);
+    record.addCourses(c2);
+
+    // Assign courses
+    record.assignCourse(1, 101);
+    record.assignCourse(2, 201);
+
+    // Add grades
+    Grade* g1 = new Grade(s1, c1, 75);
+    Grade* g2 = new Grade(s2, c2, 55);
+
+    record.addGrades(g1);
+    record.addGrades(g2);
+
+    // Check results
+    cout << "Paul Result: " << record.setResult(1, 101) << endl;
+    cout << "Dana Result: " << record.setResult(2, 201) << endl;
+
+    return 0;
+}
