@@ -21,3 +21,19 @@ Elevators should not exceed capacity.
 */
 
 #include "R:\C++\Project1\lcHeader.h"
+
+class Elevator{
+public:
+    int elevatorId;
+    double capacity;
+    float doorDuration;
+    bool direction;//true go up, false go down
+    bool request;
+};
+
+class Building{
+public:
+    int floor;
+    int totalFloors;
+    Elevator elevator;
+};
