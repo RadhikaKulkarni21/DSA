@@ -1,62 +1,62 @@
 🍔 Menu / Ordering Systems
 1.	Café / Restaurant Menu System - DONE
--	Classes: MenuCategory, MenuItem, Order
--	Concepts: composition, constructors, vector/list of objects (added)
+ - Classes: MenuCategory, MenuItem, Order
+ -	Concepts: composition, constructors, vector/list of objects (added)
 2.	Pizza Ordering System - DONE
--	Classes: Pizza, Topping, Order.
--	Single class – SOLID principles
+ -	Classes: Pizza, Topping, Order.
+ -	Single class – SOLID principles
 3.	Vending Machine - DONE
--	Classes: Item, VendingMachine, Coin.
--	Add-ons: balance check, dispense logic, inventory count.
+ -	Classes: Item, VendingMachine, Coin.
+ - Add-ons: balance check, dispense logic, inventory count.
 ________________________________________
 🎬 Ticketing / Booking Systems
 4.	Movie Ticket Booking System - DONE
--	Classes: Movie, Showtime, Seat, Booking.
+ -	Classes: Movie, Showtime, Seat, Booking.
 5.	Bus / Train Reservation - DONE
--	Classes: Bus, Seat, Passenger, Ticket.
--	Add-ons: availability check, dynamic pricing.
+ -	Classes: Bus, Seat, Passenger, Ticket.
+ -	Add-ons: availability check, dynamic pricing.
 ________________________________________
 🛒 Retail / Shopping
 6.	Online Shopping Cart - DONE
--	Classes: Product, CartItem, ShoppingCart, Customer.
--	Add-ons: discount coupons, total cost, checkout (added)
+ -	Classes: Product, CartItem, ShoppingCart, Customer.
+ -	Add-ons: discount coupons, total cost, checkout (added)
 7.	Supermarket Billing System DONE
--	Classes: Item, Invoice, Customer.
--	Add-ons: Emphasize totals, tax calculation, and printed receipt (added)
+ -	Classes: Item, Invoice, Customer.
+ -	Add-ons: Emphasize totals, tax calculation, and printed receipt (added)
 ________________________________________
 🏦 Finance / Banking
 8.	Bank Account System - DONE
--	Classes: Account, Customer, Transaction.
--	Add-ons: deposit/withdrawal, check balance, inheritance (SavingsAccount, CurrentAccount) (added)
+ -	Classes: Account, Customer, Transaction.
+ -	Add-ons: deposit/withdrawal, check balance, inheritance (SavingsAccount, CurrentAccount) (added)
 9.	ATM Simulator - DONE
--	Classes: ATM, Account, Card.
--	Add-ons: PIN check, withdraw limit, balance update (added)
+ -	Classes: ATM, Account, Card.
+ -	Add-ons: PIN check, withdraw limit, balance update (added)
 ________________________________________
 🧾 Management / Tracking
 10.	Library Management System - DONE
--	Classes: Book, Member, Librarian, Transaction, LateFine
--	Add-ons: issue/return logic, due date fine (added)
+ -	Classes: Book, Member, Librarian, Transaction, LateFine
+ -	Add-ons: issue/return logic, due date fine (added)
 11.	Hotel Room Booking - DONE
--	Classes: Room, Guest, Booking.
--	Add-ons: check-in/check-out, availability (added)
+ -	Classes: Room, Guest, Booking.
+ -	Add-ons: check-in/check-out, availability (added)
 12.	Student Record System - DONE
--	Classes: Student, Course, Grade, Enrolment
--	Add-ons: GPA calculation, course enrolment, Academic level, Attendance (added)
+ -	Classes: Student, Course, Grade, Enrolment
+ -	Add-ons: GPA calculation, course enrolment, Academic level, Attendance (added)
 ________________________________________
 ⚙️ Machine / Hardware Simulation
 13.	Elevator (Lift) System
--	Classes: Elevator, Floor, Request.
--	Add-ons: direction logic, request queue.
+ -	Classes: Elevator, Floor, Request.
+ -	Add-ons: direction logic, request queue.
 14.	Parking Lot System
--	Classes: ParkingLot, Vehicle, Ticket.
--	Add-ons: levels, spot allocation, time-based fee.
+ -	Classes: ParkingLot, Vehicle, Ticket.
+ -	Add-ons: levels, spot allocation, time-based fee.
 15.	Coffee Machine - DONE
--	Classes: Drink, Ingredient, CoffeeMachine.
--	Add-ons: recipe composition (added)
+ -	Classes: Drink, Ingredient, CoffeeMachine.
+ -	Add-ons: recipe composition (added)
 ________________________________________
 ⚙️ Additional: Inheritance
 16.	Adoption Agency - DONE
--	Class: Animal: Dog, Cat, Bird
--	Method Overriding, virtual keyword
+ -	Class: Animal: Dog, Cat, Bird
+ -	Method Overriding, virtual keyword
 17.	League of Legends Role - DONE
 18.	Valorant Roles - DONE
