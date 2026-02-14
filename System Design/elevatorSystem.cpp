@@ -27,13 +27,28 @@ public:
     int elevatorId;
     double capacity;
     float doorDuration;
-    bool direction;//true go up, false go down
-    bool request;
+
+    Elevator(int ei, double c, float dr) : elevatorId(ei), capacity(c), doorDuration(dr) {};
 };
 
 class Building{
 public:
     int floor;
     int totalFloors;
-    Elevator elevator;
+    int totalAvailableElevators;
+
+    Building(int f, int tf, int tae) : floor(f), totalFloors(tf), totalAvailableElevators(tae){};
+};
+
+class Direction{
+public:
+    bool goingup;
+    bool goingDown;
+};
+
+class Operation{
+public:
+    bool direction;//true go up, false go down 
+    int floorRequest;
+    
 };
