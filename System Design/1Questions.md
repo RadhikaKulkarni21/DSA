@@ -1,4 +1,4 @@
-🍔 Menu / Ordering Systems
+Menu / Ordering Systems
 1.	Café / Restaurant Menu System - DONE
  - Classes: MenuCategory, MenuItem, Order
  -	Concepts: composition, constructors, vector/list of objects (added)
@@ -9,14 +9,14 @@
  -	Classes: Item, VendingMachine, Coin.
  - Add-ons: balance check, dispense logic, inventory count.
 ________________________________________
-🎬 Ticketing / Booking Systems
+Ticketing / Booking Systems
 4.	Movie Ticket Booking System - DONE
  -	Classes: Movie, Showtime, Seat, Booking.
 5.	Bus / Train Reservation - DONE
  -	Classes: Bus, Seat, Passenger, Ticket.
  -	Add-ons: availability check, dynamic pricing.
 ________________________________________
-🛒 Retail / Shopping
+Retail / Shopping
 6.	Online Shopping Cart - DONE
  -	Classes: Product, CartItem, ShoppingCart, Customer.
  -	Add-ons: discount coupons, total cost, checkout (added)
@@ -24,7 +24,7 @@ ________________________________________
  -	Classes: Item, Invoice, Customer.
  -	Add-ons: Emphasize totals, tax calculation, and printed receipt (added)
 ________________________________________
-🏦 Finance / Banking
+Finance / Banking
 8.	Bank Account System - DONE
  -	Classes: Account, Customer, Transaction.
  -	Add-ons: deposit/withdrawal, check balance, inheritance (SavingsAccount, CurrentAccount) (added)
@@ -32,7 +32,7 @@ ________________________________________
  -	Classes: ATM, Account, Card.
  -	Add-ons: PIN check, withdraw limit, balance update (added)
 ________________________________________
-🧾 Management / Tracking
+Management / Tracking
 10.	Library Management System - DONE
  -	Classes: Book, Member, Librarian, Transaction, LateFine
  -	Add-ons: issue/return logic, due date fine (added)
@@ -43,7 +43,7 @@ ________________________________________
  -	Classes: Student, Course, Grade, Enrolment
  -	Add-ons: GPA calculation, course enrolment, Academic level, Attendance (added)
 ________________________________________
-⚙️ Machine / Hardware Simulation
+Machine / Hardware Simulation
 13.	Elevator (Lift) System
  -	Classes: Elevator, Floor, Request.
  -	Add-ons: direction logic, request queue.
@@ -54,7 +54,7 @@ ________________________________________
  -	Classes: Drink, Ingredient, CoffeeMachine.
  -	Add-ons: recipe composition (added)
 ________________________________________
-⚙️ Additional: Inheritance
+Additional: Inheritance
 16.	Adoption Agency - DONE
  -	Class: Animal: Dog, Cat, Bird
  -	Method Overriding, virtual keyword
