@@ -22,14 +22,12 @@ enum Direction{
 class Elevator{
 public:
     int elevatorId;
-    double capacity;
     int currentFloor;
-    int currentLoad;
     Direction direction;
 
     vector<int> requests;
 
-    Elevator(int ei, double c, int cf, int cl, Direction(d)) : elevatorId(ei), capacity(c), currentFloor(cf), currentLoad(cl), direction(d) {};
+    Elevator(int ei) : elevatorId(ei), currentFloor(0), direction(IDLE) {};
 
     int getCurrentFloor(){
         return currentFloor;
@@ -96,20 +94,50 @@ public:
 
 class Building{
 public:
-    int floor;
+    vector<Elevator> elevators;
     int totalFloors;
-    int totalAvailableElevators;
 
-    Building(int f, int tf, int tae) : floor(f), totalFloors(tf), totalAvailableElevators(tae){};
+    Building(int floors, int numEle): totalFloors(floors){
+        for(int i = 0; i < numEle; i++){
+            elevators.emplace_back(i);
+        }
+    }
+
+    void requestElevator(int floor, Direction d){
+        Elevator* hailElevator = nullptr;
+
+        for(auto& e : elevators){
+            if(e.isIdle()){
+                hailElevator = &e;
+                break;
+            }
+        }
+
+        if(!hailElevator){
+            hailElevator = &elevators[0];
+        }
+
+        hailElevator->addRequest(floor);
+    }
+
+    void movement(){
+        for(auto& e: elevators){
+            e.move();
+        }
+    }
 };
 
-class Operation{
-public:
-    bool direction;//true go up, false go down 
-    int floorRequest;
-    
-};
 
 int main(){
+    Building building(10, 2);
 
+    building.requestElevator(5, UP);
+    building.requestElevator(8, UP);
+
+    // Simulate steps
+    for (int i = 0; i < 15; i++) {
+        building.movement();
+    }
+
+    return 0;
 }
