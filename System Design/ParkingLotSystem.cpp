@@ -78,7 +78,7 @@ public:
 
     double calculateParkingFees(){
         double hours = difftime(exitStamp, entryStamp) / 3600;
-        if(hours < 1) hours = 1;
+        if(hours < 1) hours = 1;//imposing need to pay for atleast an hour
         return hours * 10;
     }
 };
@@ -158,6 +158,6 @@ int main() {
     if (ticket) {
         lot.unparkVehicle(ticket);
     }
-
-    return 0;
 }
+
+//we can pass the time into timestamps to showcase the ticket pricing

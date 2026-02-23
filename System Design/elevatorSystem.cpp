@@ -13,6 +13,7 @@ Elevators should not exceed capacity.
 
 #include "R:\C++\Project1\lcHeader.h"
 
+//Directions defined as enum
 enum Direction{
     UP,
     DOWN,
@@ -44,7 +45,7 @@ public:
     void addRequest(int floor){
         requests.push_back(floor);
         updateDirection();
-        sortRequests();
+        sortRequests();//sort bc we need to see if the floors are in the middle
     }
 
     void updateDirection(){
@@ -68,6 +69,7 @@ public:
     void openDoor(){
         cout << "Door Opening at " << "Floor: " << currentFloor << endl;
     }
+
     void move(){
         if(requests.empty()){
             direction = IDLE;
@@ -113,10 +115,12 @@ public:
             }
         }
 
+        //all elevators are busy
         if(!hailElevator){
             hailElevator = &elevators[0];
         }
 
+        //if someone pressed the button will be added at the end
         hailElevator->addRequest(floor);
     }
 
