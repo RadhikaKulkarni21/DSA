@@ -13,13 +13,15 @@ public:
     string category;
     bool isIssued;
 
-    Book(string t, string a, int i, string cat) : title(t), author(a), id(i), category(cat), isIssued(false) {};
+    Book(string t, string a, int i, string cat) :
+    title(t), author(a), id(i), category(cat), isIssued(false) {};
 
     void displayBook(){
-        cout<< "Book: " << title << " by " << author << " Category: " << category 
+        cout<< "Book: " << title 
+        << " by " << author 
+        << " Category: " << category 
         << " Currently the book is " << (isIssued ? "available" : "issued") <<endl;
     }
-
 };
 
 class Member{

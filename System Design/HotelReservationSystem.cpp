@@ -13,6 +13,7 @@ enum RoomType{
     queen
 };
 
+//Enum to string conversion
 string roomTypeToString(RoomType type) {
     switch (type) {
         case single: return "Single";
@@ -49,7 +50,8 @@ public:
     }
 
     void displayRoom(){
-        cout << "Room No.: " << roomNo << endl << "Type: " << roomTypeToString(type) << endl 
+        cout << "Room No.: " << roomNo << endl 
+        << "Type: " << roomTypeToString(type) << endl 
         << "Cost: " << price << " per night" << endl 
         << (isBooked ? "Booked" : "Available") << endl;
     }
@@ -123,7 +125,8 @@ public:
         bookings.push_back(b);
 
         cout<< "Booking successful for " << guest->guestName << endl
-        << "Room type: " << roomTypeToString(room->type) << " Room No: " << room->roomNo << endl
+        << "Room type: " << roomTypeToString(room->type) 
+        << " Room No: " << room->roomNo << endl
         << "Total cost: " << b->calculatePrice() << endl;
     }
 };

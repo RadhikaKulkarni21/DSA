@@ -7,7 +7,6 @@ Each role has a player assigned
 */
 #include "R:\C++\Project1\lcHeader.h"
 
-
 class LeagueLane{
     public:
     string lane;//all lanes
@@ -36,7 +35,7 @@ class LeagueLane{
     }
 };
 
-//lets make some roles
+//Roles
 class TopLane : public LeagueLane{
     public:
     TopLane(string l, string r, string p) : LeagueLane(l,r,p) {};
@@ -56,7 +55,7 @@ class BotLane : public LeagueLane{
 
 
 int main(){
-    TopLane tl("Top Lane", "Top Liner", "Doran/Zeus");
+    TopLane tl("Top Lane", "Top Liner", "Kiin");
     tl.addChamp("Ambessa");
     tl.addChamp("Camille");
     tl.addChamp("Gragas");
@@ -71,7 +70,7 @@ int main(){
     ml.addChamp("Galio");
     ml.addChamp("Azir");
 
-    BotLane bl("Bot Lane", "ADC", "Gumayusi");
+    BotLane bl("Bot Lane", "ADC", "Ruler");
     bl.addChamp("Lucian");
     bl.addChamp("Kaisa");
     bl.addChamp("Miss Fortune");

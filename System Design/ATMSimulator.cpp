@@ -73,10 +73,6 @@ public:
 };
 
 class Customer{
-//customer ID
-//name
-//card number
-//PIN
 public:
     int cusId;
     string customerName;
@@ -104,6 +100,7 @@ private:
     Account* currentAccount = nullptr;
     vector<Transaction> transactions;
     int transactionCounter = 1;
+    
 public:
     void addCustomer(Customer* c){
         customers.push_back(c);

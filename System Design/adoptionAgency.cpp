@@ -1,5 +1,5 @@
 /*
-Design a Pet Adoption System using OOP and inheritance.
+Design a Pet Adoption System using OOP and INHERITANCE.
 Create a base class Pet with attributes like name, age, and price.
 
 Then create derived classes like Dog, Cat, and Bird.
@@ -60,6 +60,7 @@ class Bird : public Pet{
 int main(){
     //same data type - slicing is easy
     //can be stored in vector now
+    //Pointers because the animals already exist we are just referencing them instead of creating new copies of objects
     Pet* p1 = new Dog("Milo", 5, 25.99, "Indie");
     Pet* p2 = new Cat("Eniey", 2, 38.50, "Black and white");
     Pet* p3 = new Bird("Paddy", 9, 55.90, "Free space");
