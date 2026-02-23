@@ -12,6 +12,7 @@ public:
 
     Item(string n, double p, int ts) : name(n), price(p), totalStock(ts){};
 
+    //reduce from stock if available
     bool checkStock(int q){
         if (q <= totalStock)
         {

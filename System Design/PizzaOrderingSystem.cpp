@@ -21,6 +21,7 @@ class Pizza{
     virtual double getPrice() {
         double total = price;
 
+        //For extra fees
         if(toppings.size() > 3){
             total += 2;
         }
@@ -50,3 +51,8 @@ int main(){
 
    p.display();
 }
+
+/*
+Future scope:
+Maybe add an enum with pickup/delivery for more fees
+*/

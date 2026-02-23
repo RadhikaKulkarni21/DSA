@@ -19,7 +19,7 @@ enum Attendance{
 
 string boolTostr(Attendance attendance){
     switch(attendance){
-        case(OPTIONAL): return "Optional";
+        case OPTIONAL : return "Optional";
         case MANDOTARY : return "Mandotary";
         default: return "Not specified";
     }
@@ -200,8 +200,6 @@ int main() {
     // Check results
     cout << "Paul Result: " << record.setResult(1, 101) << endl;
     cout << "Dana Result: " << record.setResult(2, 201) << endl;
-
-    return 0;
 }
 
 /*

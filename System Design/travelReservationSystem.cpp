@@ -19,7 +19,8 @@ public:
     string origin;
     vector<Seat> seats;
 
-    Bus(int bn, string d, string o, int totalSeats) : busNo(bn),destination(d), origin(o){
+    Bus(int bn, string d, string o, int totalSeats) : 
+    busNo(bn),destination(d), origin(o){
         for(int i = 1; i <= totalSeats; i++){
             seats.push_back(Seat(i));
         }
@@ -73,7 +74,8 @@ public:
     void displayTicket(){
         cout << "Ticket Details:" << endl;
         cout << "Passenger: " << p.name << endl;
-        cout << "Bus No.: " << b.busNo << " Origin: " << b.origin << " Destination: " << b.destination << endl;
+        cout << "Bus No.: " << b.busNo << " Origin: " << b.origin 
+        << " Destination: " << b.destination << endl;
         cout << "Seat no.: " << s.seatNo << endl; 
     }
 };
@@ -83,7 +85,7 @@ int main(){
 
     Passenger p1("Wooje");
 
-    int seatNeeded = 2;//this is seat number needed
+    int seatNeeded = 2;//this is seat number customer wishes to book
 
     if (bus.bookSeat(seatNeeded)) {
         Seat* bookedSeat = bus.getSeat(seatNeeded);

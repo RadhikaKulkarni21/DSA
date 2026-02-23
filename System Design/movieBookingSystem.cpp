@@ -45,7 +45,8 @@ class Seat{
     }
 
     void displaySeats(){
-        cout << "Seat: " << seatNo << (checkBook ? " Available" : " Booked") << endl;
+        cout << "Seat: " << seatNo 
+        << (checkBook ? " Available" : " Booked") << endl;
     }
 };
 

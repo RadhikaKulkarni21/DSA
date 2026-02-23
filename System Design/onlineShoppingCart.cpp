@@ -82,7 +82,7 @@ int main(){
 
     Item i1("Crisps", 0.99);
     Item i2("Waffels", 1.99);
-    Item i3("Nuetella", 5.99);
+    Item i3("Nutella", 5.99);
     Item i4("Coffee", 2.59);
 
     sb.addItem(i1, 4);

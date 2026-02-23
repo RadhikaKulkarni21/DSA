@@ -14,7 +14,8 @@ class Item{
     double itemPrice;
     int itemNo;//quantity
 
-    Item(int n, string name, double ip, int in) : itemId(n), itemName(name), itemPrice(ip), itemNo(in){};
+    Item(int n, string name, double ip, int in) : 
+    itemId(n), itemName(name), itemPrice(ip), itemNo(in){};
 };
 
 class VendingMachine{
@@ -22,7 +23,6 @@ class VendingMachine{
     vector<Item> items;
     double balance;
 
-    
     VendingMachine() : balance(0.0) {};
 
     void addItems(Item item){
@@ -38,6 +38,7 @@ class VendingMachine{
             if(item.itemId == id && item.itemNo > 0){
                 if(balance >= item.itemPrice){
                     cout << "Item Dropped: " << item.itemName << endl;
+                    //return change
                     if(balance > 0 && balance > item.itemPrice){
                         cout << "Change returned: " << (balance - item.itemPrice) << endl;
                     }
