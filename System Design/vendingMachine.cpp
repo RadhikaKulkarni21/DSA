@@ -1,5 +1,6 @@
 /*
-Design a vending machine which takes a coin, selects a item and drops it
+Design a vending machine which takes a coin, selects a item 
+and drops it
 Each item in vending machine will have a number id and price
 
 Classes: Item, VendingMachine, Coin

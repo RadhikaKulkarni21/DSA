@@ -1,8 +1,10 @@
 #include "R:\C++\Project1\lcHeader.h"
 
-//item
-//cart - item x quantity
-//Shopping - cart x items
+/*
+Online Shopping Cart - 
+ -	Classes: Product, CartItem, ShoppingCart, Customer.
+ -	Add-ons: discount coupons, total cost, checkout
+*/
 
 class Item{
 public:

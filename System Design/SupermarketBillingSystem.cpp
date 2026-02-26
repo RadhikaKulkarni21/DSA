@@ -1,8 +1,9 @@
 #include "R:\C++\Project1\lcHeader.h"
-
-//items
-//billing items x quantity total
-//invoice billing + tax
+/*
+Supermarket Billing System 
+ -	Classes: Item, Invoice, Customer.
+ -	Add-ons: Emphasize totals, tax calculation, and printed receipt
+*/
 
 class Item{
 public:

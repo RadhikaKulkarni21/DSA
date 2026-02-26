@@ -1,8 +1,10 @@
 #include "R:\C++\Project1\lcHeader.h"
-//accounts - savings/ current
-//customers
-//customers can have multiple accounts
-//transactions
+/*
+Bank Account System - 
+ -	Classes: Account, Customer, Transaction.
+ -	Add-ons: deposit/withdrawal, check balance, 
+    inheritance (SavingsAccount, CurrentAccount)
+*/
 
 enum TransactionType{
     WITHDRAW,

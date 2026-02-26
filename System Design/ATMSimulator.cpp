@@ -1,5 +1,9 @@
 #include "R:\C++\Project1\lcHeader.h"
-
+/*
+ATM Simulator - 
+ -	Classes: ATM, Account, Card.
+ -	Add-ons: PIN check, withdraw limit, balance update
+*/
 enum TransactionType{
     WITHDRAW,
     DEPOSIT

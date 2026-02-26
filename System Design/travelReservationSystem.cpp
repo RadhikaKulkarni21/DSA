@@ -1,5 +1,9 @@
 #include "R:\C++\Project1\lcHeader.h"
-
+/*
+Bus / Train Reservation - 
+ -	Classes: Bus, Seat, Passenger, Ticket.
+ -	Add-ons: availability check, dynamic pricing.
+*/
 class Seat{
 public:
     int seatNo;

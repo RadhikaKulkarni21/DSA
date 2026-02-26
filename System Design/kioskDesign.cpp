@@ -1,4 +1,9 @@
 #include "R:\C++\Project1\lcHeader.h"
+/*
+Café / Restaurant Menu System - 
+ - Classes: MenuCategory, MenuItem, Order
+ -	Concepts: composition, constructors, vector/list of objects
+*/
 
 struct menuItems{
     
