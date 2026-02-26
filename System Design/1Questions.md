@@ -58,5 +58,5 @@ Additional: Inheritance
 16.	Adoption Agency - 
  -	Class: Animal: Dog, Cat, Bird
  -	Method Overriding, virtual keyword
-17.	League of Legends Role - 
-18.	Valorant Roles - 
+17.	League of Legends Role - Inheritence
+18.	Valorant Roles - Inheritence
