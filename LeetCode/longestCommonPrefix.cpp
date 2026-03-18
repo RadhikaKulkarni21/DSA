@@ -12,13 +12,32 @@ Output: "fl"
 #include "R:\C++\Project1\lcheader.h"
 
 class Solution{
+public:
     string longestCommonPrefix(vector<string>& strs){
-        unordered_map<char, int> charFreq;
+        if(strs.empty()) return "";
 
-        int n = strs.size();
-        int m = strs[0].size();
+        string pref = strs[0];
+        int n = pref.length();
 
-        
-        return "";
+        for(int i = 1;i < strs.size();i++){
+            string s = strs[i];
+
+            while(n > s.length() || pref != s.substr(0,n)){
+                n--;
+                if(n == 0){
+                    return "";
+                }
+                pref = pref.substr(0,n);
+            }
+        }
+        return pref;
     }
 };
+
+int main(){
+    vector<string> strs = {"flower","flow","flight"};
+    vector<string> strs2 = {"race","car","dog"};
+
+    Solution s;
+    cout << s.longestCommonPrefix(strs2);
+}
