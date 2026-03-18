@@ -39,5 +39,7 @@ int main(){
     vector<string> strs2 = {"race","car","dog"};
 
     Solution s;
-    cout << s.longestCommonPrefix(strs2);
+    string result = s.longestCommonPrefix(strs2);
+
+    (result.empty()) ? cout << "No prefix found" : cout << result; 
 }
