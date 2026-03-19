@@ -47,3 +47,24 @@ int main(){
 
     (result.empty()) ? cout << "No prefix found" : cout << result; 
 }
+
+/*
+flower 6 > 4
+pref = pref(0,5) = flowe
+
+flowe 5 > 4
+pref = flow
+
+flow = flow
+
+pref = flow
+
+i++
+
+flow 4 !> 6 || s.substr(0,4) = flig
+flo 3 !> 4 || s,substr(0,3) = fli
+fl 2 !> 3 || s.substr(0,2) = fl
+
+pref = fl
+
+*/
