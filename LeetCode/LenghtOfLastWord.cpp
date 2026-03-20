@@ -52,3 +52,24 @@ int main(){
 
     cout<< so.lengthOfLastWord(s);
 }
+
+/*
+First solution
+Time: O(n) space: O(n)
+stringstream to remove all the spaces and store each word in a vector
+lenght of last element in vector
+
+second optimized solution(space only)
+Time: O(n) Space: O(1) 
+iterating from end of the string
+
+end will iterate to check if its a char or space
+char is hit set that as the end point
+
+set start = end
+iterate backwards to find char/space
+when it hits space, thats where the word starts
+set as start
+
+subtract start and end to get length
+*/
