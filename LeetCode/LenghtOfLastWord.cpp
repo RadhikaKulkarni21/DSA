@@ -66,7 +66,7 @@ iterating from end of the string
 end will iterate to check if its a char or space
 char is hit set that as the end point
 
-set start = end
+set start = end, as we can just move backwards from here
 iterate backwards to find char/space
 when it hits space, thats where the word starts
 set as start
