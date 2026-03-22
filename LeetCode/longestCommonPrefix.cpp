@@ -4,7 +4,6 @@ Write a function to find the longest common prefix string amongst an array of st
 If there is no common prefix, return an empty string "".
 
 Example 1:
-
 Input: strs = ["flower","flow","flight"]
 Output: "fl"
 */
@@ -66,5 +65,4 @@ flo 3 !> 4 || s,substr(0,3) = fli
 fl 2 !> 3 || s.substr(0,2) = fl
 
 pref = fl
-
 */
