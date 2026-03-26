@@ -1,6 +1,9 @@
 /*LOCAL COMMON HEADER*/
 //#include "R:\C++\Project1\lcHeader.h"
 
+//shortcut to fold functions: ctrl K ctrl 0
+//unfold functions: ctrl k ctrl j
+
 using namespace std;
 #include <iostream>
 #include <vector>
@@ -39,6 +42,16 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
+
+//for creating new nodes
+//this is only for one problem
+//TODO: Implement this for other tree problems
+struct TreeNode* newNode(int data){
+    struct TreeNode* node = new TreeNode();
+    node->val = data;
+    node->left = node->right = nullptr;
+    return (node);    
+}
 
 //numeric vector printing
 void printVector(const vector<int> nums){
