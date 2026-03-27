@@ -7,6 +7,7 @@ word so that the frequency of every letter present in word is equal.
 #include "R:\C++\Project1\lcheader.h"
 
 class Solution{
+public:
     bool removeLetter(string s){
         int arr[26] = {0};
 
@@ -35,5 +36,8 @@ class Solution{
 };
 
 int main(){
-
+    Solution s;
+    string st = "abcc";
+    bool r = s.removeLetter(st);
+    r ? cout << "True" : cout << "false";
 }
