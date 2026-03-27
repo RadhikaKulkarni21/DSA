@@ -8,6 +8,32 @@ word so that the frequency of every letter present in word is equal.
 
 class Solution{
     bool removeLetter(string s){
-        
+        int arr[26] = {0};
+
+        for(char c : s){
+            arr[c - 'a']++;
+        }
+
+        for(int i = 0; i < 26; i++){
+          if(!arr[i]) continue;
+          
+          arr[i]--;
+          unordered_set<int> ust;
+
+          for(int x : arr){
+            if(x){
+                ust.insert(x);
+            }
+          }
+          
+          if(ust.size() == 1) return true;
+
+          arr[i]++;
+        }
+        return false;
     }
 };
+
+int main(){
+
+}

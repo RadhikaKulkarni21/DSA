@@ -34,6 +34,10 @@ struct ListNode {
 };
 
 //for tree traversing
+//this will create a singular node
+//TreeNode* root = new TreeNode(10);
+//root->left = new TreeNode(20);
+//root->right = new TreeNode(30);
 struct TreeNode {
     int val;
     TreeNode *left;
@@ -42,16 +46,6 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
-
-//for creating new nodes
-//this is only for one problem
-//TODO: Implement this for other tree problems
-struct TreeNode* newNode(int data){
-    struct TreeNode* node = new TreeNode();
-    node->val = data;
-    node->left = node->right = nullptr;
-    return (node);    
-}
 
 //numeric vector printing
 void printVector(const vector<int> nums){
