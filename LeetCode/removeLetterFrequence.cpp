@@ -37,7 +37,7 @@ public:
 
 int main(){
     Solution s;
-    string st = "abcc";
+    string st = "aabbcc";
     bool r = s.removeLetter(st);
-    r ? cout << "True" : cout << "false";
+    r ? cout << "True" : cout << "False";
 }
