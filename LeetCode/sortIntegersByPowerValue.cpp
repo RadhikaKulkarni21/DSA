@@ -51,7 +51,7 @@ public:
             int x = i;
 
             while(x != 1){
-                if(x % 2){
+                if(x % 2 != 0){
                     x = 3 * x + 1;
                 }
                 else{
