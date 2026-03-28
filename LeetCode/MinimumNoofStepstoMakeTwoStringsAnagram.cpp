@@ -34,3 +34,21 @@ int main(){
 
     cout << sol.minSteps(s,t);
 }
+
+/*
+We take 2 arrays to store the frequency of each strings here
+then we store the frequencey as per the number of each alphabet
+subtract the each occurance from each arrays and abs will give us positive answer
+
+But since the substraction will take place for both the arrays we will divide it by 2
+
+example: s = bab t = aba 
+s = a/1 freq = 1  t = a/1 frq = 2
+s = b/2 freq = 2  t = b/2 freq = 1
+    1 2 3
+s   1 2
+t   2 1
+abs 1 1
+
+divide by 2 and the answer is 1
+*/
