@@ -23,6 +23,9 @@ public:
         unordered_map<int, int> dp;
         if(n == 1) return 0;
 
+        //We are storing values in unordered maps
+        //so this code bracket is to just find if the value already exists
+        //if it does we can just reuse it
         if(dp.find(n) != dp.end()){
             return dp[n];
         }
@@ -43,24 +46,28 @@ public:
         return ans[k-1].second;
     }
 
+    //iterative
     int getKthIt(int lo, int hi, int k){
         vector<pair<int, int>> v;
 
         for(int i = lo; i <=hi; i++){
             int ans = 0;
             int x = i;
-
-            while(x != 1){
-                if(x % 2 != 0){
+            //this while loop runs till we reach 1
+            //ans will be all the steps before we reach one
+            while(x != 1){//1 bc if its 1 the answer is 0
+                if(x % 2 != 0){//odd number
                     x = 3 * x + 1;
                 }
                 else{
                     x = x / 2;
                 }
-                ans++;
+                ans++;//any number of times the above if else runs, we ++
             }
             v.push_back({ans, i});
+            //v = {[9,12], [9,13], [17, 14], [17,15]}
         }
+        //we sort the ans not the actual numbers
         sort(v.begin(), v. end());
         return v[k - 1].second;
     }
@@ -74,3 +81,13 @@ int main(){
 
     cout << s.getKth(lo, hi, k);
 }
+
+/*
+for loop 
+The power of 12 is 9 (12 --> 6 --> 3 --> 10 --> 5 --> 16 --> 8 --> 4 --> 2 --> 1)
+The power of 13 is 9
+The power of 14 is 17
+The power of 15 is 17
+The interval sorted by the power value [12,13,14,15]. 
+For k = 2 answer is the second element which is 13.
+*/
