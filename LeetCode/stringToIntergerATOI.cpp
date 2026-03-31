@@ -29,6 +29,7 @@ Output: 0
 
 class Solution{
 public:
+//Read the question wrong so this is irrelevant to the question part
     string myAtoi(string s){
        string filterd;
        string result;
@@ -52,8 +53,11 @@ public:
        }
         return (result.size() == 0)?  "0" :  result;
     }
+};
 
-    int myAtoiInt(string s){
+//correct solution
+class Solution2{
+    int myAtoi(string s){
         
     }
 };
