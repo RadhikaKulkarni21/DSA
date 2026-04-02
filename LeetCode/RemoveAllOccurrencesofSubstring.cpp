@@ -15,11 +15,12 @@ public:
     string removeOccurrences(string s, string part){
         //find where the first occurance of part occurs
         size_t index = s.find(part);
-        //repeatedly remove till we reach the end of the string
+        //repeatedly remove till we don't find part anymore
         while(index != string::npos){
             //modify the string
             s.erase(index, part.length());
             //update index each time we remove it
+            //if part is not found, it will return npos
             index = s.find(part);
         }
         return s;
