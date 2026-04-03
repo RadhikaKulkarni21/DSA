@@ -32,12 +32,13 @@ Output: 0
 
 class Solution{
 public:
-//Read the question wrong so this is irrelevant to the question part
+//Read the question wrong so this solution is irrelevant to the question part
     string myAtoi(string s){
        string filterd;
        string result;
        int num = 0;
        
+       //remove all the spaces
        for(char c: s){
         if(c != ' '){
             filterd.push_back(c);
@@ -66,6 +67,8 @@ public:
             return 0;
         }
 
+        //last point of range
+        //[-231, 231 - 1]
         const long long maxInt = INT_MAX;
         const long long minInt = INT_MIN;
 
@@ -74,14 +77,18 @@ public:
         
         //whitespace
         int i = 0;
+        //check for white space and move forward
         while(i  < s.size() && s[i] == ' '){
             i++;
         }
 
         //sign -/+
+        //positives sign move forward
         if(s[i] == '+'){
             i++;
         }
+        //if its negative
+        //set sign = -1 as we later need this to multiply and get final output
         else if(s[i] == '-'){
             sign = -1;
             i++;
@@ -89,7 +96,12 @@ public:
 
         //digits only
         while(i < s.size() && isdigit(s[i])){
+            //bc the return type is integer and we are given a string
+            //we subtract from '0' to get the actual integer value
+            //direct conversion will give us ASCII value
+            //this will return the actual digit value
             int digit = s[i] - '0';
+            //moving to tens place, then moving to hundreds place
             res = res * 10 + digit;
 
             if(sign * res >= maxInt) return maxInt;
