@@ -15,8 +15,12 @@ class Solution{
 public:
     void sortColors(vector<int>& nums){
         int r = 0;
-        int b = nums.size() - 1;
-        int w = 0;
+        int b = nums.size() - 1;// this will be biggest
+        int w = 0;//will use this as an iterator
+
+        //two pointers + one iterating pointer
+        //check the iterating pointer with each ball and swap when necessary
+        //0 and 2 will be swapped while 1 will be kept constant
 
         while(w <= b){
             if(nums[w] == 0){
@@ -27,6 +31,8 @@ public:
             else if(nums[w] == 2){
                 swap(nums[w], nums[b]);
                 b--;
+                //we keep the white constant here bc the last ball
+                //could either be 0 or 1 so we need to recheck it
             }
             else{
                 w++;
