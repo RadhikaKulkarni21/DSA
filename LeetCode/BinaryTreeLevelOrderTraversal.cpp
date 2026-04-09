@@ -14,15 +14,22 @@ public:
         newQueue.push(root);
         while(!newQueue.empty()){
             int s = newQueue.size();
+            //to store each of the element in this
             vector<int> v;
             for(int i = 0; i < s; i++){
                 TreeNode *node = newQueue.front();
                 newQueue.pop();
 
+                //we traverse and push each value of node
                 v.push_back(node->val);
+                //we right/left exist we go again the loop for next vector
+                //only one value is added
+                //if left and right child exist 2 values will be added as queue size
+                //would be two
                 if(node->left != NULL) newQueue.push(node->left);
                 if(node->right != NULL) newQueue.push(node->right);
             }
+            //then store each vector into vector
             ans.push_back(v);
         }
         return ans;
@@ -40,3 +47,12 @@ int main(){
     vector<vector<int>> answer = sol.levelOrder(root);
     printVectOfVect(answer);
 }
+
+/*
+for using int s = newQueue.size()
+the size changes dynamically as you push children inside the loop.
+For example, if a level has 2 nodes, the loop starts with i < 2,
+but after popping the first node and pushing its children, 
+the size might become 3. So the loop runs more times than it should,
+bleeding nodes from the next level into the current level.
+*/
