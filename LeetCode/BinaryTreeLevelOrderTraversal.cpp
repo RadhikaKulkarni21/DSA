@@ -12,6 +12,7 @@ public:
 
         queue<TreeNode*> newQueue;
         newQueue.push(root);
+        
         while(!newQueue.empty()){
             int s = newQueue.size();
             //to store each of the element in this
@@ -49,6 +50,8 @@ int main(){
 }
 
 /*
+This is similar to BFS
+https://github.com/RadhikaKulkarni21/DSA/blob/master/Tree%20traversal/traversalBFS.cpp
 for using int s = newQueue.size()
 the size changes dynamically as you push children inside the loop.
 For example, if a level has 2 nodes, the loop starts with i < 2,
