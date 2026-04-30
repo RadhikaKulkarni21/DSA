@@ -8,7 +8,8 @@ public:
         a = b;
         b = temp;
     }
-
+    
+//did this in 3DS interview in 2024
     void SwapNumbersArth(int a, int b){
         a = a + b;
         b = a - b;
