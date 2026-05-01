@@ -2,7 +2,7 @@
 
 class Solution{
 public:
-    void swapNumbersTemp(int a, int b){
+    void swapNumbersTemp(int &a, int &b){
         int temp = 0;
         temp = a;
         a = b;
@@ -10,13 +10,13 @@ public:
     }
     
 //did this in 3DS interview in 2024
-    void SwapNumbersArth(int a, int b){
+    void SwapNumbersArth(int &a, int &b){
         a = a + b;
         b = a - b;
         a = a - b;
     }
 
-    void SwapNumbersBit(int a, int b){
+    void SwapNumbersBit(int &a, int &b){
         a = a ^ b;
         b = a ^ b;
         a = a ^ b;
