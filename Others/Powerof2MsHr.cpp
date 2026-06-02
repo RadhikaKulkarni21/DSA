@@ -33,7 +33,6 @@ int main(){
 If we reach something lets say 7, then we add 1 to make it 8 
 so that it is divisible by 2^3
 
-
 Why n%4 ==3
 When the last two bits are 11, that means n in binary ends with ...11.
 
