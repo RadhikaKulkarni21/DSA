@@ -10,14 +10,13 @@ but last one disconnects node 1
 
 #include "R:\C++\Project1\lcHeader.h"
 
-int getMinimumDifference(int g_nodes, vector<int> g_from, 
-                          vector<int> g_to, vector<int> g_weight) {
+int getMinimumDifference(int g_nodes, vector<int> g_from,vector<int> g_to, vector<int> g_weight) {
     int m = g_weight.size();
     
     // Build and sort edges
     vector<vector<int>> edges(m, vector<int>(3));
     for(int i = 0; i < m; i++) {
-        edges[i][0] = g_weight[i];
+        edges[i][0] = g_weight[i];//we put weight first so that we can sort with weight
         edges[i][1] = g_from[i];
         edges[i][2] = g_to[i];
     }
@@ -58,10 +57,33 @@ int getMinimumDifference(int g_nodes, vector<int> g_from,
 }
 
 int main(){
+    int g_nodes = 4;
+    vector<int> g_from = {1,2,3,4};
+    vector<int> g_to = {2,3,4,2};
+    vector<int> g_weight = {-1,2,5,3};
 
+   int result = getMinimumDifference(g_nodes,g_from,g_to, g_weight);
+
+   cout << "Minimum Difference is: " << result;
 }
 
 /*
 Spanning tree problem - connect all nodes without cycles
 Considering we need to connect 4 nodes, we need 3 edges
+first for loop
+g_weight = [-1, 2, 5, 3]
+g_from   = [1,  2, 3, 2]
+g_to     = [2,  3, 4, 4]
+
+after loop
+edges[0] = [-1, 1, 2]   (weight=-1, from node1, to node2)
+edges[1] = [2,  2, 3]   (weight=2,  from node2, to node3)
+edges[2] = [5,  3, 4]   (weight=5,  from node3, to node4)
+edges[3] = [3,  2, 4]   (weight=3,  from node2, to node4)
+
+after sort
+edges[0] = [-1, 1, 2]   
+edges[1] = [2,  2, 3]   
+edges[2] = [3,  2, 4]   
+edges[3] = [5,  3, 4]
 */
