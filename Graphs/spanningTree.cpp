@@ -1,5 +1,14 @@
-#include "R:\C++\Project1\lcHeader.h"
+/*
+Connect ALL nodes using minimum edges (exactly n-1 edges), with no cycles.
+We have 4 edges but only need 3, so we remove 1 edge each time:
+Remove edge weight 5 -1, 2, 3 max=3, min=-1  diff = 4
+Remove edge weight 3-1, 2, 5 max=5, min=-1 diff = 6
+Remove edge weight 2-1, 3, 5max=5, min=-1 diff = 6
+Remove edge weight -12, 3, 5max=5, min=2 diff = 3  
+but last one disconnects node 1
+*/
 
+#include "R:\C++\Project1\lcHeader.h"
 
 int getMinimumDifference(int g_nodes, vector<int> g_from, 
                           vector<int> g_to, vector<int> g_weight) {
@@ -49,5 +58,10 @@ int getMinimumDifference(int g_nodes, vector<int> g_from,
 }
 
 int main(){
-//idk very complex problem to even understand
+
 }
+
+/*
+Spanning tree problem - connect all nodes without cycles
+Considering we need to connect 4 nodes, we need 3 edges
+*/
